@@ -17,8 +17,8 @@ const App = ()=>{
   //최초 1회 실행
   useEffect(()=>{
     refreshLogin();
-  }, []);
-
+  }, []);  
+ 
   //callback
   const refreshLogin = useCallback(async ()=>{
     //[1] sessionStorage에 refreshToken이라는 이름의 값이 있는지 확인
