@@ -1,27 +1,41 @@
 // PaymentConfirmationPage.js
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from '../api'; // 생성한 axios 인스턴스 가져오기
 import './PaymentConfirmationPage.css';
 
 const PaymentConfirmationPage = () => {
   const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState(false);
 
-  // 결제 완료 페이지로 navigate하는 함수 정의 (useCallback 사용)
-  const handleNavigateToLoading = useCallback(() => {
-    console.log('Navigating to Loading Page...');
-    navigate('/loading', { replace: true });
-  }, [navigate]);
-
-  const handleContinue = () => {
+  const handleContinue = async () => {
     if (isChecked) {
-      handleNavigateToLoading();
+      try {
+        // localStorage에서 저장된 JWT 토큰 가져오기
+        const token = localStorage.getItem('jwtToken');
+
+        // 결제 준비 요청 보내기
+        const response = await axios.post('/ready', {
+          itemName: 'OneShot',
+          totalAmount: 11000,
+        }, {
+          headers: {
+            Authorization: `Bearer ${token}`, // 저장된 JWT 토큰을 사용
+          },
+        });
+
+        // 결제 준비 성공 시, 카카오페이에서 제공한 리다이렉트 링크로 이동
+        console.log('Payment Ready Response:', response.data);
+        window.location.href = response.data.nextRedirectPcUrl;
+      } catch (error) {
+        console.error('Error preparing payment:', error);
+        alert('결제 준비 중 오류가 발생했습니다.');
+      }
     } else {
       alert('약관에 동의해주세요.');
     }
   };
-
-return (
+  return (
     <div className="payment-confirmation-container">
       <div className="confirmation-box">
         <h1>Review + Purchase</h1>
@@ -64,5 +78,4 @@ return (
     </div>
   );
 };
-
 export default PaymentConfirmationPage;
