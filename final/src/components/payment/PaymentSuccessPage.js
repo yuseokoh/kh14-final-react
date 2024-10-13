@@ -7,10 +7,22 @@ const PaymentSuccessPage = () => {
   const navigate = useNavigate();
 
   // 결제 성공 시 전달된 데이터를 location.state에서 가져옵니다.
-  const { itemName, totalAmount, memberId } = location.state || {};
+  const { itemName = '알 수 없는 상품', totalAmount = 0, memberId = '알 수 없는 계정' } = location.state || {};
 
   const handleGoBack = () => {
-    navigate('/'); // 메인 페이지로 이동
+    navigate(-1); // 이전 페이지로 이동
+  };
+
+  const handleInstallContent = () => {
+    alert('콘텐츠 설치 페이지로 이동합니다. (기능 준비 중)');
+  };
+
+  const handlePrintReceipt = () => {
+    alert('영수증 인쇄 기능을 구현합니다. (기능 준비 중)');
+  };
+
+  const handleGoToLibrary = () => {
+    navigate('/library'); // 라이브러리 페이지로 이동
   };
 
   return (
@@ -23,7 +35,7 @@ const PaymentSuccessPage = () => {
 
       <div className="content-install">
         <h2>새 콘텐츠 설치</h2>
-        <button onClick={() => alert('콘텐츠 설치 페이지로 이동합니다.')}>
+        <button onClick={handleInstallContent}>
           콘텐츠 설치
         </button>
       </div>
@@ -38,14 +50,19 @@ const PaymentSuccessPage = () => {
         <p>계정 이름: {memberId}</p>
         <p>상품명: {itemName}</p>
         <p>총액: ₩{totalAmount}</p>
-        <button onClick={() => alert('영수증 인쇄 기능을 구현합니다.')}>
+        <button onClick={handlePrintReceipt}>
           인쇄
         </button>
       </div>
 
-      <button onClick={handleGoBack} className="back-to-store-button">
-        상점으로 돌아가기
-      </button>
+      <div className="navigation-buttons">
+        <button onClick={handleGoBack} className="back-to-store-button">
+          상점으로 돌아가기
+        </button>
+        <button onClick={handleGoToLibrary} className="go-to-library-button">
+          라이브러리로 이동하기
+        </button>
+      </div>
     </div>
   );
 };

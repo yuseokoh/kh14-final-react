@@ -1,10 +1,9 @@
-// PaymentConfirmationPage.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from '../api'; // 생성한 axios 인스턴스 가져오기
 import './PaymentConfirmationPage.css';
 
-const PaymentConfirmationPage = () => {
+const PaymentConfirmationPage = ({ itemName, totalAmount, userAccount }) => {
   const navigate = useNavigate();
   const [isChecked, setIsChecked] = useState(false);
 
@@ -16,8 +15,8 @@ const PaymentConfirmationPage = () => {
 
         // 결제 준비 요청 보내기
         const response = await axios.post('/ready', {
-          itemName: 'OneShot',
-          totalAmount: 11000,
+          itemName: itemName,
+          totalAmount: totalAmount,
         }, {
           headers: {
             Authorization: `Bearer ${token}`, // 저장된 JWT 토큰을 사용
@@ -35,22 +34,23 @@ const PaymentConfirmationPage = () => {
       alert('약관에 동의해주세요.');
     }
   };
+
   return (
     <div className="payment-confirmation-container">
       <div className="confirmation-box">
         <h1>Review + Purchase</h1>
         <div className="purchase-details">
-          <img src="/images/oneshot.png" alt="OneShot" className="product-image" />
+          <img src={`/images/${itemName.toLowerCase()}.png`} alt={itemName} className="product-image" />
           <div className="details">
-            <h2>OneShot</h2>
-            <p>Subtotal: ₩11,000</p>
-            <p>Total: ₩11,000</p>
+            <h2>{itemName}</h2>
+            <p>Subtotal: ₩{totalAmount}</p>
+            <p>Total: ₩{totalAmount}</p>
           </div>
         </div>
         <div className="payment-info">
           <p>Earn Steam Points for this purchase</p>
           <div className="payment-method">Payment method: KakaoPay (Change)</div>
-          <div className="steam-account">Steam account: rjalsjcjf430</div>
+          <div className="steam-account">Steam account: {userAccount}</div>
           <div className="terms">
             <input
               type="checkbox"
@@ -78,4 +78,5 @@ const PaymentConfirmationPage = () => {
     </div>
   );
 };
+
 export default PaymentConfirmationPage;
