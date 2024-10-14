@@ -1,42 +1,39 @@
 .payment-confirmation-page {
-    background-color: #1b2838;
-    color: white;
-    padding: 20px;
+  background-color: #1b2838;
+  color: white;
+  padding: 20px;
+}
+
+.purchase-details,
+.points-info,
+.payment-method-info {
+  background-color: #2a475e;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.terms label {
+  margin-left: 10px;
+  color: #66c0f4; /* 부트스트랩의 text-info와 비슷한 색상 */
+}
+
+.continue-button {
+  background-color: #5c7e10; /* 부트스트랩 btn-success와 유사한 색상 */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* 반응형 디자인 추가 */
+@media (max-width: 768px) {
+  .payment-method-container {
+    flex-direction: column; /* 작은 화면에서는 수직 배치 */
   }
-  
-  .purchase-details {
-    background-color: #2a475e;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .points-info {
-    background-color: #2a475e;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .payment-method-info {
-    background-color: #2a475e;
-    padding: 10px;
-    margin-bottom: 20px;
-  }
-  
-  .terms {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .terms label {
-    margin-left: 10px;
-    color: #66c0f4;
-  }
-  
-  .continue-button {
-    background-color: #5c7e10;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
+}
