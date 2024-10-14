@@ -71,6 +71,7 @@ const Menu = () => {
                                 <NavLink className="dropdown-item" to="/ex01">테스트</NavLink>
                             </div>
                         </li>
+                        
                     
                     {/* 로그인시 보이는 게시판 */}
                         {login === true && (
@@ -81,6 +82,11 @@ const Menu = () => {
                             <div className="dropdown-menu">
                                 <NavLink className="dropdown-item" to="/paytest01">로그인시 테스트</NavLink>
                             </div>
+
+                                
+
+
+
                         </li>
                         
                         )}
@@ -96,6 +102,32 @@ const Menu = () => {
                                 ({memberLevel})
                             </NavLink>
                         </li>
+
+
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/payment/method">
+                                <i className="fa-solid fa-right-to-bracket"></i>
+                                결제 테스트 1
+                            </NavLink>
+                        </li>
+
+
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/payment/confirmation">
+                                <i className="fa-solid fa-right-to-bracket"></i>
+                                결제 테스트 2
+                            </NavLink>
+                        </li>
+
+
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/payment/success">
+                                <i className="fa-solid fa-right-to-bracket"></i>
+                                결제 테스트 3
+                            </NavLink>
+                        </li>
+
+
                         <li className="nav-item">
                             <NavLink className="nav-link" to="#"
                                     onClick={logout}>
@@ -115,6 +147,8 @@ const Menu = () => {
                                 로그인
                             </NavLink>
                         </li>
+                      
+                        
                         
 
                         
