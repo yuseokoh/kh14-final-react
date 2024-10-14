@@ -1,0 +1,85 @@
+/* 배경 이미지와 전체 화면 크기 */
+body, html {
+    height: 100%  !important;
+    margin: 0 !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    background-image: url('./login.png');
+
+    background-size: cover !important;
+    background-position: center !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important; 
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.75) !important; /* 반투명한 배경 */
+    padding: 20px !important;
+    border-radius: 4px !important;
+    max-width: 1200px !important;
+    width: 800px !important;
+    color: white;
+}
+
+.form-control {
+    background-color: #2c2f33 !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px !important;
+}
+
+.form-control::placeholder {
+    color: #b9bbbe !important;
+}
+
+.form-check-label {
+    color: #b9bbbe!important;
+}
+
+.btn-success {
+    background: linear-gradient(to right, #00A6FF, #007BFF) !important; /* 파란색 그라디언트 */
+    border: none !important;
+    padding: 10px !important;
+}
+
+.btn-success:hover {
+    background: linear-gradient(to right, #0056b3, #0073e6) !important; /* 파란색 그라디언트 */
+}
+
+.jumbotron-title {
+    font-size: 1.8rem !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    margin-bottom: 40px !important;
+    margin-left: 20px !important;
+}
+
+.checkbox-group {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.login-qr-placeholder {
+    height: 150px !important;
+    width: 150px !important;
+    background-color: #282b30 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    color: #b9bbbe !important;
+    margin: 0 auto !important;
+    border-radius: 10px !important;
+    font-size: 1.2rem !important;
+    text-align: center !important;
+}
+
+.login-qr-placeholder span {
+    display: block !important;
+    text-align: center !important;
+    color: white !important;
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important;
+}
