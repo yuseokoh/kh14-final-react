@@ -17,7 +17,9 @@
   font-weight: bold;
   position: relative;
   border-radius: 5px 5px 0 0;
+  font-size: 14px;
 }
+
 
 .triangle-right {
   width: 0;
@@ -25,7 +27,8 @@
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   border-left: 5px solid #ffffff; /* 삼각형의 색상 - 흰색 */
-  margin-right: 10px; /* 삼각형과 다음 탭 사이의 간격 */
+  margin-left: 10px; /* 삼각형과 이전 요소 사이의 간격 추가 */
+  margin-right: 10px; /* 삼각형과 간격 추가 */
 }
 
 .review-purchase2-tab {
