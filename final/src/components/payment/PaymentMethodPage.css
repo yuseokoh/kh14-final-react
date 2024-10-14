@@ -1,35 +1,28 @@
+/* PaymentMethodPage.css */
 .payment-method-page {
-    background-color: #1b2838;
-    color: white;
-    padding: 20px;
-  }
-  
-  .payment-method-container {
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .payment-method-select p {
-    margin: 5px 0;
-  }
-  
-  .billing-info {
-    color: #66c0f4;
-  }
-  
-  .payment-methods {
-    text-align: center;
-  }
-  
-  .payment-method-icons img {
-    width: 50px;
-    margin: 5px;
-  }
-  
-  .continue-button {
-    background-color: #5c7e10;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
+  background-color: #1b2838;
+  color: white;
+  padding: 20px;
+}
+
+.payment-method-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.billing-info {
+  color: #66c0f4;
+}
+
+.payment-method-icons img {
+  width: 50px;
+  margin: 5px;
+}
+
+.continue-button {
+  background-color: #5c7e10;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
