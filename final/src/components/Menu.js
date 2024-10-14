@@ -105,27 +105,26 @@ const Menu = () => {
 
 
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/payment/method">
-                                <i className="fa-solid fa-right-to-bracket"></i>
-                                결제 테스트 1
-                            </NavLink>
-                        </li>
+  <NavLink className="nav-link" to="/payment/method">
+    <i className="fa-solid fa-right-to-bracket"></i>
+    결제 테스트 1
+  </NavLink>
+</li>
 
+<li className="nav-item">
+  <NavLink className="nav-link" to="/payment/confirmation">
+    <i className="fa-solid fa-right-to-bracket"></i>
+    결제 테스트 2
+  </NavLink>
+</li>
 
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/payment/confirmation">
-                                <i className="fa-solid fa-right-to-bracket"></i>
-                                결제 테스트 2
-                            </NavLink>
-                        </li>
+<li className="nav-item">
+  <NavLink className="nav-link" to="/payment/confirmation/success/:partnerOrderId">
+    <i className="fa-solid fa-right-to-bracket"></i>
+    결제 테스트 3
+  </NavLink>
+</li>
 
-
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/payment/success">
-                                <i className="fa-solid fa-right-to-bracket"></i>
-                                결제 테스트 3
-                            </NavLink>
-                        </li>
 
 
                         <li className="nav-item">
