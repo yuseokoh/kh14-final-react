@@ -3,6 +3,9 @@ import Home from './Home';
 import { useRecoilValue } from "recoil";
 import { loginState } from "../utils/recoil";
 import MemberLogin from "./member/MemberLogin";
+import PaymentMethodPage from "./payment/PaymentMethodPage";
+import PaymentConfirmationPage from "./payment/PaymentConfirmationPage";
+import PaymentSuccessPage from "./payment/PaymentSuccessPage";
 
 const MainContent = ()=>{
     //recoil에서 login 상태를 불러온다
@@ -25,7 +28,9 @@ const MainContent = ()=>{
                       
                         {/* 경로변수를 사용할 경우 콜론과 이름을 합쳐 변수명으로 지정 */}
 
-                        
+                        <Route path="/payment/method" element={<PaymentMethodPage/>}/>
+                        <Route path="/payment/confirmation" element={<PaymentConfirmationPage/>}/>
+                        <Route path="/payment/success" element={<PaymentSuccessPage/>}/>
                         {/* 기존 : 일반 라우팅 */}
                         {/* <Route path="/search/autocomplete" element={<AutoComplete/>}/> */}
                         {/* <Route path="/search/autocomplete2" element={<AutoComplete2/>}/> */}

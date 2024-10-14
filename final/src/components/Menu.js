@@ -114,6 +114,31 @@ const Menu = () => {
                                 로그인
                             </NavLink>
                         </li>
+
+
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/payment/method">
+                                <i className="fa-solid fa-right-to-bracket"></i>
+                                결제 테스트1
+                            </NavLink>
+                        </li>
+
+
+
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/payment/confirmation">
+                                <i className="fa-solid fa-right-to-bracket"></i>
+                                결제 테스트2
+                            </NavLink>
+                        </li>
+
+
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to="/payment/success">
+                                <i className="fa-solid fa-right-to-bracket"></i>
+                                결제 테스트3
+                            </NavLink>
+                        </li>
                         </>)}
                     </ul>
                 </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from '../api'; // 생성한 axios 인스턴스 가져오기
+import axios from 'axios';
+
 import './PaymentConfirmationPage.css';
 
 const PaymentConfirmationPage = ({ itemName, totalAmount, userAccount }) => {
@@ -39,7 +40,8 @@ const PaymentConfirmationPage = ({ itemName, totalAmount, userAccount }) => {
       <div className="card p-4 confirmation-box">
         <h1 className="mb-4">Review + Purchase</h1>
         <div className="card mb-4 purchase-details">
-          <img src={`/images/${itemName.toLowerCase()}.png`} alt={itemName} className="card-img-top product-image" />
+        <img src={`/images/${itemName?.toLowerCase() || 'default'}.png`} alt={itemName} className="card-img-top product-image" />
+
           <div className="card-body details">
             <h2 className="card-title">{itemName}</h2>
             <p className="card-text">Subtotal: ₩{totalAmount}</p>
