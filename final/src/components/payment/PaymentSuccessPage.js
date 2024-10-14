@@ -21,8 +21,8 @@ const PaymentSuccessPage = () => {
   return (
     <div className="payment-success-container container text-center py-5">
       <h1 className="text-primary mb-4">구매해 주셔서 감사합니다!</h1>
-      <p>확인 이메일이 전송되었습니다.</p>
-      <p>구매하신 디지털 제품이 귀하의 계정에 등록되었습니다. 이제 Steam 라이브러리에서 언제든지 게임을 즐기실 수 있습니다.</p>
+     
+      <p>구매하신 게임이 귀하의 계정에 등록되었습니다. 이제 Steam 라이브러리에서 언제든지 게임을 즐기실 수 있습니다.</p>
 
       <div className="purchase-receipt text-white rounded p-4 my-4">
         <h2>구매 영수증</h2>
