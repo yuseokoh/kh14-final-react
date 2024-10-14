@@ -7,8 +7,11 @@ const PaymentMethodPage = () => {
   const [selectedMethod, setSelectedMethod] = useState('');
 
   const handleNavigateToConfirmation = useCallback(() => {
-    navigate('/payment-confirmation', { replace: true });
-  }, [navigate]);
+    navigate('/payment/confirmation', {
+      replace: true,
+      state: { selectedMethod }, // 결제 방식 데이터를 전달
+    });
+  }, [navigate, selectedMethod]);
 
   const handleContinue = () => {
     if (selectedMethod) {
@@ -20,7 +23,6 @@ const PaymentMethodPage = () => {
 
   return (
     <div className="payment-method-page p-4">
-
       <div className="tabs-container">
         <div className="payment-info2-tab">Payment Info</div>
         <div className="triangle-right"></div>

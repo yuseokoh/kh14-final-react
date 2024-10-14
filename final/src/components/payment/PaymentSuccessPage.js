@@ -10,33 +10,25 @@ const PaymentSuccessPage = () => {
   // 결제 성공 시 전달된 데이터를 location.state에서 가져옵니다.
   const { itemName = '알 수 없는 상품', totalAmount = 0, memberId = '알 수 없는 계정' } = location.state || {};
 
- 
   const handleGoToStore = () => {
-    navigate('/store'); // 라이브러리 페이지로 이동
+    navigate('/store'); // 상점 페이지로 이동
   };
- 
 
   const handleGoToLibrary = () => {
     navigate('/library'); // 라이브러리 페이지로 이동
   };
+
   return (
     <div className="payment-success-container container text-center py-5">
       <h1 className="text-primary mb-4">구매해 주셔서 감사합니다!</h1>
       <p>확인 이메일이 전송되었습니다.</p>
-      <p>
-        구매하신 디지털 제품이 귀하의 계정에 등록되었습니다. 이제 Steam 라이브러리에서 언제든지 게임을 즐기실 수 있습니다.
-      </p>
-
-     
-
-    
+      <p>구매하신 디지털 제품이 귀하의 계정에 등록되었습니다. 이제 Steam 라이브러리에서 언제든지 게임을 즐기실 수 있습니다.</p>
 
       <div className="purchase-receipt text-white rounded p-4 my-4">
         <h2>구매 영수증</h2>
         <p>계정 이름: {memberId}</p>
         <p>상품명: {itemName}</p>
         <p>총액: ₩{totalAmount}</p>
-       
       </div>
 
       <div className="navigation-buttons d-flex justify-content-around mt-4">
@@ -50,4 +42,5 @@ const PaymentSuccessPage = () => {
     </div>
   );
 };
+
 export default PaymentSuccessPage;
