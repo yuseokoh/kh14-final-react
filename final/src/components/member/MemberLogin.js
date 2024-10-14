@@ -35,6 +35,7 @@ const MemberLogin = ()=>{
   const sendLoginRequest = useCallback(async ()=>{
       try {//로그인 성공
           const resp = await axios.post("http://localhost:8080/member/login", input);
+          console.log(resp.data);
           setMemberId(resp.data.memberId);
           setMemberLevel(resp.data.memberLevel);
           axios.defaults.headers.common["Authorization"] 

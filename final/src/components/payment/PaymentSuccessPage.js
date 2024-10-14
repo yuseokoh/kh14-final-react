@@ -2,13 +2,16 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './PaymentSuccessPage.css';
+import { memberIdState } from '../../utils/recoil';
+import { useRecoilState } from 'recoil';
 
 const PaymentSuccessPage = () => {
+  const [memberId,] = useRecoilState(memberIdState);
   const location = useLocation();
   const navigate = useNavigate();
 
   // 결제 성공 시 전달된 데이터를 location.state에서 가져옵니다.
-  const { itemName = '알 수 없는 상품', totalAmount = 0, memberId = '알 수 없는 계정' } = location.state || {};
+  const { itemName = '알 수 없는 상품', totalAmount = 0,} = location.state || {};
 
   const handleGoToStore = () => {
     navigate('/store'); // 상점 페이지로 이동
