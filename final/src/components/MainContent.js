@@ -28,9 +28,6 @@ const MainContent = ()=>{
                       
                         {/* 경로변수를 사용할 경우 콜론과 이름을 합쳐 변수명으로 지정 */}
 
-                        <Route path="/payment/method" element={<PaymentMethodPage/>}/>
-                        <Route path="/payment/confirmation" element={<PaymentConfirmationPage/>}/>
-                        <Route path="/payment/success" element={<PaymentSuccessPage/>}/>
                         {/* 기존 : 일반 라우팅 */}
                         {/* <Route path="/search/autocomplete" element={<AutoComplete/>}/> */}
                         {/* <Route path="/search/autocomplete2" element={<AutoComplete2/>}/> */}
@@ -43,6 +40,9 @@ const MainContent = ()=>{
 
 
                         {/* 결제 */}
+                        <Route path="/payment/method" element={<PaymentMethodPage/>}/>
+                        <Route path="/payment/confirmation" element={<PaymentConfirmationPage/>}/>
+                        <Route path="/payment/success" element={<PaymentSuccessPage/>}/>
 
                         {/* 나머지 경로(*) 패턴을 지정해서 미 지정된 페이지를 모두 연결할 수 있다 */}
                     </Routes>
