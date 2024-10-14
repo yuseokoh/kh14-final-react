@@ -22,9 +22,9 @@ const PaymentMethodPage = () => {
     <div className="payment-method-page p-4">
 
       <div className="tabs-container">
-        <div className="payment-info-tab">Payment Info</div>
+        <div className="payment-info2-tab">Payment Info</div>
         <div className="triangle-right"></div>
-        <div className="review-purchase-tab">Review + Purchase</div>
+        <div className="review-purchase2-tab">Review + Purchase</div>
       </div>
       <h1 className="page-title">PAYMENT METHOD</h1>
       <div className="payment-method-content">
