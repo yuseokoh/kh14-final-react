@@ -21,6 +21,8 @@ const MainContent = ()=>{
                         <Route exact path="/" element={<Home/>}/>
 
                         {/* 로그인이 필요한 페이지라면 element에 PrivateRoute를 적어서 대상을 명시하면 된다 */}
+                        
+                      
                         {/* 경로변수를 사용할 경우 콜론과 이름을 합쳐 변수명으로 지정 */}
 
                         

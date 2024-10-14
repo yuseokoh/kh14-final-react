@@ -72,8 +72,8 @@ const Menu = () => {
                             </div>
                         </li>
                     
-            
-                        {/* {login === true && ( */}
+                    {/* 로그인시 보이는 게시판 */}
+                        {login === true && (
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle"
                                 data-bs-toggle="dropdown" href="#" role="button"
@@ -82,7 +82,7 @@ const Menu = () => {
                                 <NavLink className="dropdown-item" to="/paytest01">로그인시 테스트</NavLink>
                             </div>
                         </li>
-                        {/* )} */}
+                        )}
                        
                     </ul>
 
