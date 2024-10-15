@@ -46,20 +46,6 @@ const Menu = () => {
 
     //view
     return (<>
-
-        {/* Steam 로고를 상단 중앙에 배치 */}
-        {/* <div className="container">
-            <div className="row">
-                <div className="col text-center">
-                    <nav className="navbar fixed-top" data-bs-theme="dark">
-                        <NavLink className="navbar-brand" to="/">
-                            <img src={steamLogo} alt="Steam" height={"50px"} />
-                        </NavLink>
-                    </nav>
-                </div>
-            </div>
-        </div> */}
-
         <nav className="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
             <div className="container">
                 {/* 메인 로고 또는 텍스트가 존재하는 위치 */}
@@ -88,16 +74,33 @@ const Menu = () => {
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle"
                                 data-bs-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="true" aria-expanded="false">테스트</a>
+                                aria-haspopup="true" aria-expanded="false">상점</a>
                             <div className="dropdown-menu">
-                                <NavLink className="dropdown-item" to="/ex01">테스트</NavLink>
+                                <NavLink className="dropdown-item" to="/">테스트</NavLink>
                             </div>
                         </li>
 
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle"
+                                data-bs-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">커뮤니티</a>
+                            <div className="dropdown-menu">
+                                <NavLink className="dropdown-item" to="/">테스트</NavLink>
+                            </div>
+                        </li>
 
-
+                        <li className="nav-item dropdown">
+                            <a className="nav-link"
+                                data-bs-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">정보</a>
+                        </li>
+                        <li className="nav-item dropdown">
+                            <a className="nav-link"
+                                data-bs-toggle="dropdown" href="#" role="button"
+                                aria-haspopup="true" aria-expanded="false">지원</a>
+                        </li>
                         {/* 로그인시 보이는 게시판 */}
-                        {login === true && (
+                        {/* {login === true && (
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle"
                                     data-bs-toggle="dropdown" href="#" role="button"
@@ -105,60 +108,40 @@ const Menu = () => {
                                 <div className="dropdown-menu">
                                     <NavLink className="dropdown-item" to="/paytest01">로그인시 테스트</NavLink>
                                 </div>
-
-
-
-
-
                             </li>
+                        )} */}
 
-                        )}
 
-                    </ul>
-
-                    <ul className="navbar-nav">
                         {/* 로그인이 되어있다면 아이디(등급) 형태로 출력 */}
                         {login ? (<>
+                            {/* 결제 메뉴 */}
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">결제</a>
+                                <div className="dropdown-menu">
+                                    <NavLink className="dropdown-item" to="/payment/method">
+                                        <i className="fa-solid fa-right-to-bracket"></i>
+                                        결제 테스트 1
+                                    </NavLink>
+
+                                    <NavLink className="dropdown-item" to="/payment/confirmation">
+                                        <i className="fa-solid fa-right-to-bracket"></i>
+                                        결제 테스트 2
+                                    </NavLink>
+
+                                    <NavLink className="dropdown-item" to="/payment/success">
+                                        <i className="fa-solid fa-right-to-bracket"></i>
+                                        결제 테스트 3
+                                    </NavLink>
+                                </div>
+                            </li>
+
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/member/mypage">
                                     {memberId}
                                     ({memberLevel})
                                 </NavLink>
                             </li>
-
-
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/payment/method">
-                                    <i className="fa-solid fa-right-to-bracket"></i>
-                                    결제 테스트 1
-                                </NavLink>
-                            </li>
-
-
-
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/payment/confirmation">
-                                    <i className="fa-solid fa-right-to-bracket"></i>
-                                    결제 테스트 2
-                                </NavLink>
-                            </li>
-
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/payment/confirmation">
-                                    <i className="fa-solid fa-right-to-bracket"></i>
-                                    결제 테스트 2
-                                </NavLink>
-                            </li>
-
-
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/payment/success">
-                                    <i className="fa-solid fa-right-to-bracket"></i>
-                                    결제 테스트 3
-                                </NavLink>
-                            </li>
-
-
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="#"
                                     onClick={logout}>

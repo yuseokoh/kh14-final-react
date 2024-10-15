@@ -6,7 +6,7 @@ import MemberLogin from "./member/MemberLogin";
 import PaymentMethodPage from "./payment/PaymentMethodPage";
 import PaymentConfirmationPage from "./payment/PaymentConfirmationPage";
 import PaymentSuccessPage from "./payment/PaymentSuccessPage";
-import Loading from "../router/Loading";
+import PrivateRoute from "../router/PrivateRoute";
 
 const MainContent = ()=>{
     //recoil에서 login 상태를 불러온다
@@ -44,7 +44,6 @@ const MainContent = ()=>{
                         <Route path="/payment/method" element={<PaymentMethodPage/>}/>
                         <Route path="/payment/confirmation" element={<PaymentConfirmationPage/>}/>
                         <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
-
 
                         {/* 나머지 경로(*) 패턴을 지정해서 미 지정된 페이지를 모두 연결할 수 있다 */}
                     </Routes>
