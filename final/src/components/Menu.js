@@ -77,7 +77,7 @@ const Menu = () => {
                     aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                
+
                 {/* 
                 실제 메뉴 영역
                 - 폭이 충분할 경우에는 상단 메뉴바에 표시
@@ -134,6 +134,14 @@ const Menu = () => {
                                 </NavLink>
                             </li>
 
+
+
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/payment/confirmation">
+                                    <i className="fa-solid fa-right-to-bracket"></i>
+                                    결제 테스트 2
+                                </NavLink>
+                            </li>
 
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/payment/confirmation">

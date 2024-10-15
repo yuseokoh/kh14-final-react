@@ -32,25 +32,26 @@ const MemberLogin = () => {
   }, [input]);
 
   //로그인 요청
-  const sendLoginRequest = useCallback(async () => {
+  const sendLoginRequest = useCallback(async ()=>{
     try {//로그인 성공
-      const resp = await axios.post("/member/login", input);
-      setMemberId(resp.data.memberId);
-      setMemberLevel(resp.data.memberLevel);
-      axios.defaults.headers.common["Authorization"]
-        = "Bearer " + resp.data.accessToken;
-      if (stay === true) {//로그인 유지 체크 시
-        window.localStorage.setItem("refreshToken", resp.data.refreshToken);
-      }
-      else {//로그인 유지 미 체크시
-        window.sessionStorage.setItem("refreshToken", resp.data.refreshToken);
-      }
-      navigate("/"); //함수에서 사용해야 할 경우...
+        const resp = await axios.post("/member/login", input);
+        console.log(resp.data);
+        setMemberId(resp.data.memberId);
+        setMemberLevel(resp.data.memberLevel);
+        axios.defaults.headers.common["Authorization"] 
+                            = "Bearer " + resp.data.accessToken;
+        if(stay === true) {//로그인 유지 체크 시
+            window.localStorage.setItem("refreshToken", resp.data.refreshToken);
+        }
+        else {//로그인 유지 미 체크시
+            window.sessionStorage.setItem("refreshToken", resp.data.refreshToken);
+        }
+        navigate("/"); //함수에서 사용해야 할 경우...
     }
-    catch (e) {//로그인 실패
-      console.log("아이디 없거나 비밀번호 틀림");
+    catch(e) {//로그인 실패
+        console.log("아이디 없거나 비밀번호 틀림");
     }
-  }, [input, stay]);
+}, [input, stay]);
 
 
   //view

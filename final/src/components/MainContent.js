@@ -43,7 +43,8 @@ const MainContent = ()=>{
                         {/* 결제 */}
                         <Route path="/payment/method" element={<PaymentMethodPage/>}/>
                         <Route path="/payment/confirmation" element={<PaymentConfirmationPage/>}/>
-                        <Route path="/payment/success" element={<PaymentSuccessPage/>}/>
+                        <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
+
 
                         {/* 나머지 경로(*) 패턴을 지정해서 미 지정된 페이지를 모두 연결할 수 있다 */}
                     </Routes>
