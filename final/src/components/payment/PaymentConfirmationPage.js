@@ -1,9 +1,12 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
+import { useRecoilState } from "recoil";
+import { memberIdState, memberLevelState } from "../../utils/recoil";
 import Jumbotron from "../Jumbotron";
 import axios from "axios";
 import './PaymentConfirmationPage.css';
 
 const PaymentConfirmationPage = ()=>{
+    const [memberId] = useRecoilState(memberIdState);
   //state
   const [gameList, setGameList] = useState([
       { id: 1, title: 'League of Legends', price: 20000, qty: 1 }
@@ -117,7 +120,7 @@ return (<>
 
                     <div className="payment-info">
                         <p>Payment method: <span className="text-info">KakaoPay (Change)</span></p>
-                        <p>Steam account: User1234</p>
+                        <p>Steam account: {memberId}</p>
                     </div>  <div className="terms">
                         <input
                             type="checkbox"

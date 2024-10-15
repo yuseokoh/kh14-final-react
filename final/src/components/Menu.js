@@ -126,12 +126,17 @@ const Menu = () => {
 
                                     <NavLink className="dropdown-item" to="/payment/confirmation">
                                         <i className="fa-solid fa-right-to-bracket"></i>
-                                        결제 테스트 2
+                                        결제 요청 테스트
                                     </NavLink>
 
                                     <NavLink className="dropdown-item" to="/payment/success">
                                         <i className="fa-solid fa-right-to-bracket"></i>
-                                        결제 테스트 3
+                                        결제 성공 테스트
+                                    </NavLink>
+
+                                    <NavLink className="dropdown-item" to="/payment/cancel">
+                                        <i className="fa-solid fa-right-to-bracket"></i>
+                                        결제 취소 테스트
                                     </NavLink>
                                 </div>
                             </li>
