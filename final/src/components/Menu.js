@@ -91,12 +91,12 @@ const Menu = () => {
 
                         <li className="nav-item dropdown">
                             <a className="nav-link"
-                                data-bs-toggle="dropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" to="/" role="button"
                                 aria-haspopup="true" aria-expanded="false">정보</a>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link"
-                                data-bs-toggle="dropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" to="/" role="button"
                                 aria-haspopup="true" aria-expanded="false">지원</a>
                         </li>
                         {/* 로그인시 보이는 게시판 */}
