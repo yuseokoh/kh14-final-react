@@ -6,6 +6,7 @@ import MemberLogin from "./member/MemberLogin";
 import PaymentMethodPage from "./payment/PaymentMethodPage";
 import PaymentConfirmationPage from "./payment/PaymentConfirmationPage";
 import PaymentSuccessPage from "./payment/PaymentSuccessPage";
+import Loading from "../router/Loading";
 
 const MainContent = ()=>{
     //recoil에서 login 상태를 불러온다

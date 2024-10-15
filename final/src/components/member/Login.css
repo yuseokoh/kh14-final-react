@@ -13,12 +13,13 @@ body, html {
 }
 
 .container {
-    background-color: rgba(0, 0, 0, 0.75) !important; /* 반투명한 배경 */
+    background-color: rgba(24, 26, 33) !important; /* 반투명한 배경 */
     padding: 20px !important;
     border-radius: 4px !important;
     max-width: 1200px !important;
     width: 800px !important;
     color: white;
+    height: 3;
 }
 
 .form-control {
@@ -26,8 +27,30 @@ body, html {
     color: white !important;
     border: none !important;
     padding: 10px !important;
+    width: 500px !important;
+    border-radius: 2px !important;
+    margin-left: 20px !important;
+}
+.spanid {
+    margin-left: 20px !important;
+    color:#2c85df !important;
+}
+.spanpw {
+    margin-left: 20px !important;
+    color: #b9bbbe;
 }
 
+.checkbox-group {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-left: 20px !important;
+}
+.login{
+    display: flex !important;
+    align-items: center !important;
+    margin-right: 50px !important;
+}
 .form-control::placeholder {
     color: #b9bbbe !important;
 }
@@ -37,13 +60,16 @@ body, html {
 }
 
 .btn-success {
-    background: linear-gradient(to right, #00A6FF, #007BFF) !important; /* 파란색 그라디언트 */
+    background: linear-gradient(to right, #00A6FF, #007BFF) !important; 
     border: none !important;
-    padding: 10px !important;
+    padding: 14px !important;
+    border-radius: 2px !important;
+    margin-left: 120px;
+    width: 300px;
 }
 
 .btn-success:hover {
-    background: linear-gradient(to right, #0056b3, #0073e6) !important; /* 파란색 그라디언트 */
+    background: linear-gradient(to right, #18aeff, #0073e6) !important; 
 }
 
 .jumbotron-title {
@@ -52,26 +78,22 @@ body, html {
     text-align: left !important;
     margin-bottom: 40px !important;
     margin-left: 20px !important;
+    color: white;
 }
 
-.checkbox-group {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-}
 
 .login-qr-placeholder {
-    height: 150px !important;
-    width: 150px !important;
+    height: 180px !important;
+    width: 180px !important;
     background-color: #282b30 !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     color: #b9bbbe !important;
-    margin: 0 auto !important;
     border-radius: 10px !important;
     font-size: 1.2rem !important;
     text-align: center !important;
+    margin-left: -25px
 }
 
 .login-qr-placeholder span {

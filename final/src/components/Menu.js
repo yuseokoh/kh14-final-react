@@ -11,6 +11,10 @@ import { loginState, memberIdState, memberLevelState } from "../utils/recoil";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { useCallback } from 'react';
 import axios from "axios";
+import './Menu.css';
+import { FaSteam } from "react-icons/fa";
+import steamLogo from './steamlogo.svg';
+import { MdHeight } from "react-icons/md";
 
 const Menu = () => {
     //navigate
@@ -19,12 +23,11 @@ const Menu = () => {
     //recoil state
     const [memberId, setMemberId] = useRecoilState(memberIdState);
     const [memberLevel, setMemberLevel] = useRecoilState(memberLevelState);
-    
-    //const [login, setLogin] = useRecoilState(loginState);//selector는 이게 아님
+
     const login = useRecoilValue(loginState);//읽기전용 항목은 이렇게 읽음
 
     //callback
-    const logout = useCallback((e)=>{
+    const logout = useCallback((e) => {
         //e.preventDefault();
 
         //recoil에 저장된 memberId와 memberLevel을 제거
@@ -43,10 +46,28 @@ const Menu = () => {
 
     //view
     return (<>
-        <nav className="navbar navbar-expand-lg bg-dark fixed-top" data-bs-theme="dark">
-            <div className="container-fluid">
+
+        {/* Steam 로고를 상단 중앙에 배치 */}
+        {/* <div className="container">
+            <div className="row">
+                <div className="col text-center">
+                    <nav className="navbar fixed-top" data-bs-theme="dark">
+                        <NavLink className="navbar-brand" to="/">
+                            <img src={steamLogo} alt="Steam" height={"50px"} />
+                        </NavLink>
+                    </nav>
+                </div>
+            </div>
+        </div> */}
+
+        <nav className="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
+            <div className="container">
                 {/* 메인 로고 또는 텍스트가 존재하는 위치 */}
-                <NavLink className="navbar-brand" to="/">테스트</NavLink>
+                <NavLink className="navbar-brand " to="/">
+                    {/* <FaSteam /> */}
+                    <img src={steamLogo} alt="Steam" height={"50px"} />
+                </NavLink>
+
                 {/* 폭이 좁은 경우 메뉴를 숨겼다 펼쳤다 하는 버튼(햄버거 버튼) */}
                 <button className="navbar-toggler" type="button"
                     data-bs-toggle="collapse"
@@ -56,6 +77,7 @@ const Menu = () => {
                     aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
+                
                 {/* 
                 실제 메뉴 영역
                 - 폭이 충분할 경우에는 상단 메뉴바에 표시
@@ -71,90 +93,84 @@ const Menu = () => {
                                 <NavLink className="dropdown-item" to="/ex01">테스트</NavLink>
                             </div>
                         </li>
-                        
-                    
-                    {/* 로그인시 보이는 게시판 */}
+
+
+
+                        {/* 로그인시 보이는 게시판 */}
                         {login === true && (
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle"
-                                data-bs-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="true" aria-expanded="false">로그인시 게시판 (테스트)</a>
-                            <div className="dropdown-menu">
-                                <NavLink className="dropdown-item" to="/paytest01">로그인시 테스트</NavLink>
-                            </div>
-
-                                
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle"
+                                    data-bs-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">로그인시 게시판 (테스트)</a>
+                                <div className="dropdown-menu">
+                                    <NavLink className="dropdown-item" to="/paytest01">로그인시 테스트</NavLink>
+                                </div>
 
 
 
-                        </li>
-                        
+
+
+                            </li>
+
                         )}
-                       
+
                     </ul>
 
                     <ul className="navbar-nav">
                         {/* 로그인이 되어있다면 아이디(등급) 형태로 출력 */}
                         {login ? (<>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/member/mypage">
-                                {memberId} 
-                                ({memberLevel})
-                            </NavLink>
-                        </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/member/mypage">
+                                    {memberId}
+                                    ({memberLevel})
+                                </NavLink>
+                            </li>
 
 
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/payment/method">
-                                <i className="fa-solid fa-right-to-bracket"></i>
-                                결제 테스트 1
-                            </NavLink>
-                        </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/payment/method">
+                                    <i className="fa-solid fa-right-to-bracket"></i>
+                                    결제 테스트 1
+                                </NavLink>
+                            </li>
 
 
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/payment/confirmation">
-                                <i className="fa-solid fa-right-to-bracket"></i>
-                                결제 테스트 2
-                            </NavLink>
-                        </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/payment/confirmation">
+                                    <i className="fa-solid fa-right-to-bracket"></i>
+                                    결제 테스트 2
+                                </NavLink>
+                            </li>
 
 
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/payment/success">
-                                <i className="fa-solid fa-right-to-bracket"></i>
-                                결제 테스트 3
-                            </NavLink>
-                        </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/payment/success">
+                                    <i className="fa-solid fa-right-to-bracket"></i>
+                                    결제 테스트 3
+                                </NavLink>
+                            </li>
 
 
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="#"
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="#"
                                     onClick={logout}>
-                                로그아웃
-                            </NavLink>
-                        </li>
+                                    로그아웃
+                                </NavLink>
+                            </li>
                         </>) : (<>
-                        <li className="nav-item">
-                            <a className="nav-link" href="#">
-                                <i className="fa-solid fa-user"></i>
-                                회원가입
-                            </a>
-                        </li>
-                        <li className="nav-item">
-                            <NavLink className="nav-link" to="/member/login">
-                                <i className="fa-solid fa-right-to-bracket"></i>
-                                로그인
-                            </NavLink>
-                        </li>
-                      
-                        
-                        
+                            <li className="nav-item">
+                                <a className="nav-link" href="#">
+                                    <i className="fa-solid fa-user"></i>
+                                    회원가입
+                                </a>
+                            </li>
+                            <li className="nav-item">
+                                <NavLink className="nav-link" to="/member/login">
+                                    <i className="fa-solid fa-right-to-bracket"></i>
+                                    로그인
+                                </NavLink>
+                            </li>
 
-                        
-
-
-                      
                         </>)}
                     </ul>
                 </div>
@@ -164,3 +180,5 @@ const Menu = () => {
 };
 
 export default Menu;
+
+
