@@ -1,18 +1,18 @@
-.payment-method-page {
+/* PaymentMethodPage.module.css */
+.paymentMethodPage {
   background-color: #1b2838;
   color: white;
   padding: 20px;
 }
 
-.tabs-container {
+.tabsContainer {
   display: flex;
   align-items: center;
   padding-bottom: 10px; /* 원래대로 줄어든 간격 */
 }
 
-.payment-info2-tab {
+.paymentInfo2Tab {
   background-color: #66c0f4;
-
   padding: 5px 5px; /* 원래대로 좁아진 탭 */
   font-weight: bold;
   position: relative;
@@ -20,8 +20,7 @@
   font-size: 14px;
 }
 
-
-.triangle-right {
+.triangleRight {
   width: 0;
   height: 0;
   border-top: 5px solid transparent;
@@ -31,19 +30,19 @@
   margin-right: 10px; /* 삼각형과 간격 추가 */
 }
 
-.review-purchase2-tab {
-
+.reviewPurchase2Tab {
   padding: 8px 12px;
- box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
   font-size: 14px;
 }
-.page-title {
+
+.pageTitle {
   color: #ffffff;
   margin-bottom: 20px;
   font-size: 20px; /* 제목 크기 축소 */
 }
 
-.payment-method-content {
+.paymentMethodContent {
   display: flex;
   justify-content: space-between;
   background-color: #2a475e;
@@ -52,12 +51,12 @@
   gap: 20px; /* 간격 축소 */
 }
 
-.payment-method-select {
+.paymentMethodSelect {
   flex: 1;
   margin-right: 20px;
 }
 
-.select-method {
+.selectMethod {
   width: 100%;
   padding: 10px; /* 드롭다운 크기 축소 */
   background-color: #1b2838;
@@ -66,40 +65,40 @@
   border-radius: 5px;
 }
 
-.billing-info {
+.billingInfo {
   margin-top: 10px;
   color: #66c0f4;
 }
 
-.text-link {
+.textLink {
   color: #66c0f4;
   text-decoration: underline;
 }
 
-.payment-method-icons-container {
+.paymentMethodIconsContainer {
   flex: 1;
   text-align: center;
   margin-left: 20px; /* 간격 축소 */
 }
 
-.payment-method-icons {
+.paymentMethodIcons {
   display: flex;
   justify-content: center;
   gap: 15px; /* 아이콘 사이의 간격 축소 */
   margin-top: 10px;
 }
 
-.payment-method-icons img {
+.paymentMethodIcons img {
   width: 50px; /* 이미지 크기 축소 */
   height: auto;
 }
 
-.button-container {
+.buttonContainer {
   text-align: center;
   margin-top: 20px; /* 버튼 위쪽 간격 축소 */
 }
 
-.continue-button {
+.continueButton {
   background-color: #5c7e10;
   color: #ffffff;
   padding: 10px 20px; /* 버튼 크기 축소 */
@@ -109,6 +108,6 @@
   border-radius: 5px;
 }
 
-.continue-button:hover {
+.continueButton:hover {
   background-color: #4b5d09;
 }

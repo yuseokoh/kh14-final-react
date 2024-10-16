@@ -3,7 +3,7 @@ import { useRecoilState } from "recoil";
 import { memberIdState, memberLevelState } from "../../utils/recoil";
 import Jumbotron from "../Jumbotron";
 import axios from "axios";
-import './PaymentConfirmationPage.css';
+import styles from './PaymentConfirmationPage.module.css';
 
 const PaymentConfirmationPage = ()=>{
     const [memberId] = useRecoilState(memberIdState);
@@ -100,44 +100,44 @@ return (<>
                 </table>
             </div>
         </div>
-        <div className="payment-confirmation-page">
-            <div className="tab-container">
-                <div className="payment-info-tab">Payment Info</div>
-                <div className="triangle"></div>
-                <div className="review-purchase-tab">Review + Purchase</div>
+        <div className={styles.paymentConfirmationPage}>
+            <div className={styles.tabContainer}>
+                <div className={styles.paymentInfoTab}>Payment Info</div>
+                <div className={styles.triangle}></div>
+                <div className={styles.reviewPurchaseTab}>Review + Purchase</div>
             </div>
-            <div className="main-content">
-                <div className="confirmation-box">
-                    <div className="purchase-details">
-                        <img src={`/images/league_of_legends.png`} alt="League of Legends" className="product-image" />
+            <div className={styles.mainContent}>
+                <div className={styles.confirmationBox}>
+                    <div className={styles.purchaseDetails}>
+                        <img src={`/images/league_of_legends.png`} alt="League of Legends" className={styles.productImage} />
 
-                        <div className="details">
+                        <div className={styles.details}>
                             <h2>League of Legends</h2>
                             <p>Total: ₩{checkedGameTotal}</p>
-                            <p className="vat-info">All prices include VAT where applicable</p>
+                            <p className={styles.vatInfo}>All prices include VAT where applicable</p>
                         </div>
                     </div>
 
-                    <div className="payment-info">
-                        <p>Payment method: <span className="text-info">KakaoPay (Change)</span></p>
+                    <div className={styles.paymentInfo}>
+                        <p>Payment method: <span className={styles.textInfo}>KakaoPay (Change)</span></p>
                         <p>Steam account: {memberId}</p>
-                    </div>  <div className="terms">
+                    </div>  <div className={styles.terms}>
                         <input
                             type="checkbox"
                             id="terms-checkbox"
                         /> <label htmlFor="terms-checkbox">
-                        I agree to the terms of the <a href="#" className="text-link">Steam Subscriber Agreement</a> (last updated 27 Sep, 2024).
+                        I agree to the terms of the <a href="#" className={styles.textLink}>Steam Subscriber Agreement</a> (last updated 27 Sep, 2024).
                         KakaoPay transactions are authorized through the Smart2Pay website. Click the button below to open a new web browser to initiate the transaction.
                     </label>
                 </div>
-                <button className="btn btn-success w-100" onClick={sendPurchaseRequest}>
+                <button className={styles.continueButton} onClick={sendPurchaseRequest}>
                     Continue to Smart2Pay
                 </button>
-                <p className="confirmation-email">
+                <p className={styles.confirmationEmail}>
                     Confirmation will be emailed to your address at gmail.com
                 </p>
             </div>
-            <div className="purchasing-info">
+            <div className={styles.purchasingInfo}>
                 <h2>Purchasing on Steam</h2>
                 <p>Once you've completed this transaction, your payment method will be debited, and you'll receive an email message confirming receipt of your purchase.</p>
             </div>
@@ -146,3 +146,4 @@ return (<>
 </>);
 };
 export default PaymentConfirmationPage;
+

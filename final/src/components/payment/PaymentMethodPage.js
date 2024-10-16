@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './PaymentMethodPage.css';
+import styles from './PaymentMethodPage.module.css';
 
 const PaymentMethodPage = () => {
   const navigate = useNavigate();
@@ -22,39 +22,39 @@ const PaymentMethodPage = () => {
   };
 
   return (
-    <div className="payment-method-page p-4">
-      <div className="tabs-container">
-        <div className="payment-info2-tab">Payment Info</div>
-        <div className="triangle-right"></div>
-        <div className="review-purchase2-tab">Review + Purchase</div>
+    <div className={styles.paymentMethodPage}>
+      <div className={styles.tabsContainer}>
+        <div className={styles.paymentInfo2Tab}>Payment Info</div>
+        <div className={styles.triangleRight}></div>
+        <div className={styles.reviewPurchase2Tab}>Review + Purchase</div>
       </div>
-      <h1 className="page-title">PAYMENT METHOD</h1>
-      <div className="payment-method-content">
-        <div className="payment-method-select">
+      <h1 className={styles.pageTitle}>PAYMENT METHOD</h1>
+      <div className={styles.paymentMethodContent}>
+        <div className={styles.paymentMethodSelect}>
           <p>Please select a payment method</p>
           <select
             value={selectedMethod}
             onChange={(e) => setSelectedMethod(e.target.value)}
-            className="select-method"
+            className={styles.selectMethod}
           >
             <option value="">Select a method</option>
             <option value="kakaoPay">KakaoPay</option>
           </select>
-          <p className="billing-info">
+          <p className={styles.billingInfo}>
             If your billing address is not in Korea, Republic of, please{' '}
-            <a href="#" className="text-link">set your store region preference</a>
+            <a href="#" className={styles.textLink}>set your store region preference</a>
           </p>
           <p>You'll have a chance to review your order before it's placed.</p>
         </div>
-        <div className="payment-method-icons-container">
+        <div className={styles.paymentMethodIconsContainer}>
           <h2>PAYMENT METHODS</h2>
-          <div className="payment-method-icons">
+          <div className={styles.paymentMethodIcons}>
             <img src="kakaopay.png" alt="KakaoPay" />
           </div>
         </div>
       </div>
-      <div className="button-container">
-        <button onClick={handleContinue} className="continue-button">
+      <div className={styles.buttonContainer}>
+        <button onClick={handleContinue} className={styles.continueButton}>
           Continue
         </button>
       </div>
@@ -63,3 +63,4 @@ const PaymentMethodPage = () => {
 };
 
 export default PaymentMethodPage;
+
