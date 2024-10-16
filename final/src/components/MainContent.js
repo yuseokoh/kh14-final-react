@@ -7,6 +7,7 @@ import PaymentMethodPage from "./payment/PaymentMethodPage";
 import PaymentConfirmationPage from "./payment/PaymentConfirmationPage";
 import PaymentSuccessPage from "./payment/PaymentSuccessPage";
 import PrivateRoute from "../router/PrivateRoute";
+import PaymentCancellationPage from "./payment/PaymentCancellationPage";
 
 const MainContent = () => {
     //recoil에서 login 상태를 불러온다
@@ -26,7 +27,15 @@ const MainContent = () => {
                     {/* 로그인이 필요한 페이지라면 element에 PrivateRoute를 적어서 대상을 명시하면 된다 */}
 
 
+
                     {/* 경로변수를 사용할 경우 콜론과 이름을 합쳐 변수명으로 지정 */}
+
+                        {/* 결제 */}
+                        <Route path="/payment/method" element={<PaymentMethodPage/>}/>
+                        <Route path="/payment/confirmation" element={<PaymentConfirmationPage/>}/>
+                        <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
+                        <Route path="/payment/cancel" element={<PaymentCancellationPage />} />
+
 
                     {/* 기존 : 일반 라우팅 */}
                     {/* <Route path="/search/autocomplete" element={<AutoComplete/>}/> */}
@@ -43,7 +52,7 @@ const MainContent = () => {
                     <Route path="/payment/method" element={<PaymentMethodPage />} />
                     <Route path="/payment/confirmation" element={<PaymentConfirmationPage />} />
                     <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
-                
+
                     {/* 나머지 경로(*) 패턴을 지정해서 미 지정된 페이지를 모두 연결할 수 있다 */}
                 </Routes>
 

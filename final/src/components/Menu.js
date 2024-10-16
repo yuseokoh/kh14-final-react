@@ -77,7 +77,27 @@ const Menu = () => {
                                     data-bs-toggle="dropdown" href="#" role="button"
                                     aria-haspopup="true" aria-expanded="false">커뮤니티</a>
                                 <div className="dropdown-menu">
+
                                     <NavLink className="dropdown-item" to="/">테스트</NavLink>
+                                    <NavLink className="dropdown-item" to="/payment/method">
+                                        <i className="fa-solid fa-right-to-bracket"></i>
+                                        결제 테스트 1
+                                    </NavLink>
+
+                                    <NavLink className="dropdown-item" to="/payment/confirmation">
+                                        <i className="fa-solid fa-right-to-bracket"></i>
+                                        결제 요청 테스트
+                                    </NavLink>
+
+                                    <NavLink className="dropdown-item" to="/payment/success">
+                                        <i className="fa-solid fa-right-to-bracket"></i>
+                                        결제 성공 테스트
+                                    </NavLink>
+
+                                    <NavLink className="dropdown-item" to="/payment/cancel">
+                                        <i className="fa-solid fa-right-to-bracket"></i>
+                                        결제 취소 테스트
+                                    </NavLink>
                                 </div>
                             </li>
 
