@@ -6,7 +6,8 @@ import axios from "axios";
 import { Navigate, useNavigate } from "react-router";
 import { useRecoilState } from "recoil";
 import { memberIdState, memberLevelState } from "../../utils/recoil";
-import './Login.css';
+import styles from './Login.module.css';
+import LoginImage from './Login.jpg';
 
 const MemberLogin = () => {
   //navigate
@@ -32,114 +33,110 @@ const MemberLogin = () => {
   }, [input]);
 
   //로그인 요청
-  const sendLoginRequest = useCallback(async ()=>{
+  const sendLoginRequest = useCallback(async () => {
     try {//로그인 성공
-        const resp = await axios.post("/member/login", input);
-        console.log(resp.data);
-        setMemberId(resp.data.memberId);
-        setMemberLevel(resp.data.memberLevel);
-        axios.defaults.headers.common["Authorization"] 
-                            = "Bearer " + resp.data.accessToken;
-        if(stay === true) {//로그인 유지 체크 시
-            window.localStorage.setItem("refreshToken", resp.data.refreshToken);
-        }
-        else {//로그인 유지 미 체크시
-            window.sessionStorage.setItem("refreshToken", resp.data.refreshToken);
-        }
-        navigate("/"); //함수에서 사용해야 할 경우...
+      const resp = await axios.post("/member/login", input);
+      console.log(resp.data);
+      setMemberId(resp.data.memberId);
+      setMemberLevel(resp.data.memberLevel);
+      axios.defaults.headers.common["Authorization"]
+        = "Bearer " + resp.data.accessToken;
+      if (stay === true) {//로그인 유지 체크 시
+        window.localStorage.setItem("refreshToken", resp.data.refreshToken);
+      }
+      else {//로그인 유지 미 체크시
+        window.sessionStorage.setItem("refreshToken", resp.data.refreshToken);
+      }
+      navigate("/"); //함수에서 사용해야 할 경우...
     }
-    catch(e) {//로그인 실패
-        console.log("아이디 없거나 비밀번호 틀림");
+    catch (e) {//로그인 실패
+      console.log("아이디 없거나 비밀번호 틀림");
     }
-}, [input, stay]);
+  }, [input, stay]);
 
 
   //view
-  return (<>
-    <div className="login-page" style={{
-      backgroundImage: `url(${process.env.PUBLIC_URL}/login.png)`
-    }}></div>
-    <div className="jumbotron-title">로그인</div>
-    <div className="container">
+  return (
+    <>
+      {/* 배경 이미지와 전체 화면 크기 */}
+      <div className={styles.loginPage}>
+        <div className="row">
+          <div className="col">
+            <div className={styles.jumbotronTitle}>로그인</div>
 
-    <span>아이디:user123</span>
-    <br></br>
-    <span>비밀번호:password123</span>
+            {/* 로그인 창 */}
+            <div className={styles.container}>
+              <span>아이디:user123</span>
+              <br />
+              <span>비밀번호:password123</span>
 
-      <div className="row mt-4">
-        <div className="col-9">
+              <div className="row mt-4">
+                <div className="col-9">
+                  <span className={styles.spanid}>계정 이름으로 로그인</span>
+                  <input
+                    type="text"
+                    name="memberId"
+                    className={styles.formControl}
+                    value={input.memberId}
+                    onChange={changeInput}
+                  />
+                  <div className="mt-4">
+                    <span className={styles.spanpw}>비밀번호</span>
+                    <input
+                      type={display ? "text" : "password"}
+                      name="memberPw"
+                      className={styles.formControl}
+                      value={input.memberPw}
+                      onChange={changeInput}
+                    />
+                  </div>
 
-          <span className="spanid">계정 이름으로 로그인</span>
-          <input
-            type="text"
-            name="memberId"
-            className="form-control"
-            // placeholder="user123"
-            value={input.memberId}
-            onChange={changeInput}
-          />
+                  <div className="mt-3">
+                    <div className={styles.checkboxGroup}>
+                      <label>
+                        <input
+                          type="checkbox"
+                          className="form-check-input"
+                          checked={display}
+                          onChange={(e) => setDisplay(e.target.checked)}
+                        />
+                        <span className="form-check-label"> 비밀번호 표시</span>
+                      </label>
 
-          <div className="mt-4">
-            <span className="spanpw">비밀번호</span>
-            <input
-              type={display ? "text" : "password"}
-              name="memberPw"
-              className="form-control"
-              // placeholder="password123"
-              value={input.memberPw}
-              onChange={changeInput}
-            />
-          </div>
+                      <div className={`${styles.checkboxGroup} ${styles.login}`}>
+                        <label>
+                          <input
+                            type="checkbox"
+                            className="form-check-input"
+                            checked={stay}
+                            onChange={(e) => setStay(e.target.checked)}
+                          />
+                          <span className="form-check-label"> 로그인 유지</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
 
-          <div className="mt-3">
-          <div className="checkbox-group">
-            <label>
-              <input
-                type="checkbox"
-                className="form-check-input"
-                checked={display}
-                onChange={(e) => setDisplay(e.target.checked)}
-              />
-              <span className="form-check-label"> 비밀번호 표시</span>
-            </label>
+                  <div className="mt-4">
+                    <button className={styles["btn-success"]} onClick={sendLoginRequest}>
+                      로그인
+                    </button>
+                  </div>
 
-            <div className="checkbox-group login">
-              <label>
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  checked={stay}
-                  onChange={(e) => setStay(e.target.checked)}
-                />
-                <span className="form-check-label"> 로그인 유지</span>
-              </label>
+                </div>
+
+                <div className="col-3">
+                  <div className={styles.loginQrPlaceholder}>
+                    <span>QR 코드 자리</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          </div>
-
-
-          <div className="mt-4">
-          <button className="btn btn-success " onClick={sendLoginRequest}>
-            로그인
-          </button>
         </div>
-        </div>
-
-
-        <div className="col-3">
-          <div className="login-qr-placeholder">
-            <span>QR 코드 자리</span>
-          </div>
-        </div>
-
       </div>
-    </div>
-
-
-
-
-
-  </>
+    </>
   );
 };
+
 export default MemberLogin;

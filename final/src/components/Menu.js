@@ -11,10 +11,9 @@ import { loginState, memberIdState, memberLevelState } from "../utils/recoil";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { useCallback } from 'react';
 import axios from "axios";
-import './Menu.css';
-import { FaSteam } from "react-icons/fa";
 import steamLogo from './steamlogo.svg';
-import { MdHeight } from "react-icons/md";
+import styles from './Menu.module.css';
+
 
 const Menu = () => {
     //navigate
@@ -45,131 +44,113 @@ const Menu = () => {
     }, [memberId, memberLevel]);
 
     //view
-    return (<>
-        <nav className="navbar navbar-expand-lg fixed-top" data-bs-theme="dark">
-            <div className="container">
-                {/* 메인 로고 또는 텍스트가 존재하는 위치 */}
-                <NavLink className="navbar-brand " to="/">
-                    {/* <FaSteam /> */}
-                    <img src={steamLogo} alt="Steam" height={"50px"} />
-                </NavLink>
+    return (
+        <>
+            <nav className={`navbar navbar-expand-lg fixed-top ${styles.navbar}`} data-bs-theme="dark">
+                <div className={`container ${styles.container}`}>
+                    <NavLink className="navbar-brand" to="/">
+                        <img src={steamLogo} alt="Steam" height={"50px"} />
+                    </NavLink>
 
-                {/* 폭이 좁은 경우 메뉴를 숨겼다 펼쳤다 하는 버튼(햄버거 버튼) */}
-                <button className="navbar-toggler" type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#top-menu"
-                    aria-controls="top-menu"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
+                    <button className="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#top-menu"
+                        aria-controls="top-menu"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
 
-                {/* 
-                실제 메뉴 영역
-                - 폭이 충분할 경우에는 상단 메뉴바에 표시
-                - 폭이 충분하지 않을 경우에는 접이식으로 표시
-                */}
-                <div className="collapse navbar-collapse" id="top-menu">
-                    <ul className="navbar-nav me-auto">
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle"
-                                data-bs-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="true" aria-expanded="false">상점</a>
-                            <div className="dropdown-menu">
-                                <NavLink className="dropdown-item" to="/">테스트</NavLink>
-                            </div>
-                        </li>
-
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle"
-                                data-bs-toggle="dropdown" href="#" role="button"
-                                aria-haspopup="true" aria-expanded="false">커뮤니티</a>
-                            <div className="dropdown-menu">
-                                <NavLink className="dropdown-item" to="/">테스트</NavLink>
-                            </div>
-                        </li>
-
-                        <li className="nav-item dropdown">
-                            <a className="nav-link"
-                                data-bs-toggle="dropdown" to="/" role="button"
-                                aria-haspopup="true" aria-expanded="false">정보</a>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link"
-                                data-bs-toggle="dropdown" to="/" role="button"
-                                aria-haspopup="true" aria-expanded="false">지원</a>
-                        </li>
-                        {/* 로그인시 보이는 게시판 */}
-                        {/* {login === true && (
+                    <div className="collapse navbar-collapse" id="top-menu">
+                        <ul className="navbar-nav me-auto">
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle"
                                     data-bs-toggle="dropdown" href="#" role="button"
-                                    aria-haspopup="true" aria-expanded="false">로그인시 게시판 (테스트)</a>
+                                    aria-haspopup="true" aria-expanded="false">상점</a>
                                 <div className="dropdown-menu">
-                                    <NavLink className="dropdown-item" to="/paytest01">로그인시 테스트</NavLink>
+                                    <NavLink className="dropdown-item" to="/">테스트</NavLink>
                                 </div>
                             </li>
-                        )} */}
 
-
-                        {/* 로그인이 되어있다면 아이디(등급) 형태로 출력 */}
-                        {login ? (<>
-                            {/* 결제 메뉴 */}
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                                    aria-haspopup="true" aria-expanded="false">결제</a>
+                                <a className="nav-link dropdown-toggle"
+                                    data-bs-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">커뮤니티</a>
                                 <div className="dropdown-menu">
-                                    <NavLink className="dropdown-item" to="/payment/method">
-                                        <i className="fa-solid fa-right-to-bracket"></i>
-                                        결제 테스트 1
-                                    </NavLink>
-
-                                    <NavLink className="dropdown-item" to="/payment/confirmation">
-                                        <i className="fa-solid fa-right-to-bracket"></i>
-                                        결제 테스트 2
-                                    </NavLink>
-
-                                    <NavLink className="dropdown-item" to="/payment/success">
-                                        <i className="fa-solid fa-right-to-bracket"></i>
-                                        결제 테스트 3
-                                    </NavLink>
+                                    <NavLink className="dropdown-item" to="/">테스트</NavLink>
                                 </div>
                             </li>
 
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/member/mypage">
-                                    {memberId}
-                                    ({memberLevel})
-                                </NavLink>
+                            <li className="nav-item dropdown">
+                                <a className="nav-link"
+                                    data-bs-toggle="dropdown" to="/" role="button"
+                                    aria-haspopup="true" aria-expanded="false">정보</a>
                             </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="#"
-                                    onClick={logout}>
-                                    로그아웃
-                                </NavLink>
-                            </li>
-                        </>) : (<>
-                            <li className="nav-item">
-                                <a className="nav-link" href="#">
-                                    <i className="fa-solid fa-user"></i>
-                                    회원가입
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <NavLink className="nav-link" to="/member/login">
-                                    <i className="fa-solid fa-right-to-bracket"></i>
-                                    로그인
-                                </NavLink>
+                            <li className="nav-item dropdown">
+                                <a className="nav-link"
+                                    data-bs-toggle="dropdown" to="/" role="button"
+                                    aria-haspopup="true" aria-expanded="false">지원</a>
                             </li>
 
-                        </>)}
-                    </ul>
+                            {login ? (<>
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                        aria-haspopup="true" aria-expanded="false">결제</a>
+                                    <div className="dropdown-menu">
+                                        <NavLink className="dropdown-item" to="/payment/method">
+                                            <i className="fa-solid fa-right-to-bracket"></i>
+                                            결제 테스트 1
+                                        </NavLink>
+
+                                        <NavLink className="dropdown-item" to="/payment/confirmation">
+                                            <i className="fa-solid fa-right-to-bracket"></i>
+                                            결제 요청 테스트
+                                        </NavLink>
+
+                                        <NavLink className="dropdown-item" to="/payment/success">
+                                            <i className="fa-solid fa-right-to-bracket"></i>
+                                            결제 성공 테스트
+                                        </NavLink>
+
+                                        <NavLink className="dropdown-item" to="/payment/cancel">
+                                            <i className="fa-solid fa-right-to-bracket"></i>
+                                            결제 취소 테스트
+                                        </NavLink>
+                                    </div>
+                                </li>
+
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/member/mypage">
+                                        {memberId} ({memberLevel})
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="#"
+                                        onClick={logout}>
+                                        로그아웃
+                                    </NavLink>
+                                </li>
+                            </>) : (<>
+                                <li className="nav-item">
+                                    <a className="nav-link" href="#">
+                                        <i className="fa-solid fa-user"></i>
+                                        회원가입
+                                    </a>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/member/login">
+                                        <i className="fa-solid fa-right-to-bracket"></i>
+                                        로그인
+                                    </NavLink>
+                                </li>
+                            </>)}
+                        </ul>
+                    </div>
                 </div>
-            </div>
-        </nav>
-    </>);
+            </nav>
+        </>
+    );
 };
-
 export default Menu;
 
 
