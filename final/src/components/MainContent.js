@@ -8,6 +8,7 @@ import PaymentConfirmationPage from "./payment/PaymentConfirmationPage";
 import PaymentSuccessPage from "./payment/PaymentSuccessPage";
 import PrivateRoute from "../router/PrivateRoute";
 import PaymentCancellationPage from "./payment/PaymentCancellationPage";
+import SingUp from './member/SingUp'; 
 
 const MainContent = () => {
     //recoil에서 login 상태를 불러온다
@@ -46,8 +47,8 @@ const MainContent = () => {
 
                     {/* 회원 로그인 */}
                     <Route path="/member/login" element={<MemberLogin />} />
-
-
+                    {/* 회원가입 */}
+                    <Route path="/member/signup" element={<SingUp />} />
                     {/* 결제 */}
                     <Route path="/payment/method" element={<PaymentMethodPage />} />
                     <Route path="/payment/confirmation" element={<PaymentConfirmationPage />} />

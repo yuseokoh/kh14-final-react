@@ -132,6 +132,35 @@ const MemberLogin = () => {
                 </div>
               </div>
             </div>
+
+
+            {/* 회원가입 푸터같지않은 푸터 */}
+            <div className="container">
+              <div className="row mt-4">
+                <div className="col-6">
+                  <h2>Steam에 처음 오셨나요?</h2>
+                </div>
+
+                <div className="col-6">
+                  <span>
+                    가입하기
+                    무료로 쉽게 가입할 수 있습니다. 수
+                    천 종류의 게임을 전 세계 새로운
+                    친구들과 힘께 즐겨보세요.
+                    </span>
+                    <span>
+                    Steam에 대해 자세히 알아보기
+                    </span>
+                </div>
+              </div>
+
+            </div>
+            <div className="row mt-4">
+              <div className="col-6">
+              <button onClick={() => navigate("/member/signup")}>가입하기</button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
