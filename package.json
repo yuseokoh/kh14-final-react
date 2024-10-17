@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "i18next": "^23.16.0",
-    "i18next-browser-languagedetector": "^8.0.0",
-    "i18next-http-backend": "^2.6.2",
-    "lucide-react": "^0.453.0",
-    "react-i18next": "^15.0.3"
-  }
-}
