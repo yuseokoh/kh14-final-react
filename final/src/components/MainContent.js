@@ -8,6 +8,8 @@ import PaymentConfirmationPage from "./payment/PaymentConfirmationPage";
 import PaymentSuccessPage from "./payment/PaymentSuccessPage";
 import PrivateRoute from "../router/PrivateRoute";
 import PaymentCancellationPage from "./payment/PaymentCancellationPage";
+import FriendRequest from "./friend/FriendRequest";
+import FriendList from "./friend/FriendList";
 
 const MainContent = () => {
     //recoil에서 login 상태를 불러온다
@@ -46,6 +48,12 @@ const MainContent = () => {
 
                     {/* 회원 로그인 */}
                     <Route path="/member/login" element={<MemberLogin />} />
+
+
+                    {/* 친구목록 */}
+                    <Route path="/friend/list" element={<FriendList/>} />
+                    <Route path="/friend/request" element={<FriendRequest/>} />
+
 
 
                     {/* 결제 */}
