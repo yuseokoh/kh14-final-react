@@ -8,10 +8,16 @@ import PaymentConfirmationPage from "./payment/PaymentConfirmationPage";
 import PaymentSuccessPage from "./payment/PaymentSuccessPage";
 import PrivateRoute from "../router/PrivateRoute";
 import PaymentCancellationPage from "./payment/PaymentCancellationPage";
+
 import FriendRequest from "./friend/FriendRequest";
 import FriendList from "./friend/FriendList";
 
+import SingUp from './member/SingUp'; 
+import { useTranslation } from 'react-i18next';
+
+
 const MainContent = () => {
+    const { t } = useTranslation(); // 번역 훅 사용
     //recoil에서 login 상태를 불러온다
     const login = useRecoilValue(loginState);
 
@@ -50,23 +56,29 @@ const MainContent = () => {
                     <Route path="/member/login" element={<MemberLogin />} />
 
 
+
                     {/* 친구목록 */}
                     <Route path="/friend/list" element={<FriendList/>} />
                     <Route path="/friend/request" element={<FriendRequest/>} />
 
 
 
+
+                    {/* 회원가입 */}
+                    <Route path="/member/signup" element={<SingUp />} />
+
                     {/* 결제 */}
                     <Route path="/payment/method" element={<PaymentMethodPage />} />
                     <Route path="/payment/confirmation" element={<PaymentConfirmationPage />} />
                     <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
+                    <Route path="/payment/cancel" element={<PaymentCancellationPage />} />
 
-                    {/* 나머지 경로(*) 패턴을 지정해서 미 지정된 페이지를 모두 연결할 수 있다 */}
+                    {/* 회원 로그인 */}
+                    <Route path="/member/login" element={<MemberLogin />} />
                 </Routes>
 
             </div>
         </div>
     </>);
 };
-
 export default MainContent;

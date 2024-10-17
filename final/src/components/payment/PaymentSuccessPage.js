@@ -3,12 +3,13 @@ import Jumbotron from "../Jumbotron";
 import { useRecoilValue } from "recoil";
 import { loginState, memberLoadingState, memberIdState } from "../../utils/recoil";
 import { useCallback, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import styles from './PaymentSuccessPage.module.css';
 import '../../router/Steam.css';
 
-
 const PaymentSuccessPage = () => {
+    const { t } = useTranslation();
     const { partnerOrderId } = useParams();
     const navigate = useNavigate();
     const login = useRecoilValue(loginState);
@@ -17,7 +18,7 @@ const PaymentSuccessPage = () => {
 
     const [result, setResult] = useState(null);
     const [totalAmount, setTotalAmount] = useState(0);
-    const [itemName, setItemName] = useState("알 수 없는 상품");
+    const [itemName, setItemName] = useState(t("paymentSuccess.unknownItem"));
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -30,6 +31,7 @@ const PaymentSuccessPage = () => {
             sendApproveRequest();
         }
     }, [login, memberLoading]);
+
     useEffect(() => {
         // 로딩 상태를 3초 후에 해제
         const timer = setTimeout(() => {
@@ -59,6 +61,7 @@ const PaymentSuccessPage = () => {
 
     const handleGoToStore = () => navigate("/store");
     const handleGoToLibrary = () => navigate("/library");
+
     if (isLoading) {
         return (
             <div className="loading-container">
@@ -71,35 +74,35 @@ const PaymentSuccessPage = () => {
             </div>
         );
     }
+
     if (result === null) {
-        return <h1>결제 진행 중입니다...</h1>;
+        return <h1>{t('paymentSuccess.processingMessage')}</h1>;
     } else if (result === true) {
         return (
             <div className={styles.paymentSuccessContainer}>
-                <h1 className="text-primary mb-4">구매해 주셔서 감사합니다!</h1>
-                <p>구매하신 게임이 귀하의 계정에 등록되었습니다. 이제 Steam 라이브러리에서 언제든지 게임을 즐기실 수 있습니다.</p>
+                <h1 className="text-primary mb-4">{t('paymentSuccess.thankYouMessage')}</h1>
+                <p>{t('paymentSuccess.successMessage')}</p>
 
                 <div className={styles.purchaseReceipt}>
-                    <h2>구매 영수증</h2>
-                    <p>계정 이름: {memberId}</p>
-                    <p>상품명: {itemName}</p>
-                    <p>총액: ₩{totalAmount}</p>
+                    <h2>{t('paymentSuccess.purchaseReceipt')}</h2>
+                    <p>{t('paymentSuccess.accountName')}: {memberId}</p>
+                    <p>{t('paymentSuccess.itemName')}: {itemName}</p>
+                    <p>{t('paymentSuccess.totalAmount')}: ₩{totalAmount}</p>
                 </div>
 
                 <div className={styles.navigationButtons}>
                     <button onClick={handleGoToStore} className="btn btn-primary">
-                        상점으로 돌아가기
+                        {t('paymentSuccess.goToStore')}
                     </button>
                     <button onClick={handleGoToLibrary} className="btn btn-secondary">
-                        라이브러리로 이동하기
+                        {t('paymentSuccess.goToLibrary')}
                     </button>
                 </div>
             </div>
         );
     } else {
-        return <h1>결제 승인 실패...</h1>;
+        return <h1>{t('paymentSuccess.failureMessage')}</h1>;
     }
 };
 
 export default PaymentSuccessPage;
-

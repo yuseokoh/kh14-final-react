@@ -1,8 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import styles from './PaymentMethodPage.module.css';
 
 const PaymentMethodPage = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
   const [selectedMethod, setSelectedMethod] = useState('');
 
@@ -17,45 +19,46 @@ const PaymentMethodPage = () => {
     if (selectedMethod) {
       handleNavigateToConfirmation();
     } else {
-      alert('Please select a payment method.');
+      alert(t('paymentMethod.selectMethodAlert'));
     }
   };
 
   return (
     <div className={styles.paymentMethodPage}>
       <div className={styles.tabsContainer}>
-        <div className={styles.paymentInfo2Tab}>Payment Info</div>
+        <div className={styles.paymentInfo2Tab}>{t('paymentMethod.paymentInfoTab')}</div>
         <div className={styles.triangleRight}></div>
-        <div className={styles.reviewPurchase2Tab}>Review + Purchase</div>
+        <div className={styles.reviewPurchase2Tab}>{t('paymentMethod.reviewPurchaseTab')}</div>
       </div>
-      <h1 className={styles.pageTitle}>PAYMENT METHOD</h1>
+      <h1 className={styles.pageTitle}>{t('paymentMethod.pageTitle')}</h1>
       <div className={styles.paymentMethodContent}>
         <div className={styles.paymentMethodSelect}>
-          <p>Please select a payment method</p>
+          <p>{t('paymentMethod.selectPaymentMethod')}</p>
           <select
             value={selectedMethod}
             onChange={(e) => setSelectedMethod(e.target.value)}
             className={styles.selectMethod}
           >
-            <option value="">Select a method</option>
-            <option value="kakaoPay">KakaoPay</option>
+            <option value="">{t('paymentMethod.selectMethodPlaceholder')}</option>
+            <option value="kakaoPay">{t('paymentMethod.kakaoPay')}</option>
           </select>
           <p className={styles.billingInfo}>
-            If your billing address is not in Korea, Republic of, please{' '}
-            <a href="#" className={styles.textLink}>set your store region preference</a>
+            {t('paymentMethod.billingInfo')}{' '}
+            <a href="#" className={styles.textLink}>{t('paymentMethod.storeRegionPreference')}</a>
           </p>
-          <p>You'll have a chance to review your order before it's placed.</p>
+          <p>{t('paymentMethod.reviewOrderInfo')}</p>
         </div>
         <div className={styles.paymentMethodIconsContainer}>
-          <h2>PAYMENT METHODS</h2>
+          <h2>{t('paymentMethod.paymentMethods')}</h2>
           <div className={styles.paymentMethodIcons}>
-            <img src="kakaopay.png" alt="KakaoPay" />
+            <img src="/kakaopay.png" alt={t('paymentMethod.kakaoPayAlt')}
+            style={{ width: '150px', height: 'auto' }} />
           </div>
         </div>
       </div>
       <div className={styles.buttonContainer}>
         <button onClick={handleContinue} className={styles.continueButton}>
-          Continue
+          {t('paymentMethod.continueButton')}
         </button>
       </div>
     </div>
@@ -63,4 +66,3 @@ const PaymentMethodPage = () => {
 };
 
 export default PaymentMethodPage;
-
