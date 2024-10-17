@@ -1,4 +1,3 @@
-
 /*
     (주의)
     React는 한 페이지이므로 a태그로 이동 설정하지 않는다
@@ -13,9 +12,11 @@ import { useCallback } from 'react';
 import axios from "axios";
 import steamLogo from './steamlogo.svg';
 import styles from './Menu.module.css';
-
+import { useTranslation } from 'react-i18next'; // useTranslation import 추가
+import LanguageSelector from './LanguageSelector'; // LanguageSelector import 추가
 
 const Menu = () => {
+    const { t } = useTranslation(); // useTranslation 훅 사용
     //navigate
     const navigate = useNavigate();
 
@@ -43,8 +44,8 @@ const Menu = () => {
         navigate("/");
     }, [memberId, memberLevel]);
 
-    //view
-    return (
+     //view
+     return (
         <>
             <nav className={`navbar navbar-expand-lg fixed-top ${styles.navbar}`} data-bs-theme="dark">
                 <div className={`container ${styles.container}`}>
@@ -66,55 +67,54 @@ const Menu = () => {
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle"
                                     data-bs-toggle="dropdown" href="#" role="button"
-                                    aria-haspopup="true" aria-expanded="false">상점</a>
+                                    aria-haspopup="true" aria-expanded="false">{t('menu.shop')}</a>
                                 <div className="dropdown-menu">
-                                    <NavLink className="dropdown-item" to="/">테스트</NavLink>
+                                    <NavLink className="dropdown-item" to="/">{t('menu.test')}</NavLink>
                                 </div>
                             </li>
 
                             <li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle"
                                     data-bs-toggle="dropdown" href="#" role="button"
-                                    aria-haspopup="true" aria-expanded="false">커뮤니티</a>
+                                    aria-haspopup="true" aria-expanded="false">{t('menu.community')}</a>
                                 <div className="dropdown-menu">
-                                    <NavLink className="dropdown-item" to="/">테스트</NavLink>
+                                    <NavLink className="dropdown-item" to="/">{t('menu.test')}</NavLink>
                                 </div>
                             </li>
-
                             <li className="nav-item dropdown">
                                 <a className="nav-link"
                                     data-bs-toggle="dropdown" to="/" role="button"
-                                    aria-haspopup="true" aria-expanded="false">정보</a>
+                                    aria-haspopup="true" aria-expanded="false">{t('menu.info')}</a>
                             </li>
                             <li className="nav-item dropdown">
                                 <a className="nav-link"
                                     data-bs-toggle="dropdown" to="/" role="button"
-                                    aria-haspopup="true" aria-expanded="false">지원</a>
+                                    aria-haspopup="true" aria-expanded="false">{t('menu.support')}</a>
                             </li>
 
                             {login ? (<>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">결제</a>
+                                        aria-haspopup="true" aria-expanded="false">{t('menu.payment')}</a>
                                     <div className="dropdown-menu">
                                         <NavLink className="dropdown-item" to="/payment/method">
                                             <i className="fa-solid fa-right-to-bracket"></i>
-                                            결제 테스트 1
+                                            {t('menu.paymentTest1')}
                                         </NavLink>
 
                                         <NavLink className="dropdown-item" to="/payment/confirmation">
                                             <i className="fa-solid fa-right-to-bracket"></i>
-                                            결제 요청 테스트
+                                            {t('menu.paymentRequestTest')}
                                         </NavLink>
 
                                         <NavLink className="dropdown-item" to="/payment/success">
                                             <i className="fa-solid fa-right-to-bracket"></i>
-                                            결제 성공 테스트
+                                            {t('menu.paymentSuccessTest')}
                                         </NavLink>
 
                                         <NavLink className="dropdown-item" to="/payment/cancel">
                                             <i className="fa-solid fa-right-to-bracket"></i>
-                                            결제 취소 테스트
+                                            {t('menu.paymentCancelTest')}
                                         </NavLink>
                                     </div>
                                 </li>
@@ -127,24 +127,26 @@ const Menu = () => {
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="#"
                                         onClick={logout}>
-                                        로그아웃
+                                        {t('menu.logout')}
                                     </NavLink>
                                 </li>
                             </>) : (<>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#">
                                         <i className="fa-solid fa-user"></i>
-                                        회원가입
+                                        {t('menu.signup')}
                                     </a>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/member/login">
                                         <i className="fa-solid fa-right-to-bracket"></i>
-                                        로그인
+                                        {t('menu.login')}
                                     </NavLink>
                                 </li>
                             </>)}
                         </ul>
+                        {/* Language Selector 추가 */}
+                        <LanguageSelector />
                     </div>
                 </div>
             </nav>
@@ -152,5 +154,3 @@ const Menu = () => {
     );
 };
 export default Menu;
-
-
