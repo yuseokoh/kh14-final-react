@@ -28,7 +28,7 @@ const LanguageSelector = () => {
   return (
     <div className={styles.languageSelector}>
       <button onClick={toggleDropdown} className={styles.languageButton}>
-        언어
+        {t('languageButton')}
       </button>
       {isOpen && (
         <div className={styles.dropdownMenu}>
