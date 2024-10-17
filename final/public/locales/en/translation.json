@@ -13,5 +13,20 @@
     "paymentRequestTest": "Payment Request Test",
     "paymentSuccessTest": "Payment Success Test",
     "paymentCancelTest": "Payment Cancel Test"
+  },
+  "loginPage": {
+    "title": "Login",
+    "userIdPlaceholder": "Username: user123",
+    "passwordPlaceholder": "Password: password123",
+    "loginWithId": "Login with your account name",
+    "password": "Password",
+    "showPassword": "Show Password",
+    "keepLoggedIn": "Keep me logged in",
+    "loginButton": "Login",
+    "qrCodePlaceholder": "QR Code Placeholder",
+    "newToSteam": "New to Steam?",
+    "signUpMessage": "Sign up now, it's free and easy! Discover thousands of games and connect with new friends worldwide.",
+    "learnMore": "Learn more about Steam",
+    "signUpButton": "Sign Up"
   }
 }
