@@ -4,10 +4,12 @@ import { useRecoilValue } from "recoil";
 import { loginState, memberLoadingState } from "../../utils/recoil";
 import axios from "axios";
 import Jumbotron from "../Jumbotron";
+import { useTranslation } from 'react-i18next';
 import styles from './PaymentCancellationPage.module.css';
 import '../../router/Steam.css';
 
 const PaymentCancellationPage = () => {
+  const { t } = useTranslation();
   const { paymentNo } = useParams();
   const navigate = useNavigate();
   const login = useRecoilValue(loginState);
@@ -34,16 +36,16 @@ const PaymentCancellationPage = () => {
     try {
       const token = sessionStorage.getItem("refreshToken");
       if (!token) {
-        throw new Error("토큰이 없습니다. 다시 로그인해주세요.");
+        throw new Error(t('paymentCancellation.noTokenError'));
       }
 
       await axios.delete(`http://localhost:8080/kakaopay/cancelAll/${paymentNo}`);
       setResult(true);
     } catch (e) {
-      console.error("결제 취소 중 오류가 발생했습니다:", e);
+      console.error(t('paymentCancellation.cancelError'), e);
       setResult(false);
     }
-  }, [paymentNo]);
+  }, [paymentNo, t]);
 
   const handleGoToStore = () => navigate("/store");
   const handleGoToLibrary = () => navigate("/library");
@@ -62,25 +64,25 @@ const PaymentCancellationPage = () => {
 }
 
   if (result === null) {
-    return <h1 className={styles.processingMessage}>결제 취소 진행 중입니다...</h1>;
+    return <h1 className={styles.processingMessage}>{t('paymentCancellation.processing')}</h1>;
   } else if (result === true) {
     return (
       <div className={styles.paymentCancelSuccessContainer}>
-        <h1 className="text-primary mb-4">결제가 성공적으로 취소되었습니다!</h1>
-        <p>결제가 성공적으로 취소되었으며, 결제 금액은 환불 처리됩니다.</p>
+        <h1 className="text-primary mb-4">{t('paymentCancellation.successTitle')}</h1>
+        <p>{t('paymentCancellation.successMessage')}</p>
 
         <div className={styles.navigationButtons}>
           <button onClick={handleGoToStore} className="btn btn-primary">
-            상점으로 돌아가기
+            {t('paymentCancellation.goToStore')}
           </button>
           <button onClick={handleGoToLibrary} className="btn btn-secondary">
-            라이브러리로 이동하기
+            {t('paymentCancellation.goToLibrary')}
           </button>
         </div>
       </div>
     );
   } else {
-    return <h1 className={styles.paymentCancelFailed}>결제 취소 실패...</h1>;
+    return <h1 className={styles.paymentCancelFailed}>{t('paymentCancellation.failureMessage')}</h1>;
   }
 };
 
