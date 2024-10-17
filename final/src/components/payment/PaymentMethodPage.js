@@ -51,7 +51,8 @@ const PaymentMethodPage = () => {
         <div className={styles.paymentMethodIconsContainer}>
           <h2>{t('paymentMethod.paymentMethods')}</h2>
           <div className={styles.paymentMethodIcons}>
-            <img src="kakaopay.png" alt={t('paymentMethod.kakaoPayAlt')} />
+            <img src="/kakaopay.png" alt={t('paymentMethod.kakaoPayAlt')}
+            style={{ width: '150px', height: 'auto' }} />
           </div>
         </div>
       </div>
