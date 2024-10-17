@@ -8,8 +8,10 @@ import { useRecoilState } from "recoil";
 import { memberIdState, memberLevelState } from "../../utils/recoil";
 import styles from './Login.module.css';
 import LoginImage from './Login.jpg';
+import { useTranslation } from 'react-i18next';
 
 const MemberLogin = () => {
+  const { t } = useTranslation();
   //navigate
   const navigate = useNavigate();
 
@@ -62,17 +64,17 @@ const MemberLogin = () => {
       <div className={styles.loginPage}>
         <div className="row">
           <div className="col">
-            <div className={styles.jumbotronTitle}>로그인</div>
+            <div className={styles.jumbotronTitle}>{t('loginPage.title')}</div>
 
             {/* 로그인 창 */}
             <div className={styles.container}>
-              <span>아이디:user123</span>
+              <span>{t('loginPage.userIdPlaceholder')}</span>
               <br />
-              <span>비밀번호:password123</span>
+              <span>{t('loginPage.passwordPlaceholder')}</span>
 
               <div className="row mt-4">
                 <div className="col-9">
-                  <span className={styles.spanid}>계정 이름으로 로그인</span>
+                  <span className={styles.spanid}>{t('loginPage.loginWithId')}</span>
                   <input
                     type="text"
                     name="memberId"
@@ -81,7 +83,7 @@ const MemberLogin = () => {
                     onChange={changeInput}
                   />
                   <div className="mt-4">
-                    <span className={styles.spanpw}>비밀번호</span>
+                    <span className={styles.spanpw}>{t('loginPage.password')}</span>
                     <input
                       type={display ? "text" : "password"}
                       name="memberPw"
@@ -100,7 +102,7 @@ const MemberLogin = () => {
                           checked={display}
                           onChange={(e) => setDisplay(e.target.checked)}
                         />
-                        <span className="form-check-label"> 비밀번호 표시</span>
+                        <span className="form-check-label"> {t('loginPage.showPassword')}</span>
                       </label>
 
                       <div className={`${styles.checkboxGroup} ${styles.login}`}>
@@ -111,7 +113,7 @@ const MemberLogin = () => {
                             checked={stay}
                             onChange={(e) => setStay(e.target.checked)}
                           />
-                          <span className="form-check-label"> 로그인 유지</span>
+                          <span className="form-check-label"> {t('loginPage.keepLoggedIn')}</span>
                         </label>
                       </div>
                     </div>
@@ -119,7 +121,7 @@ const MemberLogin = () => {
 
                   <div className="mt-4">
                     <button className={styles["btn-success"]} onClick={sendLoginRequest}>
-                      로그인
+                      {t('loginPage.loginButton')}
                     </button>
                   </div>
 
@@ -127,11 +129,37 @@ const MemberLogin = () => {
 
                 <div className="col-3">
                   <div className={styles.loginQrPlaceholder}>
-                    <span>QR 코드 자리</span>
+                    <span>{t('loginPage.qrCodePlaceholder')}</span>
                   </div>
                 </div>
               </div>
             </div>
+
+
+            {/* 회원가입 푸터같지않은 푸터 */}
+            <div className="container">
+              <div className="row mt-4">
+                <div className="col-6">
+                  <h2>{t('loginPage.newToSteam')}</h2>
+                </div>
+
+                <div className="col-6">
+                  <span>
+                    {t('loginPage.signUpMessage')}
+                  </span>
+                  <span>
+                    {t('loginPage.learnMore')}
+                  </span>
+                </div>
+              </div>
+
+            </div>
+            <div className="row mt-4">
+              <div className="col-6">
+                <button onClick={() => navigate("/member/signup")}>{t('loginPage.signUpButton')}</button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
