@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import styles from './LanguageSelector.module.css'; // 스타일 파일 임포트
+import styles from './LanguageSelector.module.css';
 
 const LanguageSelector = () => {
-  const { i18n } = useTranslation();
+  const { i18n, t } = useTranslation();
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => setIsOpen(!isOpen);
 
@@ -28,7 +28,7 @@ const LanguageSelector = () => {
   return (
     <div className={styles.languageSelector}>
       <button onClick={toggleDropdown} className={styles.languageButton}>
-        언어
+        {t('languageButton')}
       </button>
       {isOpen && (
         <div className={styles.dropdownMenu}>

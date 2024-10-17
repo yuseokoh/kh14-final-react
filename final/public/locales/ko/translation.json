@@ -93,5 +93,8 @@
   "goToStore": "상점으로 돌아가기",
   "goToLibrary": "라이브러리로 이동하기",
   "failureMessage": "결제 승인 실패..."
-}
+},
+
+"languageButton": "언어"
+
 }

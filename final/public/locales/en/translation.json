@@ -92,6 +92,8 @@
   "goToStore": "Return to Store",
   "goToLibrary": "Go to Library",
   "failureMessage": "Payment approval failed..."
+
+},
+"languageButton": "Language"
 }
 
-}
