@@ -1,9 +1,10 @@
 /* From Uiverse.io by SelfMadeSystem */ 
 .loader {
     display: block;
-    width: 12em;
-    height: 12em;
+   
     overflow: visible;
+    width: 100px;
+    height: 100px;
   }
   
   .loader path.fill {
@@ -29,6 +30,13 @@
     stroke-width: 2px;
     filter: drop-shadow(0 0 2px #2AF);
   }
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 전체 화면의 높이에 맞추어 가운데 배치 */
+}
+
   
   @keyframes dashArray {
     0% {
