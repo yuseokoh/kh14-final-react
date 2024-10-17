@@ -1,0 +1,51 @@
+/* 전역 스타일 설정 */
+body {
+    /* Steam의 어두운 배경색 적용 */
+    background-color: #1b2838;
+    /* 기본 텍스트 색상을 흰색으로 설정 */
+    color: white;
+    /* 기본 폰트를 Arial로 설정, 대체 폰트로 sans-serif 계열 사용 */
+    font-family: Arial, sans-serif;
+    /* 기본 마진 제거 */
+    margin: 0;
+    /* 기본 패딩 제거 */
+    padding: 0;
+  }
+  
+  /* 링크 스타일 설정 */
+  a {
+    /* 링크의 기본 색상 설정 */
+    color: #66c0f4;
+    /* 링크의 밑줄 제거 */
+    text-decoration: none;
+  }
+  
+  /* 링크 호버 효과 */
+  a:hover {
+    /* 호버 시 밑줄 표시 */
+    text-decoration: underline;
+  }
+  
+  /* 기본 버튼 스타일 */
+  button {
+    /* 버튼 배경색 설정 */
+    background-color: #4c6b22;
+    /* 버튼 텍스트 색상 */
+    color: white;
+    /* 테두리 제거 */
+    border: none;
+    /* 패딩 추가 */
+    padding: 10px 15px;
+    /* 커서를 포인터로 변경 */
+    cursor: pointer;
+    /* 폰트 크기 설정 */
+    font-size: 14px;
+    /* 모서리 둥글게 */
+    border-radius: 2px;
+  }
+
+  /* 버튼 호버 효과 */
+    button:hover {
+    /* 호버 시 배경색 밝게 */
+    background-color: #5c7e10;
+  }

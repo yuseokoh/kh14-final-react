@@ -10,6 +10,8 @@ import "bootstrap";
 import { RecoilRoot } from 'recoil';
 import { HashRouter } from 'react-router-dom';
 
+import './components/Home.global.module.css';
+import Home from './components/Home';
 
 //axios customize
 //- 환경설정(.env)에 정의된 값을 읽어온다
@@ -30,6 +32,17 @@ root.render(<>
       </RecoilRoot>
 {/* </React.StrictMode> */}
 </>); 
+
+// Home 컴포넌트 렌더링
+const homeRoot = document.createElement('div');
+homeRoot.id = 'home-root';
+document.body.appendChild(homeRoot);
+
+ReactDOM.createRoot(homeRoot).render(
+  <React.StrictMode>
+    <Home />
+  </React.StrictMode>
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
