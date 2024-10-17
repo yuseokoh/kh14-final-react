@@ -1,0 +1,17 @@
+{
+  "menu": {
+    "shop": "Shop",
+    "test": "Test",
+    "community": "Community",
+    "info": "Info",
+    "support": "Support",
+    "signup": "Sign Up",
+    "login": "Login",
+    "logout": "Logout",
+    "payment": "Payment",
+    "paymentTest1": "Payment Test 1",
+    "paymentRequestTest": "Payment Request Test",
+    "paymentSuccessTest": "Payment Success Test",
+    "paymentCancelTest": "Payment Cancel Test"
+  }
+}
