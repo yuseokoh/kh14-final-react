@@ -130,6 +130,11 @@ const Menu = () => {
                                         로그아웃
                                     </NavLink>
                                 </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/wishlist">
+                                        찜
+                                    </NavLink>
+                                </li>
                             </>) : (<>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#">
@@ -143,6 +148,7 @@ const Menu = () => {
                                         로그인
                                     </NavLink>
                                 </li>
+                                
                             </>)}
                         </ul>
                     </div>
