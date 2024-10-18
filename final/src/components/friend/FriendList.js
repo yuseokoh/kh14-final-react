@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 
 const FriendList = ()=>{
     
+    
     //state
     const [friendList, setFriendList] = useState([]);//친구 목록
     const [memberList, setMemberList] = useState([]);//회원 목록
