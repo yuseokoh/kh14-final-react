@@ -14,6 +14,7 @@ import FriendList from "./friend/FriendList";
 
 import SingUp from './member/SingUp'; 
 import { useTranslation } from 'react-i18next';
+import CommunityList from "./community/CommunityList";
 
 
 const MainContent = () => {
@@ -61,6 +62,9 @@ const MainContent = () => {
                     <Route path="/friend/list" element={<FriendList/>} />
                     <Route path="/friend/request" element={<FriendRequest/>} />
 
+
+                    {/* 커뮤니티(게시판) */}
+                    <Route path="/community/CommunityList" element={<CommunityList/>} />
 
 
 
