@@ -2,12 +2,12 @@ import { useParams, useNavigate } from "react-router";
 import Jumbotron from "../Jumbotron";
 import { useRecoilValue } from "recoil";
 import { loginState, memberLoadingState, memberIdState } from "../../utils/recoil";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useMemo } from "react";
 import { useTranslation } from "react-i18next";
 import axios from "axios";
 import styles from './PaymentSuccessPage.module.css';
 import '../../router/Steam.css';
-import LoginImage from './Login.jpg'; // 파일이 같은 폴더 내에 있기 때문에 './'로 경로 수정
+import LoginImage from './Login.jpg';
 
 const PaymentSuccessPage = () => {
     const { t } = useTranslation();
@@ -18,47 +18,57 @@ const PaymentSuccessPage = () => {
     const memberId = useRecoilValue(memberIdState);
 
     const [result, setResult] = useState(null);
-    const [totalAmount, setTotalAmount] = useState(0);
-    const [itemName, setItemName] = useState(t("paymentSuccess.unknownItem"));
+    const [gameList, setGameList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         if (login && memberLoading) {
-            const gameData = JSON.parse(window.sessionStorage.getItem("game"));
+            const gameData = JSON.parse(window.sessionStorage.getItem("checkedGameList"));
             if (gameData) {
-                setItemName(gameData.title);
-                setTotalAmount(gameData.price * gameData.qty);
+                setGameList(gameData);
             }
             sendApproveRequest();
         }
     }, [login, memberLoading]);
 
     useEffect(() => {
-        // 로딩 상태를 3초 후에 해제
         const timer = setTimeout(() => {
             setIsLoading(false);
         }, 3000);
         return () => clearTimeout(timer);
     }, []);
+// 결제 승인 요청
+const sendApproveRequest = useCallback(async () => {
+   
+        // 승인 요청
+        const resp = await axios.post(
+            "http://localhost:8080/game/approve",
+            {
+                partnerOrderId: partnerOrderId,
+                pgToken: new URLSearchParams(window.location.search).get("pg_token"),
+                tid: window.sessionStorage.getItem("tid"),
+                gameList: gameList.map(game => ({
+                    gameNo: game.gameNo,
+                    qty: game.qty,
+                })),
+            },
+           
+        );
 
-    const sendApproveRequest = useCallback(async () => {
-        try {
-            const resp = await axios.post(
-                "http://localhost:8080/kakaopay/approve",
-                {
-                    partnerOrderId: partnerOrderId,
-                    pgToken: new URLSearchParams(window.location.search).get("pg_token"),
-                    tid: window.sessionStorage.getItem("tid")
-                }
-            );
-            setResult(true);
-        } catch (e) {
-            setResult(false);
-        } finally {
-            window.sessionStorage.removeItem("tid");
-            window.sessionStorage.removeItem("game");
-        }
-    }, [partnerOrderId]);
+       
+        // 세션 데이터 제거
+        window.sessionStorage.removeItem("tid");
+        window.sessionStorage.removeItem("checkedGameList");
+    }
+, [partnerOrderId]);
+
+
+
+
+
+    const totalAmount = useMemo(() => {
+        return gameList.reduce((total, game) => total + (game.gamePrice * game.qty), 0);
+    }, [gameList]);
 
     const handleGoToStore = () => navigate("/store");
     const handleGoToLibrary = () => navigate("/library");
@@ -66,13 +76,13 @@ const PaymentSuccessPage = () => {
     if (isLoading) {
         return (
             <div className="loading-container"
-            style={{
-                backgroundImage: `url(${LoginImage})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                width: '100vw',
-                height: '100vh'
-            }}
+                style={{
+                    backgroundImage: `url(${LoginImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    width: '100vw',
+                    height: '100vh'
+                }}
             >
                 <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" className="loader">
                     <g className="dash">
@@ -95,7 +105,6 @@ const PaymentSuccessPage = () => {
                 <div className={styles.purchaseReceipt}>
                     <h2>{t('paymentSuccess.purchaseReceipt')}</h2>
                     <p>{t('paymentSuccess.accountName')}: {memberId}</p>
-                    <p>{t('paymentSuccess.itemName')}: {itemName}</p>
                     <p>{t('paymentSuccess.totalAmount')}: ₩{totalAmount}</p>
                 </div>
 
