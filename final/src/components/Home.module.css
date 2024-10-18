@@ -4,21 +4,35 @@
   max-width: 1000px; /* 최대 너비 설정 */
   margin: 0 auto; /* 가운데 정렬 */
   padding: 16px 16px 16px 32px; /* 상, 우, 하, 좌 패딩 */
+  background-color: #1b2838; /* 어두운 배경색 */
+  color: #c7d5e0; /* 기본 텍스트 색상 */
+  min-height: 100vh; /* 전체 높이를 차지하도록 설정 */
 }
 
 /* 사이드바 스타일 */
 .sidebar {
-  width: 180px; /* 사이드바 너비 */
+  width: 300px; /* 사이드바 너비 */
   margin-right: 20px; /* 오른쪽 여백 */
   flex-shrink: 0; /* 화면이 작아져도 사이드바 크기 유지 */
+  padding-left: 100px; /* 왼쪽 패딩 추가 (선택사항) */
 }
-
 /* 메인 컨텐츠 영역 스타일 */
 .mainContent {
   flex-grow: 1; /* 남은 공간을 모두 차지 */
   min-width: 0; /* Flexbox 버그 방지 */
-  max-width: 800px; /* 최대 너비 설정 */
+  max-width: 1100px; /* 최대 너비 설정 */
+  margin-left: auto; /* 왼쪽 마진을 자동으로 설정 */
+  margin-right: auto; /* 오른쪽 마진을 자동으로 설정 */
+  padding-left: 20px; /* 왼쪽 패딩 추가 (선택사항) */
+  padding-right: 20px; /* 오른쪽 패딩 추가 (선택사항) */
 }
+
+/* 부모 컨테이너에 적용할 스타일 (필요한 경우) */
+.container {
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  width: 100%;
+}  
 
 /* 사이드바 섹션 스타일 */
 .sidebarSection {
@@ -344,3 +358,52 @@
     grid-template-columns: 1fr; /* 1열 그리드로 변경 */
   }
 }
+
+  /* 링크 스타일 설정 */
+  .a {
+    /* 링크의 기본 색상 설정 */
+    color: #66c0f4;
+    /* 링크의 밑줄 제거 */
+    text-decoration: none;
+  }
+  
+  /* 링크 호버 효과 */
+  .a:hover {
+    /* 호버 시 밑줄 표시 */
+    text-decoration: underline;
+  }
+
+  .appContainer {
+    background-color: #1b2838;
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 기본 버튼 스타일 */
+  .button {
+    /* 버튼 배경색 설정 */
+    background-color: #4c6b22;
+    /* 버튼 텍스트 색상 */
+    color: white;
+    /* 테두리 제거 */
+    border: none;
+    /* 패딩 추가 */
+    padding: 10px 15px;
+    /* 커서를 포인터로 변경 */
+    cursor: pointer;
+    /* 폰트 크기 설정 */
+    font-size: 14px;
+    /* 모서리 둥글게 */
+    border-radius: 2px;
+  }
+
+  /* 버튼 호버 효과 */
+    .button:hover {
+    /* 호버 시 배경색 밝게 */
+    background-color: #5c7e10;
+  }
