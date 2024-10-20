@@ -7,9 +7,13 @@ import { useRecoilState } from "recoil";
 import { memberIdState, memberLevelState } from "../../utils/recoil";
 import styles from './Login.module.css';
 import LoginImage from './Login.jpg';
+import { useTranslation } from 'react-i18next';
 
 const MemberLogin = () => {
+
   // navigate
+  const { t } = useTranslation();
+  //navigate
   const navigate = useNavigate();
 
   // state
@@ -67,6 +71,7 @@ const MemberLogin = () => {
 
   // view
   return (
+
     <div className={styles.loginPage}>
       <div className="row">
         <div className="col">
@@ -89,6 +94,24 @@ const MemberLogin = () => {
                 />
                 <div className="mt-4">
                   <span className={styles.spanpw}>비밀번호</span>
+
+    <>
+      {/* 배경 이미지와 전체 화면 크기 */}
+      <div className={styles.loginPage}>
+        <div className="row">
+          <div className="col">
+            <div className={styles.jumbotronTitle}>{t('loginPage.title')}</div>
+
+            {/* 로그인 창 */}
+            <div className={styles.container}>
+              <span>{t('loginPage.userIdPlaceholder')}</span>
+              <br />
+              <span>{t('loginPage.passwordPlaceholder')}</span>
+
+              <div className="row mt-4">
+                <div className="col-9">
+                  <span className={styles.spanid}>{t('loginPage.loginWithId')}</span>
+
                   <input
                     type={display ? "text" : "password"}
                     name="memberPw"
@@ -96,6 +119,7 @@ const MemberLogin = () => {
                     value={input.memberPw}
                     onChange={changeInput}
                   />
+
                 </div>
 
                 <div className="mt-3">
@@ -110,6 +134,18 @@ const MemberLogin = () => {
                       <span className="form-check-label"> 비밀번호 표시</span>
                     </label>
 
+                  <div className="mt-4">
+                    <span className={styles.spanpw}>{t('loginPage.password')}</span>
+                    <input
+                      type={display ? "text" : "password"}
+                      name="memberPw"
+                      className={styles.formControl}
+                      value={input.memberPw}
+                      onChange={changeInput}
+                    />
+                  </div>
+
+
                     <div className={`${styles.checkboxGroup} ${styles.login}`}>
                       <label>
                         <input
@@ -118,11 +154,28 @@ const MemberLogin = () => {
                           checked={stay}
                           onChange={(e) => setStay(e.target.checked)}
                         />
+
                         <span className="form-check-label"> 로그인 유지</span>
                       </label>
+
+                        <span className="form-check-label"> {t('loginPage.showPassword')}</span>
+                      </label>
+
+                      <div className={`${styles.checkboxGroup} ${styles.login}`}>
+                        <label>
+                          <input
+                            type="checkbox"
+                            className="form-check-input"
+                            checked={stay}
+                            onChange={(e) => setStay(e.target.checked)}
+                          />
+                          <span className="form-check-label"> {t('loginPage.keepLoggedIn')}</span>
+                        </label>
+                      </div>
                     </div>
                   </div>
                 </div>
+
 
                 <div className="mt-4">
                   <button className={styles["btn-success"]} onClick={sendLoginRequest}>
@@ -135,9 +188,49 @@ const MemberLogin = () => {
               <div className="col-3">
                 <div className={styles.loginQrPlaceholder}>
                   <span>QR 코드 자리</span>
+
+                  <div className="mt-4">
+                    <button className={styles["btn-success"]} onClick={sendLoginRequest}>
+                      {t('loginPage.loginButton')}
+                    </button>
+                  </div>
+
+                </div>
+
+                <div className="col-3">
+                  <div className={styles.loginQrPlaceholder}>
+                    <span>{t('loginPage.qrCodePlaceholder')}</span>
+                  </div>
+
                 </div>
               </div>
             </div>
+
+
+            {/* 회원가입 푸터같지않은 푸터 */}
+            <div className="container">
+              <div className="row mt-4">
+                <div className="col-6">
+                  <h2>{t('loginPage.newToSteam')}</h2>
+                </div>
+
+                <div className="col-6">
+                  <span>
+                    {t('loginPage.signUpMessage')}
+                  </span>
+                  <span>
+                    {t('loginPage.learnMore')}
+                  </span>
+                </div>
+              </div>
+
+            </div>
+            <div className="row mt-4">
+              <div className="col-6">
+                <button onClick={() => navigate("/member/signup")}>{t('loginPage.signUpButton')}</button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
