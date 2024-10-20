@@ -16,6 +16,7 @@ import SingUp from './member/SingUp';
 import { useTranslation } from 'react-i18next';
 import CommunityList from "./community/CommunityList";
 import WishList from "./wishlist/WishList";
+import ShoppingCart from "./shoppingcart/ShoppingCart";
 
 
 const MainContent = () => {
@@ -82,6 +83,8 @@ const MainContent = () => {
                     <Route path="/member/login" element={<MemberLogin />} />
                     {/* 찜 */}
                     <Route path="/wishlist" element={<WishList />} />
+                    {/* 장바구니 */}
+                    <Route path="/cart" element={<ShoppingCart />} />
                 </Routes>
 
             </div>

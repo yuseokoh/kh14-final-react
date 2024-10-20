@@ -135,6 +135,11 @@ const Menu = () => {
                                         찜
                                     </NavLink>
                                 </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/cart">
+                                        장바구니
+                                    </NavLink>
+                                </li>
                             </>) : (<>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#">
