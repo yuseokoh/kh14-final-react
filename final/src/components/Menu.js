@@ -135,6 +135,11 @@ const Menu = () => {
                                         찜
                                     </NavLink>
                                 </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/wishlist">
+                                        찜
+                                    </NavLink>
+                                </li>
                             </>) : (<>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#">
@@ -148,6 +153,7 @@ const Menu = () => {
                                         {t('menu.login')}
                                     </NavLink>
                                 </li>
+                                
                             </>)}
                         </ul>
                         {/* Language Selector 추가 */}

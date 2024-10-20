@@ -1,4 +1,102 @@
 .loginPage {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./Login.jpg');
+  background-size: cover; /* 이미지가 컨테이너에 꽉 차도록 */
+  background-position: center; /* 이미지를 중앙에 배치 */
+  height: 100vh; /* 화면 높이에 맞추기 */
+  width: 100vw; /* 화면 너비에 맞추기 */
+  margin: 0;
+  padding: 0;
+}
+
+.wishlist_container {
+  background-color: #1c1c1c; /* 어두운 배경색 */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 그림자 색상 조정 */
+  padding: 20px;
+  width: 600px; /* 너비를 유지 */
+  max-height: 90vh; /* 최대 높이를 설정하여 스크롤 가능하게 합니다. */
+  overflow-y: auto; /* 스크롤이 가능하도록 설정합니다. */
+  margin: 0 auto; /* 중앙 정렬 */
+}
+
+.wishlist_title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff; /* 흰색 텍스트 */
+  margin-bottom: 20px; /* 닉네임과 게임 목록 간의 여백 */
+}
+
+.game_list_section {
+  margin-top: 10px;
+}
+
+.game_list_title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff; /* 흰색 텍스트 */
+  margin-bottom: 10px; /* 제목 아래 여백 */
+}
+
+.game_list {
+  list-style: none;
+  padding: 0; /* 기본 패딩 제거 */
+}
+
+.game_item {
+  display: flex;
+  justify-content: space-between; /* 아이템과 버튼을 양쪽에 배치 */
+  align-items: center; /* 세로 정렬 */
+  background-color: #2a2a2a; /* 어두운 카드 배경 색상 */
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px; /* 아이템 간의 여백 */
+  transition: background-color 0.3s; /* 호버 시 부드러운 전환 효과 */
+}
+
+.game_item:hover {
+  background-color: #3a3a3a; /* 호버 시 카드 색상 변경 */
+}
+
+.button_group {
+  display: flex;
+  flex-direction: column; /* 버튼을 세로로 나열 */
+  gap: 5px; /* 버튼 간 간격 */
+}
+
+
+.play_button {
+  background: linear-gradient(90deg, #4caf50, #81c784); /* 그라데이션 */
+  color: rgb(207, 203, 203);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.play_button:hover {
+  background: linear-gradient(90deg, #43a047, #66bb6a); /* 호버 시 그라데이션 변화 */
+}
+
+.remove_button {
+  background-color: transparent; /* 투명 배경 */
+  color: lightgray; /* 밝은 회색 글씨 */
+  border: none; /* 밝은 회색 테두리 */
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s; /* 부드러운 전환 효과 */
+}
+
+.remove_button:hover {
+  color: white; /* 호버 시 흰색으로 변화 */
+  border-color: white; /* 테두리 색상 변화 */
+}
+=======
     display: flex;
     justify-content: center;
     align-items: center;

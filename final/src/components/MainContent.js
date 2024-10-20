@@ -8,6 +8,8 @@ import PaymentConfirmationPage from "./payment/PaymentConfirmationPage";
 import PaymentSuccessPage from "./payment/PaymentSuccessPage";
 import PrivateRoute from "../router/PrivateRoute";
 import PaymentCancellationPage from "./payment/PaymentCancellationPage";
+import WishList from "./wishlist/WishList";
+import Basket from "./basket/Basket";
 
 import FriendRequest from "./friend/FriendRequest";
 import FriendList from "./friend/FriendList";
@@ -78,10 +80,14 @@ const MainContent = () => {
                     <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
                     <Route path="/payment/cancel" element={<PaymentCancellationPage />} />
 
-                    {/* 회원 로그인 */}
-                    <Route path="/member/login" element={<MemberLogin />} />
+
                     {/* 찜 */}
                     <Route path="/wishlist" element={<WishList />} />
+                    {/* 장바구니 */}
+                    <Route path="/basket" element={<Basket />} />
+                    {/* 나머지 경로(*) 패턴을 지정해서 미 지정된 페이지를 모두 연결할 수 있다 */}
+
+                  
                 </Routes>
 
             </div>
