@@ -15,6 +15,7 @@ import FriendList from "./friend/FriendList";
 import SingUp from './member/SingUp'; 
 import { useTranslation } from 'react-i18next';
 import CommunityList from "./community/CommunityList";
+import WishList from "./wishlist/WishList";
 
 
 const MainContent = () => {
@@ -79,6 +80,8 @@ const MainContent = () => {
 
                     {/* 회원 로그인 */}
                     <Route path="/member/login" element={<MemberLogin />} />
+                    {/* 찜 */}
+                    <Route path="/wishlist" element={<WishList />} />
                 </Routes>
 
             </div>

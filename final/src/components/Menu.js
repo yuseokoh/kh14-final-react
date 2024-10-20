@@ -130,6 +130,11 @@ const Menu = () => {
                                         {t('menu.logout')}
                                     </NavLink>
                                 </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/wishlist">
+                                        찜
+                                    </NavLink>
+                                </li>
                             </>) : (<>
                                 <li className="nav-item">
                                     <a className="nav-link" href="#">
