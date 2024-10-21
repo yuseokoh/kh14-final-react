@@ -1,0 +1,62 @@
+
+.footerContainer {
+  background-color:#141d29;
+  color: #c6d4df;
+  padding: 40px 0;
+  text-align: center;
+  border-top: 1px solid #2a475e;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: auto; /* 페이지의 끝에 푸터가 위치하도록 설정 */
+}
+
+body, html {
+  background-color: #141d29; /* 푸터와 동일한 배경색으로 설정 */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+
+.footerContent {
+  max-width: 940px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.footerLogo img {
+  height: 24px;
+  margin-bottom: 15px;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.footerLink {
+  color: #c6d4df;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.footerLink:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.footerCopyright {
+  font-size: 0.75rem;
+  line-height: 1.5;
+  color: #8f98a0;
+  text-align: center;
+  margin-bottom: 15px;
+}

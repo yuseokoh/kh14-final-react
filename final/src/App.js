@@ -1,6 +1,8 @@
 import { useCallback, useEffect } from "react";
 import MainContent from "./components/MainContent";
 import Menu from "./components/Menu";
+import Footer from "./components/Footer";
+
 import { useRecoilState } from "recoil";
 import { memberIdState, memberLevelState, memberLoadingState } from "./utils/recoil";
 import axios from "axios";
@@ -59,6 +61,7 @@ const App = ()=>{
     <>
       <Menu/>
       <MainContent/>
+      <Footer />
     </>
   );
 }
