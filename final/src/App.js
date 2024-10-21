@@ -1,7 +1,9 @@
 import { useCallback, useEffect } from "react";
 import MainContent from "./components/MainContent";
 import Menu from "./components/Menu";
-import Footer from "./components/Footer";
+import Footer from './components/footer/Footer';
+
+
 
 import { useRecoilState } from "recoil";
 import { memberIdState, memberLevelState, memberLoadingState } from "./utils/recoil";
