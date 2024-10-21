@@ -81,55 +81,65 @@
     "failureMessage": "Payment approval failed..."
   },
   "languageButton": "Language",
-  
-    "privacyPolicy": {
-      "title": "Privacy Policy",
-      "intro": "Valve respects the privacy of its online visitors and customers of its products and services and complies with applicable laws for the protection of your privacy, including, without limitation, the California Consumer Privacy Act (\"CCPA\"), the European Union General Data Protection Regulation (\"GDPR\") and the UK GDPR.",
-      "dpf": "Valve and its subsidiary TR Technical Inc. comply with the EU-U.S. Data Privacy Framework (EU-U.S. DPF), the UK Extension to the EU-U.S. DPF, and the Swiss-U.S. Data Privacy Framework (Swiss-U.S. DPF) as set forth by the U.S. Department of Commerce.",
-      "section1": {
-        "title": "1. Definitions",
-        "content": "Wherever we talk about personal data (\"Personal Data\"), we mean any information that can either itself identify you as an individual (\"Personally Identifying Information\")."
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "intro": "Valve respects the privacy of its online visitors and customers of its products and services and complies with applicable laws for the protection of your privacy, including, without limitation, the California Consumer Privacy Act (\"CCPA\"), the European Union General Data Protection Regulation (\"GDPR\") and the UK GDPR.",
+    "dpf": "Valve and its subsidiary TR Technical Inc. comply with the EU-U.S. Data Privacy Framework (EU-U.S. DPF), the UK Extension to the EU-U.S. DPF, and the Swiss-U.S. Data Privacy Framework (Swiss-U.S. DPF) as set forth by the U.S. Department of Commerce.",
+    "section1": {
+      "title": "1. Definitions",
+      "content": "Wherever we talk about personal data (\"Personal Data\"), we mean any information that can either itself identify you as an individual (\"Personally Identifying Information\")."
+    },
+    "section2": {
+      "title": "2. Why Valve Collects and Processes Data",
+      "content": "Valve collects and processes Personal Data for the following reasons:",
+      "itemA": "a) Where it is necessary for the performance of an agreement with you.",
+      "itemB": "b) Where it is necessary for compliance with legal obligations.",
+      "itemC": "c) Where it is necessary for the purposes of the legitimate and legal interests of Valve or third parties.",
+      "itemD": "d) Where you have given consent to the processing of your Personal Data for one or more specific purposes.",
+      "summary": "These reasons for collecting and processing data determine and limit what Personal Data we collect and how we use it."
+    },
+    "section3": {
+      "title": "3. The Types and Sources of Data We Collect",
+      "subsection1": {
+        "title": "3.1 Basic Account Data",
+        "content": "When setting up an Account, Valve will collect your email address and country of residence, among other information."
       },
-      "section2": {
-        "title": "2. Why Valve Collects and Processes Data",
-        "content": "Valve collects and processes Personal Data for the following reasons:",
-        "itemA": "a) Where it is necessary for the performance of an agreement with you.",
-        "itemB": "b) Where it is necessary for compliance with legal obligations.",
-        "itemC": "c) Where it is necessary for the purposes of the legitimate and legal interests of Valve or third parties.",
-        "itemD": "d) Where you have given consent to the processing of your Personal Data for one or more specific purposes.",
-        "summary": "These reasons for collecting and processing data determine and limit what Personal Data we collect and how we use it."
+      "subsection2": {
+        "title": "3.2 Transaction and Payment Data",
+        "content": "In order to make a transaction on Steam, you may need to provide payment data to Valve to enable the transaction."
       },
-      "section3": {
-        "title": "3. The Types and Sources of Data We Collect",
-        "subsection1": {
-          "title": "3.1 Basic Account Data",
-          "content": "When setting up an Account, Valve will collect your email address and country of residence, among other information."
-        },
-        "subsection2": {
-          "title": "3.2 Transaction and Payment Data",
-          "content": "In order to make a transaction on Steam, you may need to provide payment data to Valve to enable the transaction."
-        },
-        "subsection3": {
-          "title": "3.3 Other Data You Explicitly Submit",
-          "content": "We will collect and process Personal Data whenever you explicitly provide it to us or send it.",
-          "item1": "Information that you post, comment or follow in any of our Content and Services.",
-          "item2": "Information sent through chat.",
-          "item3": "Information you provide when you request information or support from us.",
-          "item4": "Information you provide to us when participating in competitions, contests or tournaments."
-        },
-        "subsection4": {
-          "title": "3.4 Your Use of the Steam Client and Websites",
-          "content": "We collect a variety of information through your general interaction with the websites, Content and Services offered by Steam."
-        },
-        "subsection5": {
-          "title": "3.5 Your Use of Games and Other Subscriptions",
-          "content": "In order to provide you with services, we record and store information about your activity in our Content and Services."
-        },
-        "subsection6": {
-          "title": "3.6 Tracking Data and Cookies",
-          "content": "We use \"Cookies\", which are text files placed on your computer, and similar technologies to help us analyze how users use our services."
-        }
+      "subsection3": {
+        "title": "3.3 Other Data You Explicitly Submit",
+        "content": "We will collect and process Personal Data whenever you explicitly provide it to us or send it.",
+        "item1": "Information that you post, comment or follow in any of our Content and Services.",
+        "item2": "Information sent through chat.",
+        "item3": "Information you provide when you request information or support from us.",
+        "item4": "Information you provide to us when participating in competitions, contests or tournaments."
+      },
+      "subsection4": {
+        "title": "3.4 Your Use of the Steam Client and Websites",
+        "content": "We collect a variety of information through your general interaction with the websites, Content and Services offered by Steam."
+      },
+      "subsection5": {
+        "title": "3.5 Your Use of Games and Other Subscriptions",
+        "content": "In order to provide you with services, we record and store information about your activity in our Content and Services."
+      },
+      "subsection6": {
+        "title": "3.6 Tracking Data and Cookies",
+        "content": "We use \"Cookies\", which are text files placed on your computer, and similar technologies to help us analyze how users use our services."
       }
     }
+  },
+  "termsOfUse": {
+    "title": "Legal Notice",
+    "copyrightTitle": "Copyright",
+    "copyrightContent": "© 2024 Valve Corporation. All rights reserved. Valve, the Valve logo, Half-Life, the Half-Life logo, the Lambda logo, Steam, the Steam logo, Team Fortress, the Team Fortress logo, Opposing Force, Day of Defeat, the Day of Defeat logo, Counter-Strike, the Counter-Strike logo, Source, the Source logo, Counter-Strike: Condition Zero, Portal, the Portal logo, Dota, the Dota 2 logo, and Defense of the Ancients are trademarks and/or registered trademarks of Valve Corporation. All other trademarks are property of their respective owners.",
+    "videoPolicyTitle": "Valve Video Policy",
+    "videoPolicyLink": "Click here for information.",
+    "thirdPartyTitle": "Third Party Legal Notices",
+    "thirdPartyContent": "Steam and other Valve products distributed via Steam use certain third party materials that require notifications about their license terms. You can find a list of these notifications in the file called ThirdPartyLegalNotices.doc distributed with the Steam client and/or a particular Valve product. Where license terms require Valve to make source code available for redistribution, the code may be found here. Some geospatial data on this website is provided by geonames.org",
+    "copyrightInfringementTitle": "Claims of Copyright Infringement",
+    "copyrightInfringementContent": "Valve respects the intellectual property rights of others, and we ask that everyone using our internet sites and services do the same. Anyone who believes that their work has been reproduced in one of our internet sites or services in a way that constitutes copyright infringement may notify Valve via this page.",
+    "copyrightLink": "More information about U.S. copyright law can be found at the United States Copyright Office."
   }
-  
+}
