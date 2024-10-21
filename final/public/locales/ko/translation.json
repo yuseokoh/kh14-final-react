@@ -13,5 +13,88 @@
     "paymentRequestTest": "결제 요청 테스트",
     "paymentSuccessTest": "결제 성공 테스트",
     "paymentCancelTest": "결제 취소 테스트"
-  }
+  },
+  "loginPage": {
+    "title": "로그인",
+    "userIdPlaceholder": "아이디: user123",
+    "passwordPlaceholder": "비밀번호: password123",
+    "loginWithId": "계정 이름으로 로그인",
+    "password": "비밀번호",
+    "showPassword": "비밀번호 표시",
+    "keepLoggedIn": "로그인 유지",
+    "loginButton": "로그인",
+    "qrCodePlaceholder": "QR 코드 자리",
+    "newToSteam": "Steam에 처음 오셨나요?",
+    "signUpMessage": "무료로 쉽게 가입할 수 있습니다. 수천 종류의 게임을 전 세계 새로운 친구들과 함께 즐겨보세요.",
+    "learnMore": "Steam에 대해 자세히 알아보기",
+    "signUpButton": "가입하기"
+  },
+  "payment": {
+    "pageTitle": "게임 결제 페이지",
+    "table": {
+      "number": "번호",
+      "title": "제목",
+      "price": "가격",
+      "quantity": "수량"
+    },
+    "currency": "원",
+    "paymentInfoTab": "결제 정보",
+    "reviewPurchaseTab": "리뷰 + 결제",
+    "productImageAlt": "리그 오브 레전드",
+    "total": "총합",
+    "vatInfo": "모든 가격에는 해당되는 경우 부가세가 포함됩니다",
+    "method": "결제 방법",
+    "change": "변경",
+    "steamAccount": "Steam 계정",
+    "agreeTerms": "다음의 약관에 동의합니다",
+    "steamSubscriberAgreement": "Steam 구독자 계약",
+    "kakaoPayNotice": "KakaoPay 거래는 Smart2Pay 웹사이트를 통해 승인됩니다. 아래 버튼을 클릭하여 새 웹 브라우저를 열고 거래를 시작하십시오.",
+    "continueButton": "Smart2Pay로 계속하기",
+    "confirmationEmail": "확인 이메일이 gmail.com 주소로 전송됩니다",
+    "purchasingOnSteam": "Steam에서 구매",
+    "purchaseDescription": "이 거래를 완료하면 결제 방법이 인출되고 구매 확인 이메일 메시지를 받게 됩니다.",
+    "errorNoToken": "토큰이 없습니다. 다시 로그인해주세요.",
+    "errorDuringPurchase": "결제 준비 중 오류가 발생했습니다:",
+    "errorPurchaseFailed": "결제 준비에 실패했습니다. 다시 시도해주세요."
+  },
+  "paymentMethod": {
+    "pageTitle": "결제 방법",
+    "paymentInfoTab": "결제 정보",
+    "reviewPurchaseTab": "리뷰 + 결제",
+    "selectPaymentMethod": "결제 방법을 선택하세요",
+    "selectMethodPlaceholder": "방법을 선택하세요",
+    "kakaoPay": "카카오페이",
+    "billingInfo": "청구 주소가 대한민국에 있지 않다면 상점 지역 설정을 변경하세요",
+    "storeRegionPreference": "상점 지역 설정",
+    "reviewOrderInfo": "주문이 완료되기 전에 검토할 기회가 있습니다.",
+    "paymentMethods": "결제 방법",
+    "kakaoPayAlt": "카카오페이",
+    "continueButton": "계속"
+  },
+  "paymentCancellation": {
+    "loadingMessage": "로딩 중...",
+    "processingMessage": "결제 취소 진행 중입니다...",
+    "successMessage": "결제가 성공적으로 취소되었습니다!",
+    "failureMessage": "결제 취소 실패...",
+    "refundInfo": "결제가 성공적으로 취소되었으며, 결제 금액은 환불 처리됩니다.",
+    "goToStore": "상점으로 돌아가기",
+    "goToLibrary": "라이브러리로 이동하기"
+  },
+  
+ "paymentSuccess": {
+  "loading": "결제 진행 중입니다...",
+
+  "thankYouMessage": "구매해 주셔서 감사합니다!",
+  "successMessage": "구매하신 게임이 귀하의 계정에 등록되었습니다. 이제 Steam 라이브러리에서 언제든지 게임을 즐기실 수 있습니다.",
+  "purchaseReceipt": "구매 영수증",
+  "accountName": "계정 이름",
+  "itemName": "상품명",
+  "totalAmount": "총액",
+  "goToStore": "상점으로 돌아가기",
+  "goToLibrary": "라이브러리로 이동하기",
+  "failureMessage": "결제 승인 실패..."
+},
+
+"languageButton": "언어"
+
 }

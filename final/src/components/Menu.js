@@ -78,7 +78,7 @@ const Menu = () => {
                                     data-bs-toggle="dropdown" href="#" role="button"
                                     aria-haspopup="true" aria-expanded="false">{t('menu.community')}</a>
                                 <div className="dropdown-menu">
-                                    <NavLink className="dropdown-item" to="/">{t('menu.test')}</NavLink>
+                                    <NavLink className="dropdown-item" to="/community/CommunityList">{t('menu.community')}</NavLink>
                                 </div>
                             </li>
                             <li className="nav-item dropdown">
@@ -128,6 +128,16 @@ const Menu = () => {
                                     <NavLink className="nav-link" to="#"
                                         onClick={logout}>
                                         {t('menu.logout')}
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/wishlist">
+                                        찜
+                                    </NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink className="nav-link" to="/cart">
+                                        장바구니
                                     </NavLink>
                                 </li>
                             </>) : (<>
