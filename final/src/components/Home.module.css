@@ -12,7 +12,7 @@
 /* 사이드바 스타일 */
 .sidebar {
   width: 300px; /* 사이드바 너비 */
-  margin-right: 20px; /* 오른쪽 여백 */
+  margin-right: 30px; /* 오른쪽 여백 */
   flex-shrink: 0; /* 화면이 작아져도 사이드바 크기 유지 */
   padding-left: 100px; /* 왼쪽 패딩 추가 (선택사항) */
 }
@@ -406,4 +406,70 @@
     .button:hover {
     /* 호버 시 배경색 밝게 */
     background-color: #5c7e10;
+  }
+
+  .horizontalSlider, .verticalSlider {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .horizontalSliderContainer, .verticalSliderContainer {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .horizontalSliderContainer {
+    flex-direction: row;
+  }
+  
+  .verticalSliderContainer {
+    flex-direction: column;
+  }
+  
+  .sliderButton {
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    cursor: pointer;
+  }
+  
+  .sliderButtonLeft, .sliderButtonRight {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .sliderButtonLeft {
+    left: 10px;
+  }
+  
+  .sliderButtonRight {
+    right: 10px;
+  }
+  
+  .sliderButtonTop, .sliderButtonBottom {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .sliderButtonTop {
+    top: 10px;
+  }
+  
+  .sliderButtonBottom {
+    bottom: 10px;
+  }
+
+  .verticalCardSlider {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .verticalCardSliderContainer {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .verticalCardSliderItem {
+    flex-shrink: 0;
   }
