@@ -58,20 +58,7 @@
     "errorNoToken": "토큰이 없습니다. 다시 로그인해주세요.",
     "errorDuringPurchase": "결제 준비 중 오류가 발생했습니다:",
     "errorPurchaseFailed": "결제 준비에 실패했습니다. 다시 시도해주세요."
-  },
-  "paymentMethod": {
-    "pageTitle": "결제 방법",
-    "paymentInfoTab": "결제 정보",
-    "reviewPurchaseTab": "리뷰 + 결제",
-    "selectPaymentMethod": "결제 방법을 선택하세요",
-    "selectMethodPlaceholder": "방법을 선택하세요",
-    "kakaoPay": "카카오페이",
-    "billingInfo": "청구 주소가 대한민국에 있지 않다면 상점 지역 설정을 변경하세요",
-    "storeRegionPreference": "상점 지역 설정",
-    "reviewOrderInfo": "주문이 완료되기 전에 검토할 기회가 있습니다.",
-    "paymentMethods": "결제 방법",
-    "kakaoPayAlt": "카카오페이",
-    "continueButton": "계속"
+ 
   },
   "paymentCancellation": {
     "loadingMessage": "로딩 중...",

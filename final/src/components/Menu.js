@@ -97,10 +97,7 @@ const Menu = () => {
                                     <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                         aria-haspopup="true" aria-expanded="false">{t('menu.payment')}</a>
                                     <div className="dropdown-menu">
-                                        <NavLink className="dropdown-item" to="/payment/method">
-                                            <i className="fa-solid fa-right-to-bracket"></i>
-                                            {t('menu.paymentTest1')}
-                                        </NavLink>
+                                       
 
                                         <NavLink className="dropdown-item" to="/payment/confirmation">
                                             <i className="fa-solid fa-right-to-bracket"></i>

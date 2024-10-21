@@ -59,20 +59,7 @@
     "errorDuringPurchase": "An error occurred during the payment preparation:",
     "errorPurchaseFailed": "Payment preparation failed. Please try again."
   },
-  "paymentMethod": {
-    "pageTitle": "Payment Method",
-    "paymentInfoTab": "Payment Info",
-    "reviewPurchaseTab": "Review + Purchase",
-    "selectPaymentMethod": "Please select a payment method",
-    "selectMethodPlaceholder": "Select a method",
-    "kakaoPay": "KakaoPay",
-    "billingInfo": "If your billing address is not in Korea, Republic of, please set your store region preference",
-    "storeRegionPreference": "set your store region preference",
-    "reviewOrderInfo": "You'll have a chance to review your order before it's placed.",
-    "paymentMethods": "Payment Methods",
-    "kakaoPayAlt": "KakaoPay",
-    "continueButton": "Continue"
-  },
+  
   "paymentCancellation": {
     "loadingMessage": "Loading...",
     "processingMessage": "Processing cancellation...",
