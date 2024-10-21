@@ -87,7 +87,7 @@ const MainContent = () => {
                     <Route path="/friend/request" element={<FriendRequest/>} />
 
                     {/* 커뮤니티(게시판) */}
-                    <Route path="/community/CommunityList" element={<CommunityList/>} />
+                    <Route path="/community/list" element={<CommunityList/>}/>
 
                     {/* 회원가입 */}
                     <Route path="/member/signup" element={<SingUp />} />
