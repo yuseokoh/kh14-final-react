@@ -81,16 +81,7 @@ const Menu = () => {
                                     <NavLink className="dropdown-item" to="/community/CommunityList">{t('menu.community')}</NavLink>
                                 </div>
                             </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link"
-                                    data-bs-toggle="dropdown" to="/" role="button"
-                                    aria-haspopup="true" aria-expanded="false">{t('menu.info')}</a>
-                            </li>
-                            <li className="nav-item dropdown">
-                                <a className="nav-link"
-                                    data-bs-toggle="dropdown" to="/" role="button"
-                                    aria-haspopup="true" aria-expanded="false">{t('menu.support')}</a>
-                            </li>
+                          
 
                             {login ? (<>
                                 <li className="nav-item dropdown">
@@ -141,12 +132,6 @@ const Menu = () => {
                                     </NavLink>
                                 </li>
                             </>) : (<>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">
-                                        <i className="fa-solid fa-user"></i>
-                                        {t('menu.signup')}
-                                    </a>
-                                </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/member/login">
                                         <i className="fa-solid fa-right-to-bracket"></i>
