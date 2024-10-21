@@ -44,8 +44,8 @@ const Menu = () => {
         navigate("/");
     }, [memberId, memberLevel]);
 
-     //view
-     return (
+    //view
+    return (
         <>
             <nav className={`navbar navbar-expand-lg fixed-top ${styles.navbar}`} data-bs-theme="dark">
                 <div className={`container ${styles.container}`}>
@@ -132,16 +132,16 @@ const Menu = () => {
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/wishlist">
-                                        찜
+                                        {t('menu.wishlist')}
                                     </NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/cart">
-                                        장바구니
+                                        {t('menu.cart')}
                                     </NavLink>
                                 </li>
                             </>) : (<>
-                              
+
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/member/login">
                                         <i className="fa-solid fa-right-to-bracket"></i>

@@ -12,7 +12,9 @@
     "paymentTest1": "Payment Test 1",
     "paymentRequestTest": "Payment Request Test",
     "paymentSuccessTest": "Payment Success Test",
-    "paymentCancelTest": "Payment Cancel Test"
+    "paymentCancelTest": "Payment Cancel Test",
+     "wishlist": "Wishlist",
+    "cart": "Cart"
   },
   "loginPage": {
     "title": "Login",
