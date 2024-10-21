@@ -233,7 +233,7 @@ const VerticalCardSlider = ({ games, itemsPerPage = 4 }) => {
             >
               <VerticalGameCard game={game}/>
               </div>
-        ))}
+        ))} 
       </div>
 
       {/* 이전 슬라이드로 이동하는 버튼 */}
