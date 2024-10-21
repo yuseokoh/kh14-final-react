@@ -1,16 +1,19 @@
+import Jumbotron from "../Jumbotron";
 import { CgLogIn } from "react-icons/cg";
 import { useState, useCallback } from 'react';
 import axios from "axios";
-import { useNavigate } from "react-router";
+import { Navigate, useNavigate } from "react-router";
 import { useRecoilState } from "recoil";
 import { memberIdState, memberLevelState } from "../../utils/recoil";
 import styles from './Login.module.css';
+import LoginImage from './Login.jpg';
 import { useTranslation } from 'react-i18next';
 
 const MemberLogin = () => {
 
-  // navigation & translation
+  // navigate
   const { t } = useTranslation();
+  //navigate
   const navigate = useNavigate();
 
   // state
@@ -36,10 +39,11 @@ const MemberLogin = () => {
   // 로그인 요청
   const sendLoginRequest = useCallback(async () => {
     try {
+      // 로그인 요청
       const resp = await axios.post("/member/login", input);
       console.log(resp.data); // 응답 데이터 로그
 
-      // 로그인 성공 시
+      // 성공적으로 로그인했을 경우
       setMemberId(resp.data.memberId);
       setMemberLevel(resp.data.memberLevel);
 
@@ -58,32 +62,28 @@ const MemberLogin = () => {
     } catch (e) {
       // 에러 핸들링
       if (e.response && e.response.status === 404) {
-        console.log("아이디가 없거나 비밀번호가 틀립니다.");
+        console.log("아이디가 없거나 비밀번호가 틀립니다."); // 서버의 에러 메시지에 따라 수정 가능
       } else {
-        console.log("로그인 요청 중 오류가 발생했습니다.");
+        console.log("로그인 요청 중 오류가 발생했습니다."); // 일반 오류 메시지
       }
     }
-  }, [input, stay, navigate]);
+  }, [input, stay]);
 
   // view
   return (
     <div className={styles.loginPage}>
       <div className="row">
         <div className="col">
-          <div className={styles.jumbotronTitle}>{t('loginPage.title')}</div>
+          <div className={styles.jumbotronTitle}>로그인</div>
 
           <div className={styles.container}>
-            <span>{t('loginPage.userIdPlaceholder')}</span>
-            <br />
-            <span>{t('loginPage.passwordPlaceholder')}</span>
-            <br />
             <span>아이디: testuser123</span>
             <br />
             <span>비밀번호: Testuser123!!</span>
 
             <div className="row mt-4">
               <div className="col-9">
-                <span className={styles.spanid}>{t('loginPage.loginWithId')}</span>
+                <span className={styles.spanid}>계정 이름으로 로그인</span>
                 <input
                   type="text"
                   name="memberId"
@@ -92,7 +92,7 @@ const MemberLogin = () => {
                   onChange={changeInput}
                 />
                 <div className="mt-4">
-                  <span className={styles.spanpw}>{t('loginPage.password')}</span>
+                  <span className={styles.spanpw}>비밀번호</span>
                   <input
                     type={display ? "text" : "password"}
                     name="memberPw"
@@ -110,7 +110,7 @@ const MemberLogin = () => {
                       checked={display}
                       onChange={(e) => setDisplay(e.target.checked)}
                     />
-                    <span className="form-check-label"> {t('loginPage.showPassword')}</span>
+                    <span className="form-check-label"> 비밀번호 표시</span>
                   </label>
                 </div>
 
@@ -122,20 +122,20 @@ const MemberLogin = () => {
                       checked={stay}
                       onChange={(e) => setStay(e.target.checked)}
                     />
-                    <span className="form-check-label"> {t('loginPage.keepLoggedIn')}</span>
+                    <span className="form-check-label"> 로그인 유지</span>
                   </label>
                 </div>
 
                 <div className="mt-4">
                   <button className={styles["btn-success"]} onClick={sendLoginRequest}>
-                    {t('loginPage.loginButton')}
+                    로그인
                   </button>
                 </div>
               </div>
 
               <div className="col-3">
                 <div className={styles.loginQrPlaceholder}>
-                  <span>{t('loginPage.qrCodePlaceholder')}</span>
+                  <span>QR 코드 자리</span>
                 </div>
               </div>
             </div>
@@ -143,29 +143,26 @@ const MemberLogin = () => {
             <div className={styles.accession}>
               <div className="row mt-5">
                 <div className="col-6">
-                  <h2>{t('loginPage.newToSteam')}</h2>
+                  <h2 className={styles.span1}>Steam에 처음 오셨나요?</h2>
                 </div>
                 <div className="col-6">
-                  <span>{t('loginPage.signUpMessage')}</span>
+                  <span>무료로 쉽게 가입할 수 있습니다. 수천 종류의 게임을 전 세계 새로운 친구들과 함께 즐겨보세요.</span>
                   <div className="row mt-4">
                     <div className="col">
                       <button className={styles.button} onClick={() => navigate("/member/signupPage")}>
-                        {t('loginPage.signUpButton')}
+                        가입하기
                       </button>
                     </div>
                   </div>
                 </div>
                 <div className="col-6">
                   <span className={styles.span2}>
-                    {t('loginPage.signUpDescription')}
-                  </span>
-                  <br />
-                  <span className={styles.span3}>
-                    {t('loginPage.learnMore')}
+                    Steam에 대해 자세히 알아보기
                   </span>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>

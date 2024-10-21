@@ -141,12 +141,7 @@ const Menu = () => {
                                     </NavLink>
                                 </li>
                             </>) : (<>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="#">
-                                        <i className="fa-solid fa-user"></i>
-                                        {t('menu.signup')}
-                                    </a>
-                                </li>
+                              
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/member/login">
                                         <i className="fa-solid fa-right-to-bracket"></i>
