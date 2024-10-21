@@ -8,7 +8,8 @@ import PaymentConfirmationPage from "./payment/PaymentConfirmationPage";
 import PaymentSuccessPage from "./payment/PaymentSuccessPage";
 import PrivateRoute from "../router/PrivateRoute";
 import PaymentCancellationPage from "./payment/PaymentCancellationPage";
-import SingUp from './member/SingUp'; 
+import SignupPage from './member/SignupPage'; 
+import SignupForm from './member/SignupForm'; 
 import { useTranslation } from 'react-i18next';
 
 const MainContent = () => {
@@ -49,8 +50,11 @@ const MainContent = () => {
 
                     {/* 회원 로그인 */}
                     <Route path="/member/login" element={<MemberLogin />} />
-                    {/* 회원가입 */}
-                    <Route path="/member/signup" element={<SingUp />} />
+                    {/* 회원가입 이메일 입력 */}
+                    <Route path="/member/signupPage" element={<SignupPage />} />
+                    {/* 회원가입 아이디 비밀번호입력 */}
+                    <Route path="/member/signupForm" element={<SignupForm />} />
+
                     {/* 결제 */}
                     <Route path="/payment/method" element={<PaymentMethodPage />} />
                     <Route path="/payment/confirmation" element={<PaymentConfirmationPage />} />
