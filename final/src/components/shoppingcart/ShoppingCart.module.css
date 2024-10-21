@@ -1,0 +1,130 @@
+/* 페이지 기본 스타일 */
+.cartPage {
+    background-color: #1b2838;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+  }
+  
+  .cart_container {
+    width: 80%;
+    max-width: 1200px;
+    background-color: #2a475e;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  /* 장바구니 제목 */
+  .cart_title {
+    font-size: 2em;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #c7d5e0;
+    padding-bottom: 10px;
+  }
+  
+  /* 메인 컨텐츠 (좌우 배치) */
+  .main_content {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  /* 아이템 리스트 섹션 */
+  .item_list_section {
+    width: 70%;
+  }
+  
+  .item_list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1c1e22;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .item:hover {
+    background-color: #3c444c;
+  }
+  
+  .item_details {
+    display: flex;
+    align-items: center;
+  }
+  
+  .item_image {
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 5px;
+  }
+  
+  .price_section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .price_section span {
+    font-size: 1.5em;
+  }
+  
+  .remove_button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .remove_button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* 결제 요약 섹션 */
+  .summary {
+    width: 25%;
+    background-color: #2a475e;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+  }
+  
+  .summary h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .summary p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+  }
+  
+  .checkout_btn {
+    background-color: #66c0f4;
+    color: #1b2838;
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .checkout_btn:hover {
+    background-color: #41a2d6;
+  }
+  

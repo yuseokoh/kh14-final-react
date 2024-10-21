@@ -27,26 +27,27 @@ const SignUp = () => {
   // 이메일 인증 전송
   const sendEmailVerification = async () => {
     if (!emailValid) return;
-  
+
     try {
-        const response = await fetch('http://localhost:8080/email', {  // 전체 URL 사용
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email }),
+        const response = await fetch('http://localhost:8080/member/email', {  // 전체 URL 사용
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(email),  // body에 이메일 문자열을 바로 전달
         });
-    
-        console.log('Response status:', response.status);
-        console.log('Response body:', await response.text());
-    
+
+        console.log('Response status:', response.status);  // 응답 상태 확인
+        console.log('Response body:', await response.text());  // 응답 본문 확인
+
         if (response.ok) {
-          alert('인증 이메일을 전송했습니다. 확인 후 계속 진행해주세요.');
+            alert('인증 이메일을 전송했습니다. 확인 후 계속 진행해주세요.');
         } else {
-          alert('이메일 전송에 실패했습니다.');
+            alert('이메일 전송에 실패했습니다.');
         }
-      } catch (error) {
+    } catch (error) {
         console.error('Error sending email verification:', error);
-      }
-    };
+    }
+};
+
   
 
   // 다른 유효성 검사 함수 (아이디, 비밀번호 등)
@@ -73,7 +74,7 @@ const SignUp = () => {
   }, [emailValid, memberId, memberPw, memberPwRe]);
 
   return (
-    <div className="container">
+    <div className="container mt-5">
       {/* 이메일 입력 */}
       <div className="form-group">
         <input

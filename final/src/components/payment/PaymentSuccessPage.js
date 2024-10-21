@@ -23,10 +23,6 @@ const PaymentSuccessPage = () => {
 
     useEffect(() => {
         if (login && memberLoading) {
-            const gameData = JSON.parse(window.sessionStorage.getItem("checkedGameList"));
-            if (gameData) {
-                setGameList(gameData);
-            }
             sendApproveRequest();
         }
     }, [login, memberLoading]);
@@ -39,7 +35,7 @@ const PaymentSuccessPage = () => {
     }, []);
 // 결제 승인 요청
 const sendApproveRequest = useCallback(async () => {
-   
+    try {
         // 승인 요청
         const resp = await axios.post(
             "http://localhost:8080/game/approve",
@@ -47,20 +43,22 @@ const sendApproveRequest = useCallback(async () => {
                 partnerOrderId: partnerOrderId,
                 pgToken: new URLSearchParams(window.location.search).get("pg_token"),
                 tid: window.sessionStorage.getItem("tid"),
-                gameList: gameList.map(game => ({
-                    gameNo: game.gameNo,
-                    qty: game.qty,
-                })),
+                gameList: JSON.parse(window.sessionStorage.getItem("checkedGameList"))
             },
            
         );
-
-       
+        setGameList(JSON.parse(window.sessionStorage.getItem("checkedGameList")));
+        setResult(true);
+    }
+    catch(e){
+        setResult(false);//실패
+    }
+    finally{
         // 세션 데이터 제거
         window.sessionStorage.removeItem("tid");
         window.sessionStorage.removeItem("checkedGameList");
     }
-, [partnerOrderId]);
+    }, [login,memberLoading]);
 
 
 

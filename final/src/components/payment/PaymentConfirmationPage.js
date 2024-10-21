@@ -81,7 +81,7 @@ const PaymentConfirmationPage = () => {
             );
     
             window.sessionStorage.setItem("tid", response.data.tid);
-            window.sessionStorage.setItem("game", JSON.stringify(gameList));
+            window.sessionStorage.setItem("checkedGameList", JSON.stringify(gameList));
     
             const savedTid = sessionStorage.getItem("tid");
             if (!savedTid) {
