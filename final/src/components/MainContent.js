@@ -8,12 +8,6 @@ import PaymentConfirmationPage from "./payment/PaymentConfirmationPage";
 import PaymentSuccessPage from "./payment/PaymentSuccessPage";
 import PrivateRoute from "../router/PrivateRoute";
 import PaymentCancellationPage from "./payment/PaymentCancellationPage";
-import WishList from "./wishlist/WishList";
-import ShoppingCart from "./shoppingcart/ShoppingCart";  // ShoppingCart 사용
-
-import FriendRequest from "./friend/FriendRequest";
-import FriendList from "./friend/FriendList";
-
 import SingUp from './member/SingUp'; 
 import { useTranslation } from 'react-i18next';
 import CommunityList from "./community/CommunityList";
@@ -37,24 +31,16 @@ const MainContent = () => {
 
                     {/* 회원 로그인 */}
                     <Route path="/member/login" element={<MemberLogin />} />
-
-                    {/* 친구목록 */}
-                    <Route path="/friend/list" element={<FriendList/>} />
-                    <Route path="/friend/request" element={<FriendRequest/>} />
-
-                    {/* 커뮤니티(게시판) */}
-                    <Route path="/community/CommunityList" element={<CommunityList/>} />
-
                     {/* 회원가입 */}
                     <Route path="/member/signup" element={<SingUp />} />
+                    {/* 결제 */}
+                    <Route path="/payment/method" element={<PaymentMethodPage />} />
+                    <Route path="/payment/confirmation" element={<PaymentConfirmationPage />} />
+                    <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
+                    <Route path="/payment/cancel" element={<PaymentCancellationPage />} />
 
-                    {/* 찜 */}
-                    <Route path="/wishlist" element={<WishList />} />
-
-                    {/* 장바구니 */}
-                    <Route path="/cart" element={<ShoppingCart />} />  {/* ShoppingCart로 통일 */}
-
-                    {/* 나머지 경로(*) 패턴을 지정해서 미 지정된 페이지를 모두 연결 */}
+                    {/* 회원 로그인 */}
+                    <Route path="/member/login" element={<MemberLogin />} />
                 </Routes>
             </div>
         </div>
