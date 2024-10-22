@@ -130,16 +130,68 @@
       }
     }
   },
-  "termsOfUse": {
-    "title": "법적 고지",
-    "copyrightTitle": "저작권",
-    "copyrightContent": "© 2024 Valve Corporation. 모든 권리 보유. Valve, Valve 로고, Half-Life, Half-Life 로고, Lambda 로고, Steam, Steam 로고, Team Fortress, Team Fortress 로고, Opposing Force, Day of Defeat, Day of Defeat 로고, Counter-Strike, Counter-Strike 로고, Source, Source 로고, Counter-Strike: Condition Zero, Portal, Portal 로고, Dota, Dota 2 로고 및 Defense of the Ancients는 Valve Corporation의 상표 및/또는 등록 상표입니다. 기타 모든 상표는 각 소유자의 재산입니다.",
-    "videoPolicyTitle": "Valve 비디오 정책",
-    "videoPolicyLink": "정보를 보려면 여기를 클릭하십시오.",
-    "thirdPartyTitle": "타사 법적 고지",
-    "thirdPartyContent": "Steam 및 Steam을 통해 배포된 기타 Valve 제품은 특정 타사 자료를 사용하며, 이에 대한 라이선스 조건에 대한 알림이 필요합니다. 이러한 알림 목록은 Steam 클라이언트 및/또는 특정 Valve 제품과 함께 배포된 ThirdPartyLegalNotices.doc 파일에서 찾을 수 있습니다. 라이선스 조건에 따라 Valve가 재배포를 위해 소스 코드를 제공해야 하는 경우, 해당 코드는 여기에서 찾을 수 있습니다. 이 웹사이트의 일부 지리 데이터는 geonames.org에서 제공됩니다.",
-    "copyrightInfringementTitle": "저작권 침해 신고",
-    "copyrightInfringementContent": "Valve는 다른 사람의 지적 재산권을 존중하며, 당사 인터넷 사이트와 서비스를 사용하는 모든 사람도 동일하게 하기를 요청합니다. 당사 인터넷 사이트나 서비스 중 하나에서 자신의 작업이 저작권 침해에 해당하는 방식으로 복제되었다고 믿는 사람은 이 페이지를 통해 Valve에 알릴 수 있습니다.",
-    "copyrightLink": "미국 저작권법에 대한 자세한 내용은 미국 저작권청에서 확인할 수 있습니다."
+  
+  
+  
+    "termsOfUse": {
+      "title": "법적 고지",
+      "copyrightTitle": "저작권",
+      "copyrightContent": "© 2024 Valve Corporation. 모든 권리 보유. Valve, Valve 로고, Half-Life, Half-Life 로고, Lambda 로고, Steam, Steam 로고, Team Fortress, Team Fortress 로고, Opposing Force, Day of Defeat, Day of Defeat 로고, Counter-Strike, Counter-Strike 로고, Source, Source 로고, Counter-Strike: Condition Zero, Portal, Portal 로고, Dota, Dota 2 로고, Defense of the Ancients는 Valve Corporation의 상표 및/또는 등록 상표입니다. 다른 모든 상표는 해당 소유자의 자산입니다.",
+      "videoPolicyTitle": "Valve 비디오 정책",
+      "videoPolicyContent": "정보는 여기를 클릭하세요.",
+      "thirdPartyTitle": "제3자 법적 고지",
+      "thirdPartyContent": "Steam 및 기타 Valve 제품은 특정 제3자 자료를 사용하며 해당 라이선스 조건에 대한 알림이 필요합니다. 이러한 알림 목록은 Steam 클라이언트 및/또는 특정 Valve 제품과 함께 배포되는 ThirdPartyLegalNotices.doc 파일에서 확인할 수 있습니다.",
+      "copyrightInfringementTitle": "저작권 침해 주장",
+      "copyrightInfringementContent": "Valve는 타인의 지적 재산권을 존중하며, 당사의 인터넷 사이트와 서비스를 사용하는 모든 사용자에게도 동일한 것을 요구합니다. 인터넷 사이트나 서비스 중 하나에서 저작권 침해 방식으로 작업이 복제되었다고 생각하는 사람은 Valve에 통지할 수 있습니다."
+    }
+  ,
+  
+  
+    "steamAgreement": {
+      "title": "Steam 이용약관",
+      "introductionContent": "이 Steam 가입자 계약(\"계약\")은 Valve Corporation의 Steam 가입자로서 귀하의 권리와 의무를 설명하는 법적 문서입니다. Valve Corporation은 미국 워싱턴 주 법률에 따라 설립된 법인으로, 등록 사무소는 10400 NE 4th St., Bellevue, WA 98004, 미국에 위치하고 있으며, 워싱턴 주 국무장관에 등록된 번호는 60 22 90 773, VAT ID No. EU 8260 00671(\"Valve\")입니다. 자세히 읽어주시기 바랍니다.",
+      "section1Title": "가입자로 등록; 약관의 적용; 계정 생성 및 계약 체결",
+      "section1Content": "Steam은 Valve가 제공하는 온라인 서비스입니다.\n\n귀하는 Steam 사용자 계정을 등록함으로써 Steam 가입자가 됩니다. 이 계약은 귀하가 이 약관에 대한 동의를 표시하는 즉시 효력을 발휘합니다. 귀하는 만 13세 미만인 경우 가입자가 될 수 없습니다. Steam은 만 13세 미만의 아동을 대상으로 하지 않으며, Valve는 만 13세 미만의 아동으로부터 고의로 개인 정보를 수집하지 않습니다. 추가적인 연령 제한이 귀하의 국가에 적용될 수 있습니다.",
+      "section1SubTitleA": "계약 당사자",
+      "section1SubContentA": "Steam과의 모든 상호 작용에서 귀하의 계약 관계는 Valve와 이루어집니다. 본 계약 또는 거래 시 (예: 구독 마켓플레이스에서 다른 가입자로부터 구매하는 경우) 별도로 명시된 경우를 제외하고, 귀하가 Steam에서 하는 모든 구독 (아래 정의됨)에 대한 거래는 Valve와의 거래입니다.",
+      "section1SubTitleB": "하드웨어, 구독; 콘텐츠 및 서비스",
+      "section1SubContentB": "가입자로서 귀하는 특정 하드웨어 (아래 정의됨)를 구매하거나 구독자에게 제공되는 특정 서비스, 소프트웨어 및 콘텐츠에 접근할 수 있습니다. Steam 클라이언트 소프트웨어와 귀하가 Steam을 통해 다운로드하거나 접근하는 모든 다른 소프트웨어, 콘텐츠 및 업데이트, Valve 또는 타사 비디오 게임 및 인게임 콘텐츠, 하드웨어와 관련된 소프트웨어 및 Steam 구독 마켓플레이스에서 교환, 판매 또는 구매하는 모든 가상 아이템은 본 계약에서 \"콘텐츠 및 서비스\"로 지칭됩니다. Steam을 통해 접근하고/또는 사용할 수 있는 모든 콘텐츠 및 서비스에 대한 접근 권한은 본 계약에서 \"구독\"으로 지칭됩니다.",
+      "section1SubTitleC": "귀하의 계정",
+      "section1SubContentC": "Steam의 등록 과정을 완료하면 귀하는 Steam 계정(\"계정\")을 생성하게 됩니다. 귀하의 계정에는 구독, 콘텐츠 및 서비스와 관련된 거래 및 Steam을 통해 물리적 상품을 구매할 때 Valve에 제공하는 청구 정보가 포함될 수 있습니다. Valve의 별도 승인 없이 귀하의 비밀번호나 계정을 타인에게 공개, 공유 또는 사용하게 할 수 없습니다. 귀하는 귀하의 로그인 및 비밀번호의 기밀성, 컴퓨터 시스템의 보안에 대한 책임이 있습니다.",
+      "section1SubTitleD": "계약의 수락",
+      "section1SubContentD": "귀하의 Steam 주문은 Valve에게 주문한 구독, 콘텐츠 및 서비스 및/또는 하드웨어(“제품”)를 해당 가격에 제공하는 계약을 체결하려는 제안입니다.\n\n귀하가 Steam에서 주문을 하면, 귀하의 주문을 수령했음을 확인하고 주문의 세부 사항이 포함된 메시지(“주문 확인”)를 보냅니다. 주문 확인은 귀하의 주문을 수령했음을 확인하는 것이며 계약 체결을 수락한다는 의미는 아닙니다."
+    },
+    "refundPolicy": {
+      "title": "Steam 환불 정책",
+      "overview": "Steam을 통한 거의 모든 구매에 대해 환불을 요청하실 수 있습니다. 예를 들어, 내 PC가 게임의 하드웨어 요구 사항에 맞지 않거나, 잘못 구매했거나, 게임을 한 시간 정도 플레이했는데 마음에 들지 않는 경우가 있습니다.",
+      "refundScopeTitle": "환불 정책 적용 범위",
+      "refundScopeContent": "Steam 상점에서 구매한 게임 및 소프트웨어는 구매 14일 이내, 플레이 시간이 2시간 미만일 경우 환불이 가능합니다.",
+      "dlcRefundTitle": "다운로드 콘텐츠 (DLC) 환불",
+      "dlcRefundContent": "Steam 상점에서 구매한 DLC는 구매일로부터 14일 이내, 본 게임 플레이 시간이 2시간 미만이며 DLC가 사용, 수정 또는 양도되지 않은 경우 환불이 가능합니다.",
+      "inGameRefundTitle": "게임 내 구매 환불",
+      "inGameRefundContent": "Valve에서 개발한 게임 내 아이템 구매는 사용, 수정, 거래되지 않은 경우 구매 후 48시간 이내에 환불이 가능합니다.",
+      "preOrderRefundTitle": "출시 전 구매 환불",
+      "preOrderRefundContent": "출시 전 구매한 게임은 출시 이전에 언제든지 환불이 가능하며, 출시 후에는 14일 및 2시간 환불 규정이 적용됩니다.",
+      "steamWalletRefundTitle": "Steam 지갑 환불",
+      "steamWalletRefundContent": "Steam 지갑 자금은 구매 후 14일 이내에 사용되지 않은 경우 환불이 가능합니다.",
+      "subscriptionRefundTitle": "갱신 가능한 구독 환불",
+      "subscriptionRefundContent": "갱신 가능한 구독의 경우, 구독 콘텐츠가 소비되지 않은 경우 구매 또는 갱신 후 48시간 이내에 환불을 요청할 수 있습니다.",
+      "hardwareRefundTitle": "Steam 하드웨어 환불",
+      "hardwareRefundContent": "Steam에서 구매한 하드웨어에 대한 환불은 하드웨어 환불 정책 및 안내된 절차에 따릅니다.",
+      "bundleRefundTitle": "꾸러미 환불",
+      "bundleRefundContent": "Steam 상점에서 구매한 꾸러미는 모든 항목이 반환되고, 항목이 소비, 수정 또는 양도되지 않은 경우 구매 후 14일 이내에 환불 가능합니다.",
+      "outsidePurchaseTitle": "Steam 외부 구매",
+      "outsidePurchaseContent": "Valve는 Steam 외부에서 진행된 구매(CD 키나 Steam 지갑 코드 등)에 대해 환불할 수 없습니다.",
+      "vacBanTitle": "VAC 차단",
+      "vacBanContent": "게임에서 VAC 차단을 당한 경우 해당 게임에 대한 환불 권한을 잃게 됩니다.",
+      "videoContentRefundTitle": "동영상 콘텐츠 환불",
+      "videoContentRefundContent": "Steam에서 구매한 동영상 콘텐츠에 대해서는 환불이 불가능합니다.",
+      "giftRefundTitle": "선물 환불",
+      "giftRefundContent": "수락되지 않은 선물은 기본 14일/2시간 환불 기간 내에 환불 가능합니다.",
+      "euRightsTitle": "EU 취소권",
+      "euRightsContent": "EU 취소권이 Steam 고객에게 어떻게 적용되는지에 대한 자세한 정보를 보려면 여기를 클릭하세요.",
+      "abuseTitle": "악용",
+      "abuseContent": "환불 기능은 Steam에서의 구매 위험을 줄이기 위해 설계된 것입니다. 악용하는 경우, 환불 제공이 제한될 수 있습니다."
+    }
   }
-}
+  

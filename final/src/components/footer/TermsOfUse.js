@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from './TermsOfUse.module.css';
 import { useTranslation } from 'react-i18next';
+import styles from './TermsOfUse.module.css';
 
 const TermsOfUse = () => {
   const { t } = useTranslation();
@@ -9,29 +9,28 @@ const TermsOfUse = () => {
     <div className={styles.termsOfUseContainer}>
       <h1 className={styles.title}>{t('termsOfUse.title')}</h1>
 
-      <div className={styles.copyrightSection}>
-        <h3>{t('termsOfUse.copyrightTitle')}</h3>
-        <p>{t('termsOfUse.copyrightContent')}</p>
-      </div>
+      <div className={styles.contentBox}>
+        <div className={styles.section}>
+          <h2 className={styles.sectionHeader}>{t('termsOfUse.copyrightTitle')}</h2>
+          <p className={styles.content}>{t('termsOfUse.copyrightContent')}</p>
+        </div>
 
-      <div className={styles.copyrightSection}>
-        <h3>{t('termsOfUse.videoPolicyTitle')}</h3>
-        <p>
-          <a href="#">{t('termsOfUse.videoPolicyLink')}</a>
-        </p>
-      </div>
+        <div className={styles.section}>
+          <h2 className={styles.sectionHeader}>{t('termsOfUse.videoPolicyTitle')}</h2>
+          <p className={styles.content}>
+            {t('termsOfUse.videoPolicyContent')}
+          </p>
+        </div>
 
-      <div className={styles.copyrightSection}>
-        <h3>{t('termsOfUse.thirdPartyTitle')}</h3>
-        <p>{t('termsOfUse.thirdPartyContent')}</p>
-      </div>
+        <div className={styles.section}>
+          <h2 className={styles.sectionHeader}>{t('termsOfUse.thirdPartyTitle')}</h2>
+          <p className={styles.content}>{t('termsOfUse.thirdPartyContent')}</p>
+        </div>
 
-      <div className={styles.copyrightSection}>
-        <h3>{t('termsOfUse.copyrightInfringementTitle')}</h3>
-        <p>{t('termsOfUse.copyrightInfringementContent')}</p>
-        <p>
-          <a href="http://lcweb.loc.gov/copyright/">{t('termsOfUse.copyrightLink')}</a>
-        </p>
+        <div className={styles.section}>
+          <h2 className={styles.sectionHeader}>{t('termsOfUse.copyrightInfringementTitle')}</h2>
+          <p className={styles.content}>{t('termsOfUse.copyrightInfringementContent')}</p>
+        </div>
       </div>
     </div>
   );

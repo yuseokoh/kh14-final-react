@@ -20,19 +20,12 @@ import SignupForm from './member/SignupForm';
 import { useTranslation } from 'react-i18next';
 import CommunityList from "./community/CommunityList";
 
-import ValveInfo from "../components/footer/ValveInfo";
-import CareerInfo from "../components/footer/CareerInfo";
-import Steamworks from "../components/footer/Steamworks";
-import SteamDistribution from "../components/footer/SteamDistribution";
-import Support from "../components/footer/Support";
-import GiftCard from "../components/footer/GiftCard";
-import SteamPage from "../components/footer/SteamPage";
-import SteamSocial from "../components/footer/SteamSocial";
+
 import PrivacyPolicy from "../components/footer/PrivacyPolicy";
 import TermsOfUse from "../components/footer/TermsOfUse";
 import SteamAgreement from "../components/footer/SteamAgreement";
 import RefundPolicy from "../components/footer/RefundPolicy";
-import Cookies from "../components/footer/Cookies";
+
 
 
 
@@ -98,19 +91,13 @@ const MainContent = () => {
                     {/* 장바구니 */}
                     <Route path="/cart" element={<ShoppingCart />} />  {/* ShoppingCart로 통일 */}
 
-                    <Route path="/valve-info" element={<ValveInfo />} />
-                    <Route path="/career-info" element={<CareerInfo />} />
-                    <Route path="/steamworks" element={<Steamworks />} />
-                    <Route path="/steam-distribution" element={<SteamDistribution />} />
-                    <Route path="/support" element={<Support />} />
-                    <Route path="/gift-card" element={<GiftCard />} />
-                    <Route path="/steam" element={<SteamPage />} />
-                    <Route path="/steam-social" element={<SteamSocial />} />
+                    
+                 
                     <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                     <Route path="/terms-of-use" element={<TermsOfUse />} />
                     <Route path="/steam-agreement" element={<SteamAgreement />} />
                     <Route path="/refund-policy" element={<RefundPolicy />} />
-                    <Route path="/cookies" element={<Cookies />} />
+                   
 
                     {/* 나머지 경로(*) 패턴을 지정해서 미 지정된 페이지를 모두 연결 */}
                 </Routes>
