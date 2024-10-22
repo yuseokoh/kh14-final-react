@@ -123,7 +123,7 @@ const HorizontalSlider = ({ games, itemsPerPage = 4 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  // 다음 슬라이드로 이동하는 함수
+  // 다음 슬라이드로 이동하는 함수  
   const nextSlide = () => {
     if (isAnimating) return; //애니메이션중이면 실행중단
     setIsAnimating(true); //애니메이션 상태를 true로 설정
