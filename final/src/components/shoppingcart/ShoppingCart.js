@@ -1,124 +1,71 @@
 import axios from 'axios';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import styles from './ShoppingCart.module.css';
 import { useRecoilValue } from 'recoil';
-import { memberLoadingState } from '../../utils/recoil';
+import { loginState, memberIdState, memberLoadingState } from "../../utils/recoil";
 
 const ShoppingCart = () => {
-  const dragItem = useRef(); // 드래그할 아이템의 인덱스
-  const dragOverItem = useRef(); // 드랍할 위치의 아이템의 인덱스
-  const [cart, setCart] = useState([]);
-  const [member, setMember] = useState("");
+  const [cartList, setCartList] = useState([]);
+  
+  // Recoil 상태 사용
+  const login = useRecoilValue(loginState);
+  const memberId = useRecoilValue(memberIdState);
   const memberLoading = useRecoilValue(memberLoadingState);
 
-  const loadMember = useCallback(async () => {
-      const resp = await axios.get("/member/find");
-      setMember(resp.data); 
+  // 장바구니 리스트 불러오는 함수
+  const loadCartList = useCallback(async () => {
+    // try {
+    //   let token = localStorage.getItem("accessToken") || sessionStorage.getItem("accessToken");
+  
+    //   if (!token) {
+    //     const refreshToken = localStorage.getItem("refreshToken") || sessionStorage.getItem("refreshToken");
+  
+    //     if (refreshToken) {
+    //       const resp = await axios.post('/member/refresh', { refreshToken });
+    //       token = resp.data.accessToken;
+    //       localStorage.setItem('accessToken', token);
+    //     } else {
+    //       console.error("No access token found");
+    //       return;
+    //     }
+    //   }
+  
+      const resp = await axios.get("/cart/")
+      console.log(resp.data);
+      // , {
+      //   headers: { Authorization: `Bearer ${token}` }
+      // });
+      setCartList(resp.data);
+    // } catch (error) {
+    //   console.error("Failed to load cart data", error);
+    // }
   }, []);
 
-  const loadCart = useCallback(async () => {
-    if (!member) return;
-    
-      const resp = await axios.get(`/cart/${member.memberId}`, {
-        headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` }
-      });
-      setCart(resp.data);
-  }, [member]);
-
   useEffect(() => {
-    if (memberLoading) {
-      loadMember();
+    if (login && memberId) {
+      loadCartList();
     }
-  }, [memberLoading, loadMember]);
-
-  useEffect(() => {
-    if (member) {
-      loadCart();
-    }
-  }, [member, loadCart]);
-
-  // 게임 삭제
-  const removeItem = async (index) => {
-    try {
-      const cartId = cart[index].cartId;
-      await axios.delete(`/cart/${cartId}`, {
-        headers: { Authorization: `Bearer ${sessionStorage.getItem("token")}` }
-      });
-      const newCart = cart.filter((_, i) => i !== index);
-      setCart(newCart);
-    } catch (error) {
-      console.error("Failed to remove item:", error);
-    }
-  };
-
-  // 드래그 시작 시 호출되는 함수
-  const dragStart = (e, position) => {
-    dragItem.current = position;
-    e.target.style.opacity = 0.5; // 드래그 시작 시 불투명하게
-  };
-
-  // 드래그 도중 호출되는 함수
-  const dragEnter = (e, position) => {
-    dragOverItem.current = position;
-    e.preventDefault();
-  };
-
-  // 드래그 완료 시 호출되는 함수
-  const drop = (e) => {
-    e.preventDefault();
-    const newCart = [...cart];
-    const draggedItem = newCart[dragItem.current];
-    newCart.splice(dragItem.current, 1);
-    newCart.splice(dragOverItem.current, 0, draggedItem);
-    dragItem.current = null;
-    dragOverItem.current = null;
-    setCart(newCart);
-    e.target.style.opacity = 1;
-  };
-
-
-  const totalPrice = cart.reduce((total, item) => total + item.price, 0);
+  }, [login, memberId, loadCartList]);
 
   return (
-    <div className={styles.cartPage}>
-      <div className={styles.cart_container}>
-        <h1 className={styles.cart_title}>{`${member.memberId}'s Shopping Cart`}</h1>
-        <div className={styles.main_content}>
-          {/* 장바구니 아이템 리스트 */}
-          <div className={styles.item_list_section}>
-            <ul className={styles.item_list}>
-              {cart.map((item, index) => (
-                <li
-                  key={index}
-                  className={styles.item}
-                  draggable
-                  onDragStart={(e) => dragStart(e, index)}
-                  onDragEnter={(e) => dragEnter(e, index)}
-                  onDragEnd={drop}
-                  onDragOver={(e) => e.preventDefault()}
-                  onDragLeave={(e) => (e.target.style.opacity = 1)}
-                >
-                  <div className={styles.item_details}>
-                    <img src={item.imageUrl || 'https://via.placeholder.com/200x100'} alt={item.name} className={styles.item_image} />
-                    <span>{item.name}</span>
-                  </div>
-                  <div className={styles.price_section}>
-                    <span>{`₩ ${item.price.toLocaleString()}`}</span>
-                    <button onClick={() => removeItem(index)} className={styles.remove_button}>
-                      Remove
-                    </button>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-          {/* 결제 요약 섹션 */}
-          <div className={styles.summary}>
-            <h3>총 금액:</h3>
-            <p>{`₩ ${totalPrice.toLocaleString()}`}</p>
-            <button className={styles.checkout_btn}>결제하기</button>
-          </div>
-        </div>
+    <div className="row mt-4">
+      <div className="col">
+        <table className="table text-nowrap">
+          <thead>
+            <tr>
+              <th>게임이름</th>
+              <th>가격</th>
+            </tr>
+          </thead>
+          <tbody>
+            {cartList.map(cart => (
+              <tr key={cart.memberId}>
+                <td>{cart.gameTitle} </td>
+                <td>{cart.gamePrice.toLocaleString()} $</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </div>
   );
