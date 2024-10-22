@@ -421,7 +421,7 @@ const Home = () => {
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>특별 할인</h2>
               {/* HorizontalSlider 컴포넌트를 사용하여 할인 게임 목록을 표시 */}
-              <HorizontalSlider games={games.filter(game => game.gameDiscount > 0)} itemsPerPage={4} />
+              <HorizontalSlider games={games.filter(game => game.gameDiscount >= 0)} itemsPerPage={4} />
             </section>
 
             {/* 신규 및 인기 게임 섹션 */}
