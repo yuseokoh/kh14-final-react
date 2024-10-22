@@ -19,6 +19,8 @@ import SignupPage from './member/SignupPage';
 import SignupForm from './member/SignupForm'; 
 import { useTranslation } from 'react-i18next';
 import CommunityList from "./community/CommunityList";
+import CommunityAdd from "./community/CommunityAdd";
+import CommunityEdit from "./community/CommunityEdit";
 
 
 import PrivacyPolicy from "../components/footer/PrivacyPolicy";
@@ -81,6 +83,8 @@ const MainContent = () => {
 
                     {/* 커뮤니티(게시판) */}
                     <Route path="/community/list" element={<CommunityList/>}/>
+                    <Route path="/community/add" element={<CommunityAdd/>}/>
+                    <Route path="/community/edit" element={<CommunityEdit/>}/>
 
                     {/* 회원가입 */}
                     <Route path="/member/signup" element={<SingUp />} />
