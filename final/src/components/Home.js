@@ -227,7 +227,7 @@ const VerticalCardSlider = ({ games, itemsPerPage = 4 }) => {
     });
     setTimeout(() => setIsAnimating(false), 300);
   };
-
+ 
   return (
     <div className={styles.verticalCardSlider}>
       <div 
