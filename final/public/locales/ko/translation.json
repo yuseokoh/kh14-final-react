@@ -12,7 +12,9 @@
     "paymentTest1": "결제 테스트 1",
     "paymentRequestTest": "결제 요청 테스트",
     "paymentSuccessTest": "결제 성공 테스트",
-    "paymentCancelTest": "결제 취소 테스트"
+    "paymentCancelTest": "결제 취소 테스트",
+    "wishlist": "찜",
+    "cart": "장바구니"
   },
   "loginPage": {
     "title": "로그인",
@@ -57,20 +59,6 @@
     "errorDuringPurchase": "결제 준비 중 오류가 발생했습니다:",
     "errorPurchaseFailed": "결제 준비에 실패했습니다. 다시 시도해주세요."
   },
-  "paymentMethod": {
-    "pageTitle": "결제 방법",
-    "paymentInfoTab": "결제 정보",
-    "reviewPurchaseTab": "리뷰 + 결제",
-    "selectPaymentMethod": "결제 방법을 선택하세요",
-    "selectMethodPlaceholder": "방법을 선택하세요",
-    "kakaoPay": "카카오페이",
-    "billingInfo": "청구 주소가 대한민국에 있지 않다면 상점 지역 설정을 변경하세요",
-    "storeRegionPreference": "상점 지역 설정",
-    "reviewOrderInfo": "주문이 완료되기 전에 검토할 기회가 있습니다.",
-    "paymentMethods": "결제 방법",
-    "kakaoPayAlt": "카카오페이",
-    "continueButton": "계속"
-  },
   "paymentCancellation": {
     "loadingMessage": "로딩 중...",
     "processingMessage": "결제 취소 진행 중입니다...",
@@ -80,21 +68,78 @@
     "goToStore": "상점으로 돌아가기",
     "goToLibrary": "라이브러리로 이동하기"
   },
-  
- "paymentSuccess": {
-  "loading": "결제 진행 중입니다...",
-
-  "thankYouMessage": "구매해 주셔서 감사합니다!",
-  "successMessage": "구매하신 게임이 귀하의 계정에 등록되었습니다. 이제 Steam 라이브러리에서 언제든지 게임을 즐기실 수 있습니다.",
-  "purchaseReceipt": "구매 영수증",
-  "accountName": "계정 이름",
-  "itemName": "상품명",
-  "totalAmount": "총액",
-  "goToStore": "상점으로 돌아가기",
-  "goToLibrary": "라이브러리로 이동하기",
-  "failureMessage": "결제 승인 실패..."
-},
-
-"languageButton": "언어"
-
+  "paymentSuccess": {
+    "loading": "결제 진행 중입니다...",
+    "thankYouMessage": "구매해 주셔서 감사합니다!",
+    "successMessage": "구매하신 게임이 귀하의 계정에 등록되었습니다. 이제 Steam 라이브러리에서 언제든지 게임을 즐기실 수 있습니다.",
+    "purchaseReceipt": "구매 영수증",
+    "accountName": "계정 이름",
+    "itemName": "상품명",
+    "totalAmount": "총액",
+    "goToStore": "상점으로 돌아가기",
+    "goToLibrary": "라이브러리로 이동하기",
+    "failureMessage": "결제 승인 실패..."
+  },
+  "languageButton": "언어",
+  "privacyPolicy": {
+    "title": "개인정보 처리방침",
+    "intro": "Valve는 제품 및 서비스의 온라인 방문자와 고객의 개인정보를 존중하며, 캘리포니아 소비자 개인정보 보호법(\"CCPA\"), 유럽 연합 일반 개인정보 보호법(\"GDPR\"), 영국 GDPR을 포함하여 관련 개인정보 보호 법률을 준수합니다.",
+    "dpf": "Valve와 그 자회사인 TR Technical Inc.는 미국 상무부가 규정한 EU-미국 데이터 프라이버시 프레임워크(EU-U.S. DPF), EU-U.S. DPF에 대한 영국 확장 프로그램 및 스위스-미국 데이터 프라이버시 프레임워크(스위스-U.S. DPF)를 준수합니다.",
+    "section1": {
+      "title": "1. 정의",
+      "content": "개인 데이터(\"개인 데이터\")에 대해 언급할 때마다, 이는 개인을 식별할 수 있는 모든 정보(\"개인 식별 정보\")를 의미합니다."
+    },
+    "section2": {
+      "title": "2. Valve가 데이터를 수집하고 처리하는 이유",
+      "content": "Valve는 다음과 같은 이유로 개인 데이터를 수집하고 처리합니다:",
+      "itemA": "a) 귀하와의 계약을 이행하기 위해 필요한 경우.",
+      "itemB": "b) 법적 의무를 준수해야 하는 경우.",
+      "itemC": "c) Valve 또는 제3자의 정당한 법적 이익을 위해 필요한 경우.",
+      "itemD": "d) 특정 목적을 위해 귀하의 개인 데이터 처리에 동의한 경우.",
+      "summary": "이러한 데이터 수집 및 처리 이유는 우리가 수집하는 개인 데이터와 이를 사용하는 방법을 결정하고 제한합니다."
+    },
+    "section3": {
+      "title": "3. 우리가 수집하는 데이터의 유형과 출처",
+      "subsection1": {
+        "title": "3.1 기본 계정 데이터",
+        "content": "계정을 설정할 때 Valve는 귀하의 이메일 주소와 거주 국가를 수집합니다."
+      },
+      "subsection2": {
+        "title": "3.2 거래 및 결제 데이터",
+        "content": "Steam에서 거래를 하기 위해 Valve에 결제 데이터를 제공해야 할 수 있습니다."
+      },
+      "subsection3": {
+        "title": "3.3 명시적으로 제출한 기타 데이터",
+        "content": "Steam에서 다른 사람과의 커뮤니케이션의 일환으로 귀하가 명시적으로 제공하거나 전송하는 경우",
+        "item1": "당사 콘텐츠 및 서비스에 귀하가 게시한 정보, 댓글 또는 팔로우.",
+        "item2": "채팅을 통해 전송된 정보.",
+        "item3": "정보 요청 또는 지원 요청 시 제공된 정보.",
+        "item4": "대회, 콘테스트 또는 토너먼트에 참여할 때 제공된 정보."
+      },
+      "subsection4": {
+        "title": "3.4 Steam 클라이언트 및 웹사이트 사용",
+        "content": "Steam이 제공하는 웹사이트, 콘텐츠 및 서비스와의 일반적인 상호작용을 통해 다양한 정보를 수집합니다."
+      },
+      "subsection5": {
+        "title": "3.5 게임 및 기타 구독 사용",
+        "content": "서비스를 제공하기 위해 콘텐츠 및 서비스에서의 활동에 대한 정보를 기록하고 저장합니다."
+      },
+      "subsection6": {
+        "title": "3.6 추적 데이터 및 쿠키",
+        "content": "\"쿠키\"(컴퓨터에 저장되는 텍스트 파일)와 유사 기술을 사용하여 사용자가 당사 서비스를 어떻게 사용하는지 분석합니다."
+      }
+    }
+  },
+  "termsOfUse": {
+    "title": "법적 고지",
+    "copyrightTitle": "저작권",
+    "copyrightContent": "© 2024 Valve Corporation. 모든 권리 보유. Valve, Valve 로고, Half-Life, Half-Life 로고, Lambda 로고, Steam, Steam 로고, Team Fortress, Team Fortress 로고, Opposing Force, Day of Defeat, Day of Defeat 로고, Counter-Strike, Counter-Strike 로고, Source, Source 로고, Counter-Strike: Condition Zero, Portal, Portal 로고, Dota, Dota 2 로고 및 Defense of the Ancients는 Valve Corporation의 상표 및/또는 등록 상표입니다. 기타 모든 상표는 각 소유자의 재산입니다.",
+    "videoPolicyTitle": "Valve 비디오 정책",
+    "videoPolicyLink": "정보를 보려면 여기를 클릭하십시오.",
+    "thirdPartyTitle": "타사 법적 고지",
+    "thirdPartyContent": "Steam 및 Steam을 통해 배포된 기타 Valve 제품은 특정 타사 자료를 사용하며, 이에 대한 라이선스 조건에 대한 알림이 필요합니다. 이러한 알림 목록은 Steam 클라이언트 및/또는 특정 Valve 제품과 함께 배포된 ThirdPartyLegalNotices.doc 파일에서 찾을 수 있습니다. 라이선스 조건에 따라 Valve가 재배포를 위해 소스 코드를 제공해야 하는 경우, 해당 코드는 여기에서 찾을 수 있습니다. 이 웹사이트의 일부 지리 데이터는 geonames.org에서 제공됩니다.",
+    "copyrightInfringementTitle": "저작권 침해 신고",
+    "copyrightInfringementContent": "Valve는 다른 사람의 지적 재산권을 존중하며, 당사 인터넷 사이트와 서비스를 사용하는 모든 사람도 동일하게 하기를 요청합니다. 당사 인터넷 사이트나 서비스 중 하나에서 자신의 작업이 저작권 침해에 해당하는 방식으로 복제되었다고 믿는 사람은 이 페이지를 통해 Valve에 알릴 수 있습니다.",
+    "copyrightLink": "미국 저작권법에 대한 자세한 내용은 미국 저작권청에서 확인할 수 있습니다."
+  }
 }

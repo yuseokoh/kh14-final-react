@@ -1,4 +1,6 @@
-import { useEffect, useState, useNavigate } from "react";
+import axios from "axios";
+import { useEffect, useState, useNavigate, useCallback } from "react";
+import { Navigate } from "react-router";
 
 const GameDetail = ()=>{
     //navigatior
@@ -9,14 +11,42 @@ const GameDetail = ()=>{
     
     //state
     const [game, setGame] = useState(null);
-    const [load, setLoadf] = useState(false);
+    const [load, setLoad] = useState(false);
 
     //effect
     useEffect(() => {
         loadGame();
     }, [gameNo]);
 
+    //callback
+    const loadGame = useCallback(async () => {
+        try{
+            const resp = await axios.get(`http://localhost:8080/game/${gameNo}`);
+            setGame(resp.data);
+        }
+        catch {
+            //조회 실패시
+            setGame(null);
+        }
+        setLoad(true);//로딩이 완료되었음을 마킹
+    }, [gameNo]); //gameNo 의존성 배열에 추가
 
+    const deleteGame = useCallback(async () => {
+        await axios.delete(`http://localhost:8080/game/${gameNo}`);
+        navigate("/game/list");
+    }, [gameNo, Navigate]);
+
+    if(load === false) {
+        return (
+            <>
+                <h2>로딩중...</h2>
+            </>
+        );
+    }
+
+    if (game === null){
+        return <navigate to="/notFound"/>
+    }
 
     return (<>
         <h1>`${gameNo}번게임 상세정보`</h1>
@@ -26,7 +56,7 @@ const GameDetail = ()=>{
             </div>
             <div className="row mt-4">
                 <div className="col-sm-3">게임 가격</div>
-                <div className="col-sm-9">{game.game}</div>
+                <div className="col-sm-9">{game.gamePrice}</div>
             </div>
             <div className="row mt-4">
                 <div className="col-sm-3">게임 개발자</div>
@@ -79,10 +109,10 @@ const GameDetail = ()=>{
 
             <div className="row mt-4">
                 <div className="col text-end">
-                    <button className="btn btn-success" onClick={() => navigate("/book/add")}>신규 등록</button>
-                    <button className="btn btn-secondary ms-2" onClick={() => navigate("/book/list")}>목록 보기</button>
-                    <button className="btn btn-warning ms-2" onClick={() => navigate(`/book/edit/${bookId}`)}>수정하기</button>
-                    <button className="btn btn-danger ms-2" onClick={deleteBook}>삭제하기</button>
+                    <button className="btn btn-success" onClick={() => navigate("/game/add")}>신규 등록</button>
+                    <button className="btn btn-secondary ms-2" onClick={() => navigate("/game/list")}>목록 보기</button>
+                    <button className="btn btn-warning ms-2" onClick={() => navigate(`/game/edit/${gameNo}`)}>수정하기</button>
+                    <button className="btn btn-danger ms-2" onClick={deleteGame}>삭제하기</button>
                 </div>
             </div>
     </>);

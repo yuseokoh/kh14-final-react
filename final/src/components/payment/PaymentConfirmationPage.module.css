@@ -1,9 +1,12 @@
 /* PaymentConfirmationPage.module.css */
 .paymentConfirmationPage {
-  background-color: #1b2838;
+  background-color: #1b2838; /* 페이지 전체 배경색과 동일하게 설정 */
   color: white;
   padding: 20px;
+  min-height: 100vh; /* 페이지 높이가 항상 100vh 이상이 되도록 설정 */
+  box-sizing: border-box;
 }
+
 
 .tabContainer {
   display: flex; /* 수평 배치를 위한 flex 설정 */

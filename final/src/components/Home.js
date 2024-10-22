@@ -3,7 +3,26 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { ChevronLeft, ChevronRight, Tag, Users, Gamepad } from 'lucide-react'; 
 import styles from './Home.module.css';
+import bannerImage from '../components/game/gameimg/webm_page_bg_koreana (1).gif';
 
+
+/**
+ * FeaturedBanner 컴포넌트
+ * 
+ * 이 컴포넌트는 메인 페이지 상단에 특별 이벤트나 프로모션을 위한 큰 배너를 표시합니다.
+ * 
+ * @param {string} bannerAlt - 배너 이미지의 대체 텍스트
+*/
+
+const FeaturedBanner = ({ bannerAlt }) => {
+  return(
+    <div className={styles.FeaturedBanner}>
+      {/* 배너 이미지 표시 */}
+      <img src={bannerImage} alt={bannerAlt} className={styles.bannerImage}/>
+    </div>
+  );
+};
+  
 // 추천 게임을 큰 카드로 표시하는 컴포넌트
 const FeaturedGame = ({ game }) => (
   <div className={`${styles.featuredGame} ${styles[`gameBackground${game.gameNo}`]}`}>
@@ -178,7 +197,6 @@ const HorizontalSlider = ({ games, itemsPerPage = 4 }) => {
   );
 };
 
-
 //세로형카드를 가로로 정렬하는 슬라이더 컴포넌ㅁ트
 const VerticalCardSlider = ({ games, itemsPerPage = 4 }) => {
   // 현재 표시 중인 첫 번째 게임의 인덱스를 관리하는 상태
@@ -342,6 +360,7 @@ const Home = () => {
   const [loading, setLoading] = useState(true); // 로딩 상태
   const [error, setError] = useState(null); // 에러 상태
 
+
   // 컴포넌트 마운트 시 게임 데이터를 가져오기 위한 useEffect 훅
   useEffect(() => {
     //비동기로 게임데이터가져오는함수
@@ -369,62 +388,68 @@ const Home = () => {
   if (games.length === 0) return <div>게임이 없습니다.</div>;
 
   return (
-    <div className={styles.layout}>
-      <Sidebar />
-      <div className={styles.mainContent}>
-        {/* 추천 게임 섹션 */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>추천 게임</h2>
-          <div style={{position: 'relative'}}>
-            <FeaturedGame game={games[featuredIndex]} />
-            {/* 이전 게임으로 이동하는 버튼 */}
-            <button 
-              className={`${styles.sliderButton} ${styles.sliderButtonLeft}`}
-              onClick={() => setFeaturedIndex((prev) => (prev === 0 ? games.length - 1 : prev - 1))}
-            >
-              <ChevronLeft color="white" size={24} />
-            </button>
-            {/* 다음 게임으로 이동하는 버튼 */}
-            <button 
-              className={`${styles.sliderButton} ${styles.sliderButtonRight}`}
-              onClick={() => setFeaturedIndex((prev) => (prev === games.length - 1 ? 0 : prev + 1))}
-            >
-              <ChevronRight color="white" size={24} />
-            </button>
+    <div className={styles.homeContainer}>
+      {/* FeaturedBanner를 최상단에 배치 */}
+        <FeaturedBanner bannerAlt="Steam Next Fest Banner"/>
+        <div className={styles.contentWrapper}>
+        <Sidebar />
+        <div className={styles.contentContainer}>
+          <div className={styles.mainContent}>
+            {/* 추천 게임 섹션 */}
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>추천 게임</h2>
+              <div style={{position: 'relative'}}>
+                <FeaturedGame game={games[featuredIndex]} />
+                {/* 이전 게임으로 이동하는 버튼 */}
+                <button 
+                  className={`${styles.sliderButton} ${styles.sliderButtonLeft}`}
+                  onClick={() => setFeaturedIndex((prev) => (prev === 0 ? games.length - 1 : prev - 1))}
+                >
+                  <ChevronLeft color="white" size={24} />
+                </button>
+                {/* 다음 게임으로 이동하는 버튼 */}
+                <button 
+                  className={`${styles.sliderButton} ${styles.sliderButtonRight}`}
+                  onClick={() => setFeaturedIndex((prev) => (prev === games.length - 1 ? 0 : prev + 1))}
+                >
+                  <ChevronRight color="white" size={24} />
+                </button>
+              </div>
+            </section>
+
+            {/* 특별 할인 섹션 */}
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>특별 할인</h2>
+              {/* HorizontalSlider 컴포넌트를 사용하여 할인 게임 목록을 표시 */}
+              <HorizontalSlider games={games.filter(game => game.gameDiscount > 0)} itemsPerPage={4} />
+            </section>
+
+            {/* 신규 및 인기 게임 섹션 */}
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>신작 및 인기 게임</h2>
+              {/* HorizontalSlider 컴포넌트를 사용하여 모든 게임 목록을 표시 */}
+              <HorizontalSlider games={games} itemsPerPage={6} />
+            </section>
+
+            {/* 최고 판매 게임 섹션 */}
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>최고 인기 게임</h2>
+              {/* VerticalSlider 컴포넌트를 사용하여 게임 목록을 세로로 표시 */}
+              <VerticalCardSlider games={games} itemsPerPage={8} />
+            </section>
+
+            {/* 카테고리 섹션 */}
+            <section className={styles.section}>
+              <h2 className={styles.sectionTitle}>카테고리</h2>
+              <div className={styles.grid}>
+                {/* 카테고리 카드들을 표시 */}
+                <CategoryCard icon={<Tag color="white" size={24} />} title="무료 게임" />
+                <CategoryCard icon={<Users color="white" size={24} />} title="멀티플레이어" />
+                <CategoryCard icon={<Gamepad color="white" size={24} />} title="컨트롤러 지원" />
+              </div>
+            </section>
           </div>
-        </section>
-
-        {/* 특별 할인 섹션 */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>특별 할인</h2>
-          {/* HorizontalSlider 컴포넌트를 사용하여 할인 게임 목록을 표시 */}
-          <HorizontalSlider games={games.filter(game => game.gameDiscount > 0)} itemsPerPage={4} />
-        </section>
-
-        {/* 신규 및 인기 게임 섹션 */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>신작 및 인기 게임</h2>
-          {/* HorizontalSlider 컴포넌트를 사용하여 모든 게임 목록을 표시 */}
-          <HorizontalSlider games={games} itemsPerPage={6} />
-        </section>
-
-        {/* 최고 판매 게임 섹션 */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>최고 인기 게임</h2>
-          {/* VerticalSlider 컴포넌트를 사용하여 게임 목록을 세로로 표시 */}
-          <VerticalCardSlider games={games} itemsPerPage={8} />
-        </section>
-
-        {/* 카테고리 섹션 */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>카테고리</h2>
-          <div className={styles.grid}>
-            {/* 카테고리 카드들을 표시 */}
-            <CategoryCard icon={<Tag color="white" size={24} />} title="무료 게임" />
-            <CategoryCard icon={<Users color="white" size={24} />} title="멀티플레이어" />
-            <CategoryCard icon={<Gamepad color="white" size={24} />} title="컨트롤러 지원" />
-          </div>
-        </section>
+        </div>
       </div>
     </div>
   );

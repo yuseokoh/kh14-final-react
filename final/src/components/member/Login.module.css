@@ -117,6 +117,7 @@ body {
 .span1{
   display: block; /* Span을 블록으로 만들어서 줄바꿈 가능 */
   font-size: 1.4rem; /* 크기 키우기 */
+  
 }
 .span2{
   color: #b9bbbe;

@@ -1,0 +1,93 @@
+/* TermsOfUse.module.css */
+
+.termsOfUseContainer {
+    padding: 40px;
+    background-color: #1b2838;
+    color: #c7d5e0;
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    border: 1px solid #000000;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    min-height: 100vh; /* 뷰포트의 전체 높이로 설정 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* 컨테이너 내의 내용을 위아래로 정렬 */
+}
+
+.title {
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.sectionTitle {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.content {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+a {
+    color: #66c0f4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.termsOfUseContainer a {
+    color: #66c0f4;
+    text-decoration: none;
+}
+
+.termsOfUseContainer a:hover {
+    text-decoration: underline;
+}
+
+.termsOfUseContainer ul {
+    list-style: disc;
+    padding-left: 40px;
+    margin-bottom: 15px;
+}
+
+.termsOfUseContainer ul li {
+    margin-bottom: 10px;
+}
+
+.copyrightSection {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #0e1a25;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+.copyrightSection h3 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.copyrightSection p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.copyrightSection a {
+    color: #66c0f4;
+}
+
+.copyrightSection a:hover {
+    text-decoration: underline;
+}
+
