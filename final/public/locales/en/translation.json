@@ -196,5 +196,16 @@
       "abuseTitle": "Abuse",
       "abuseContent": "Refunds are designed to remove the risk from purchasing titles on Steam—not as a way to get free games. If it appears that you are abusing refunds, we may stop offering them to you."
     }
-  }
+    ,
+      "footer": {
+        "allRightsReserved": "All rights reserved. All trademarks are property of their respective owners in the US and other countries.",
+        "vatIncluded": "Includes VAT",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfUse": "Terms of Use",
+        "steamAgreement": "Steam Subscriber Agreement",
+        "refundPolicy": "Refund Policy"
+      }
+    }
+    
+  
   

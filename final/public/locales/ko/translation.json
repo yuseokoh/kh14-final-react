@@ -193,5 +193,16 @@
       "abuseTitle": "악용",
       "abuseContent": "환불 기능은 Steam에서의 구매 위험을 줄이기 위해 설계된 것입니다. 악용하는 경우, 환불 제공이 제한될 수 있습니다."
     }
-  }
+    ,
+      "footer": {
+        "allRightsReserved": "모든 권리 보유. 모든 상표는 미국 및 기타 국가에서 해당하는 소유자의 재산입니다.",
+        "vatIncluded": "부가가치세 포함",
+        "privacyPolicy": "개인정보 처리방침",
+        "termsOfUse": "사용권",
+        "steamAgreement": "Steam 이용 약관",
+        "refundPolicy": "환불"
+      }
+    }
+    
+  
   
