@@ -52,7 +52,7 @@ const MainContent = () => {
                     {/* 변경 : 중첩 라우팅 */}
 
                     {/* 회원 로그인 */}
-                    <Route path="/member/login" element={<MemberLogin />} />
+                    <Route path="/member/MemberLogin" element={<MemberLogin />} />
                     {/* 회원가입 이메일 입력 */}
                     <Route path="/member/signupPage" element={<SignupPage />} />
                     {/* 회원가입 아이디 비밀번호입력 */}
@@ -63,9 +63,6 @@ const MainContent = () => {
                     <Route path="/payment/confirmation" element={<PaymentConfirmationPage/>}/>
                     <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
                     <Route path="/payment/cancel" element={<PaymentCancellationPage />} />
-
-                    {/* 회원 로그인 */}
-                    <Route path="/member/login" element={<MemberLogin />} />
 
                     {/* 친구목록 */}
                     <Route path="/friend/list" element={<FriendList/>} />
