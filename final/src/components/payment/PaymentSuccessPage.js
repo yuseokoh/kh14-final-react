@@ -11,7 +11,7 @@ import LoginImage from './Login.jpg';
 
 const PaymentSuccessPage = () => {
     const { t } = useTranslation();
-    const { partnerOrderId } = useParams();
+    const { partnerOrderId,paymentNo } = useParams();
     const navigate = useNavigate();
     const login = useRecoilValue(loginState);
     const memberLoading = useRecoilValue(memberLoadingState);
@@ -35,46 +35,50 @@ const PaymentSuccessPage = () => {
     }, []);
 
     // 결제 승인 요청
-    const sendApproveRequest = useCallback(async () => {
-        try {
-            // 세션 스토리지에서 데이터 가져오기
-            const tid = window.sessionStorage.getItem("tid");
-            let checkedGameList = JSON.parse(window.sessionStorage.getItem("checkedGameList"));
-            const token = sessionStorage.getItem('refreshToken');
-    
-            if (!tid || !checkedGameList || !token) {
-                throw new Error(t('payment.errorNoTokenOrData'));
-            }
-    
-            // 각 게임에 대해 `qty` 값이 없으면 기본값 설정
-            checkedGameList = checkedGameList.map(game => ({
-                ...game,
-                qty: game.qty || 1,
-            }));
-    
-            // 승인 요청
-            const resp = await axios.post(
-                "http://localhost:8080/game/approve",
-                {
-                    partnerOrderId: partnerOrderId,
-                    pgToken: new URLSearchParams(window.location.search).get("pg_token"),
-                    tid: tid,
-                    gameList: checkedGameList
-                },
-            );
-    
-            setGameList(checkedGameList);
-            setResult(true);
-        } catch (e) {
-            console.error(e);
-            setResult(false); // 실패
-        } finally {
-            // 세션 데이터 제거
-            window.sessionStorage.removeItem("tid");
-            window.sessionStorage.removeItem("checkedGameList");
+   // 결제 승인 요청
+   const sendApproveRequest = useCallback(async () => {
+    try {
+        // 세션 스토리지에서 데이터 가져오기
+        const tid = window.sessionStorage.getItem("tid");
+        let checkedGameList = JSON.parse(window.sessionStorage.getItem("checkedGameList"));
+        const token = sessionStorage.getItem('refreshToken');
+  
+        if (!tid || !checkedGameList || !token) {
+            throw new Error(t('payment.errorNoTokenOrData'));
         }
-    }, [partnerOrderId, t]);
-    
+  
+        // 각 게임에 대해 `qty` 값이 없으면 기본값 설정
+        checkedGameList = checkedGameList.map(game => ({
+            ...game,
+            qty: game.qty || 1,
+        }));
+  
+        // 승인 요청
+        const resp = await axios.post(
+            "http://localhost:8080/game/approve",
+            {
+                partnerOrderId: partnerOrderId,
+                pgToken: new URLSearchParams(window.location.search).get("pg_token"),
+                tid: tid,
+                gameList: checkedGameList
+            },
+           
+        );
+
+        // 결제 승인에 성공했을 때 paymentNo 저장
+        if (resp.status === 200) {
+            window.sessionStorage.setItem('paymentNo', partnerOrderId); // 결제 번호 저장
+        }
+
+        setGameList(checkedGameList);
+        setResult(true);
+    } catch (e) {
+        console.error(e);
+        setResult(false); // 실패
+    }
+}, [partnerOrderId, t]);
+
+  
 
     const totalAmount = useMemo(() => {
         return gameList.reduce((total, game) => {
@@ -85,9 +89,19 @@ const PaymentSuccessPage = () => {
         }, 0);
     }, [gameList]);
     
-    
-    
-    
+   
+      
+    const handleGoToCancelPage = () => {
+        const paymentNo = sessionStorage.getItem("paymentNo");
+      
+        if (!paymentNo) {
+          alert('결제 번호가 유효하지 않습니다. 결제 정보를 확인해주세요.');
+          return;
+        }
+      
+        navigate(`/cancel-payment/detail/${paymentNo}`);
+      };
+      
 
     const handleGoToStore = () => navigate("/store");
     const handleGoToLibrary = () => navigate("/library");
@@ -134,6 +148,9 @@ const PaymentSuccessPage = () => {
                     <button onClick={handleGoToLibrary} className="btn btn-secondary">
                         {t('paymentSuccess.goToLibrary')}
                     </button>
+                    <button onClick={handleGoToCancelPage} className="btn btn-danger">
+        결제 취소하기
+      </button>
                 </div>
             </div>
         );
