@@ -19,7 +19,7 @@ const PaymentSuccessPage = () => {
 
     const [result, setResult] = useState(null);
     const [gameList, setGameList] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(true); 
 
     useEffect(() => {
         if (login && memberLoading) {
