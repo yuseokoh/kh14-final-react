@@ -33,36 +33,43 @@ const PaymentSuccessPage = () => {
         }, 3000);
         return () => clearTimeout(timer);
     }, []);
-// 결제 승인 요청
-const sendApproveRequest = useCallback(async () => {
-    try {
-        // 승인 요청
-        const resp = await axios.post(
-            "http://localhost:8080/game/approve",
-            {
-                partnerOrderId: partnerOrderId,
-                pgToken: new URLSearchParams(window.location.search).get("pg_token"),
-                tid: window.sessionStorage.getItem("tid"),
-                gameList: JSON.parse(window.sessionStorage.getItem("checkedGameList"))
-            },
-           
-        );
-        setGameList(JSON.parse(window.sessionStorage.getItem("checkedGameList")));
-        setResult(true);
-    }
-    catch(e){
-        setResult(false);//실패
-    }
-    finally{
-        // 세션 데이터 제거
-        window.sessionStorage.removeItem("tid");
-        window.sessionStorage.removeItem("checkedGameList");
-    }
-    }, [login,memberLoading]);
 
+    // 결제 승인 요청
+    const sendApproveRequest = useCallback(async () => {
+        try {
+            // 세션 스토리지에서 데이터 가져오기
+            const tid = window.sessionStorage.getItem("tid");
+            const checkedGameList = JSON.parse(window.sessionStorage.getItem("checkedGameList"));
+            const token = sessionStorage.getItem('refreshToken');
+            if (!tid || !checkedGameList || !token) {
+                throw new Error(t('payment.errorNoTokenOrData'));
+            }
 
+            // 승인 요청
+            const resp = await axios.post(
+                "http://localhost:8080/game/approve",
+                {
+                    partnerOrderId: partnerOrderId,
+                    pgToken: new URLSearchParams(window.location.search).get("pg_token"),
+                    tid: window.sessionStorage.getItem("tid"),
+                    gameList: JSON.parse(window.sessionStorage.getItem("checkedGameList"))
 
+                   
+                },
+               
+            );
 
+            setGameList(checkedGameList);
+            setResult(true);
+        } catch (e) {
+            console.error(e);
+            setResult(false); // 실패
+        } finally {
+            // 세션 데이터 제거
+            window.sessionStorage.removeItem("tid");
+            window.sessionStorage.removeItem("checkedGameList");
+        }
+    }, [partnerOrderId, t]);
 
     const totalAmount = useMemo(() => {
         return gameList.reduce((total, game) => total + (game.gamePrice * game.qty), 0);

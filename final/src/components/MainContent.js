@@ -4,10 +4,10 @@ import { useRecoilValue } from "recoil";
 import { loginState } from "../utils/recoil";
 import MemberLogin from "./member/MemberLogin";
 
-import PaymentConfirmationPage from "./payment/PaymentConfirmationPage";
+
 import PaymentSuccessPage from "./payment/PaymentSuccessPage";
 import PrivateRoute from "../router/PrivateRoute";
-import PaymentCancellationPage from "./payment/PaymentCancellationPage";
+
 import WishList from "./wishlist/WishList";
 import ShoppingCart from "./shoppingcart/ShoppingCart";  // ShoppingCart 사용
 
@@ -47,12 +47,7 @@ const MainContent = () => {
 
                     {/* 경로변수를 사용할 경우 콜론과 이름을 합쳐 변수명으로 지정 */}
 
-                        {/* 결제 */}
-                       
-                        <Route path="/payment/confirmation" element={<PaymentConfirmationPage/>}/>
-                        <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
-                        <Route path="/payment/cancel" element={<PaymentCancellationPage />} />
-
+                     
 
                     {/* 기존 : 일반 라우팅 */}
                     {/* <Route path="/search/autocomplete" element={<AutoComplete/>}/> */}
@@ -70,9 +65,9 @@ const MainContent = () => {
 
                     {/* 결제 */}
                   
-                    <Route path="/payment/confirmation" element={<PaymentConfirmationPage/>}/>
-                    <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
-                    <Route path="/payment/cancel" element={<PaymentCancellationPage />} />
+                
+                    <Route path="/cart/success/:partnerOrderId" element={<PaymentSuccessPage />} />
+                  
 
                     {/* 친구목록 */}
                     <Route path="/friend/list" element={<FriendList/>} />
