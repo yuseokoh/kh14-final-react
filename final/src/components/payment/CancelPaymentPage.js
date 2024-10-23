@@ -13,13 +13,11 @@ const CancelPaymentPage = () => {
 
   useEffect(() => {
     // 세션 스토리지에서 paymentNo 가져오기
-    let paymentNo = window.sessionStorage.getItem('paymentNo');
+    const paymentNo = window.sessionStorage.getItem('paymentNo');
 
-    // paymentNo가 문자열 UUID라면 이 경우 올바른 숫자값이 아니라는 점을 확인해야 함
-    if (paymentNo && !isNaN(Number(paymentNo))) {
-      paymentNo = Number(paymentNo);
-    } else {
-      setError('결제 번호가 올바르지 않습니다.');
+    // paymentNo가 존재하지 않을 경우 오류 처리
+    if (!paymentNo) {
+      setError('결제 번호가 없습니다.');
       setLoading(false);
       return;
     }
@@ -44,11 +42,7 @@ const CancelPaymentPage = () => {
       // 결제 정보 조회를 위한 백엔드 엔드포인트 호출
       const response = await axios.get(
         `http://localhost:8080/kakaopay/detail/${paymentNo}`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
+       
       );
 
       if (response.status === 200) {
@@ -68,10 +62,7 @@ const CancelPaymentPage = () => {
 
   const handleCancelAllPayment = useCallback(async () => {
     try {
-      const paymentNo = Number(paramPaymentNo);
-      if (isNaN(paymentNo)) {
-        throw new Error('결제 번호가 올바르지 않습니다.');
-      }
+      const paymentNo = paramPaymentNo;
 
       console.log('Attempting to cancel payment with paymentNo:', paymentNo); // 디버깅용 로그
 
@@ -96,7 +87,7 @@ const CancelPaymentPage = () => {
     return <h1>결제 정보를 확인 중입니다...</h1>;
   }
 
-  if (error) {
+  if (error && !paymentInfo) {
     return <h1>{error}</h1>;
   }
 
