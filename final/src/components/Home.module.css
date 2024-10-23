@@ -5,17 +5,19 @@
   margin: 0 auto; /* 가운데 정렬 */
   padding: 16px 16px 16px 32px; /* 상, 우, 하, 좌 패딩 */
   background-color: #1b2838; /* 어두운 배경색 */
-  color: #c7d5e0; /* 기본 텍스트 색상 */
+  color: #ffffff; /* 기본 텍스트 색상 (변경: 가독성을 위해 순수한 흰색으로) */
   min-height: 100vh; /* 전체 높이를 차지하도록 설정 */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* 추가: 텍스트 가독성 향상을 위한 그림자 효과 */
 }
 
 /* 사이드바 스타일 */
 .sidebar {
   width: 300px; /* 사이드바 너비 */
-  margin-right: 20px; /* 오른쪽 여백 */
+  margin-right: 30px; /* 오른쪽 여백 */
   flex-shrink: 0; /* 화면이 작아져도 사이드바 크기 유지 */
   padding-left: 100px; /* 왼쪽 패딩 추가 (선택사항) */
 }
+
 /* 메인 컨텐츠 영역 스타일 */
 .mainContent {
   flex-grow: 1; /* 남은 공간을 모두 차지 */
@@ -43,13 +45,14 @@
 .sidebarSectionTitle {
   font-size: 16px;
   margin-bottom: 10px;
-  color: #c7d5e0; /* 밝은 회색 */
+  color: #ffffff; /* 변경: 가독성을 위해 더 밝은 색상으로 */
+  font-weight: 600; /* 추가: 가독성 향상을 위한 폰트 두께 증가 */
 }
 
 /* 사이드바 섹션 내용 스타일 */
 .sidebarSectionContent {
   font-size: 14px;
-  color: #66c0f4; /* Steam의 특징적인 파란색 */
+  color: #ffffff; /* 변경: 가독성을 위해 더 밝은 색상으로 */
   margin-bottom: 5px;
   cursor: pointer; /* 호버 효과를 위한 커서 변경 */
 }
@@ -69,8 +72,9 @@
 /* 섹션 제목 스타일 */
 .sectionTitle {
   font-size: 24px;
-  font-weight: normal;
+  font-weight: 600; /* 변경: 가독성 향상을 위한 폰트 두께 증가 */
   margin-bottom: 16px;
+  color: #ffffff; /* 변경: 가독성을 위해 더 밝은 색상으로 */
 }
 
 /* 추천 게임 카드 스타일 */
@@ -99,6 +103,7 @@
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 8px;
+  color: #ffffff; /* 변경: 가독성을 위해 더 밝은 색상으로 */
 }
 
 /* 게임 태그 스타일 */
@@ -359,51 +364,155 @@
   }
 }
 
-  /* 링크 스타일 설정 */
-  .a {
-    /* 링크의 기본 색상 설정 */
-    color: #66c0f4;
-    /* 링크의 밑줄 제거 */
-    text-decoration: none;
-  }
-  
-  /* 링크 호버 효과 */
-  .a:hover {
-    /* 호버 시 밑줄 표시 */
-    text-decoration: underline;
-  }
+/* 링크 스타일 설정 */
+.a {
+  /* 링크의 기본 색상 설정 */
+  color: #66c0f4;
+  /* 링크의 밑줄 제거 */
+  text-decoration: none;
+}
 
-  .appContainer {
-    background-color: #1b2838;
-    color: white;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* 기본 버튼 스타일 */
-  .button {
-    /* 버튼 배경색 설정 */
-    background-color: #4c6b22;
-    /* 버튼 텍스트 색상 */
-    color: white;
-    /* 테두리 제거 */
-    border: none;
-    /* 패딩 추가 */
-    padding: 10px 15px;
-    /* 커서를 포인터로 변경 */
-    cursor: pointer;
-    /* 폰트 크기 설정 */
-    font-size: 14px;
-    /* 모서리 둥글게 */
-    border-radius: 2px;
-  }
+/* 링크 호버 효과 */
+.a:hover {
+  /* 호버 시 밑줄 표시 */
+  text-decoration: underline;
+  /* 변경: 호버 시 색상을 흰색으로 변경하여 가독성 향상 */
+  color: #ffffff;
+}
 
-  /* 버튼 호버 효과 */
-    .button:hover {
-    /* 호버 시 배경색 밝게 */
-    background-color: #5c7e10;
-  }
+.appContainer {
+  background-color: #1b2838;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 기본 버튼 스타일 */
+.button {
+  /* 버튼 배경색 설정 */
+  background-color: #4c6b22;
+  /* 버튼 텍스트 색상 */
+  color: white;
+  /* 테두리 제거 */
+  border: none;
+  /* 패딩 추가 */
+  padding: 10px 15px;
+  /* 커서를 포인터로 변경 */
+  cursor: pointer;
+  /* 폰트 크기 설정 */
+  font-size: 14px;
+  /* 모서리 둥글게 */
+  border-radius: 2px;
+}
+
+/* 버튼 호버 효과 */
+  .button:hover {
+  /* 호버 시 배경색 밝게 */
+  background-color: #5c7e10;
+}
+
+.horizontalSlider, .verticalSlider {
+  position: relative;
+  overflow: hidden;
+}
+
+.horizontalSliderContainer, .verticalSliderContainer {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.horizontalSliderContainer {
+  flex-direction: row;
+}
+
+.verticalSliderContainer {
+  flex-direction: column;
+}
+
+.sliderButton {
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+}
+
+.sliderButtonLeft, .sliderButtonRight {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sliderButtonLeft {
+  left: 10px;
+}
+
+.sliderButtonRight {
+  right: 10px;
+}
+
+.sliderButtonTop, .sliderButtonBottom {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sliderButtonTop {
+  top: 10px; 
+}
+
+.sliderButtonBottom {
+  bottom: 10px;
+}
+
+.verticalCardSlider {
+  position: relative;
+  overflow: hidden;
+}
+
+.verticalCardSliderContainer {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.verticalCardSliderItem {
+  flex-shrink: 0;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #1b2838;
+  color: #c7d5e0;
+}
+
+.contentWrapper {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 300px;
+  margin-right: 20px;
+}
+
+.mainContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.featuredBanner {
+  width: 100%;
+  overflow: hidden;
+  background-color: #1b2838;
+}
+
+.bannerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}

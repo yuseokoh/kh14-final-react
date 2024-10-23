@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useCallback } from 'react';
-import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-import { QRCodeCanvas } from 'qrcode.react';
-import { useRecoilState } from 'recoil';
+import Jumbotron from "../Jumbotron";
+import { CgLogIn } from "react-icons/cg";
+import { useState, useCallback } from 'react';
+import axios from "axios";
+import { Navigate, useNavigate } from "react-router";
+import { useRecoilState } from "recoil";
 import { memberIdState, memberLevelState } from "../../utils/recoil";
 import styles from './Login.module.css';
 import { useTranslation } from 'react-i18next';

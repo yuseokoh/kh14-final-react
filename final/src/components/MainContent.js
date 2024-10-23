@@ -3,7 +3,7 @@ import Home from './Home';
 import { useRecoilValue } from "recoil";
 import { loginState } from "../utils/recoil";
 import MemberLogin from "./member/MemberLogin";
-import PaymentMethodPage from "./payment/PaymentMethodPage";
+
 import PaymentConfirmationPage from "./payment/PaymentConfirmationPage";
 import PaymentSuccessPage from "./payment/PaymentSuccessPage";
 import PrivateRoute from "../router/PrivateRoute";
@@ -19,6 +19,16 @@ import SignupPage from './member/SignupPage';
 import SignupForm from './member/SignupForm'; 
 import { useTranslation } from 'react-i18next';
 import CommunityList from "./community/CommunityList";
+import CommunityAdd from "./community/CommunityAdd";
+import CommunityEdit from "./community/CommunityEdit";
+
+
+import PrivacyPolicy from "../components/footer/PrivacyPolicy";
+import TermsOfUse from "../components/footer/TermsOfUse";
+import SteamAgreement from "../components/footer/SteamAgreement";
+import RefundPolicy from "../components/footer/RefundPolicy";
+
+
 
 
 const MainContent = () => {
@@ -38,7 +48,7 @@ const MainContent = () => {
                     {/* 경로변수를 사용할 경우 콜론과 이름을 합쳐 변수명으로 지정 */}
 
                         {/* 결제 */}
-                        <Route path="/payment/method" element={<PaymentMethodPage/>}/>
+                       
                         <Route path="/payment/confirmation" element={<PaymentConfirmationPage/>}/>
                         <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
                         <Route path="/payment/cancel" element={<PaymentCancellationPage />} />
@@ -59,7 +69,7 @@ const MainContent = () => {
                     <Route path="/member/signupForm" element={<SignupForm />} />
 
                     {/* 결제 */}
-                    <Route path="/payment/method" element={<PaymentMethodPage/>}/>
+                  
                     <Route path="/payment/confirmation" element={<PaymentConfirmationPage/>}/>
                     <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
                     <Route path="/payment/cancel" element={<PaymentCancellationPage />} />
@@ -69,7 +79,9 @@ const MainContent = () => {
                     <Route path="/friend/request" element={<FriendRequest/>} />
 
                     {/* 커뮤니티(게시판) */}
-                    <Route path="/community/CommunityList" element={<CommunityList/>} />
+                    <Route path="/community/list" element={<CommunityList/>}/>
+                    <Route path="/community/add" element={<CommunityAdd/>}/>
+                    <Route path="/community/edit" element={<CommunityEdit/>}/>
 
                     {/* 회원가입 */}
                     <Route path="/member/signup" element={<SingUp />} />
@@ -79,6 +91,14 @@ const MainContent = () => {
 
                     {/* 장바구니 */}
                     <Route path="/cart" element={<ShoppingCart />} />  {/* ShoppingCart로 통일 */}
+
+                    
+                 
+                    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                    <Route path="/terms-of-use" element={<TermsOfUse />} />
+                    <Route path="/steam-agreement" element={<SteamAgreement />} />
+                    <Route path="/refund-policy" element={<RefundPolicy />} />
+                   
 
                     {/* 나머지 경로(*) 패턴을 지정해서 미 지정된 페이지를 모두 연결 */}
                 </Routes>

@@ -12,7 +12,9 @@
     "paymentTest1": "Payment Test 1",
     "paymentRequestTest": "Payment Request Test",
     "paymentSuccessTest": "Payment Success Test",
-    "paymentCancelTest": "Payment Cancel Test"
+    "paymentCancelTest": "Payment Cancel Test",
+    "wishlist": "Wishlist",
+    "cart": "Cart"
   },
   "loginPage": {
     "title": "Login",
@@ -57,20 +59,6 @@
     "errorDuringPurchase": "An error occurred during the payment preparation:",
     "errorPurchaseFailed": "Payment preparation failed. Please try again."
   },
-  "paymentMethod": {
-    "pageTitle": "Payment Method",
-    "paymentInfoTab": "Payment Info",
-    "reviewPurchaseTab": "Review + Purchase",
-    "selectPaymentMethod": "Please select a payment method",
-    "selectMethodPlaceholder": "Select a method",
-    "kakaoPay": "KakaoPay",
-    "billingInfo": "If your billing address is not in Korea, Republic of, please set your store region preference",
-    "storeRegionPreference": "set your store region preference",
-    "reviewOrderInfo": "You'll have a chance to review your order before it's placed.",
-    "paymentMethods": "Payment Methods",
-    "kakaoPayAlt": "KakaoPay",
-    "continueButton": "Continue"
-  },
   "paymentCancellation": {
     "loadingMessage": "Loading...",
     "processingMessage": "Processing cancellation...",
@@ -80,20 +68,144 @@
     "goToStore": "Return to Store",
     "goToLibrary": "Go to Library"
   },
- "paymentSuccess": {
-  "loading": "Processing payment...",
+  "paymentSuccess": {
+    "loading": "Processing payment...",
+    "thankYouMessage": "Thank you for your purchase!",
+    "successMessage": "The purchased game has been registered to your account. You can now enjoy it anytime from your Steam library.",
+    "purchaseReceipt": "Purchase Receipt",
+    "accountName": "Account Name",
+    "itemName": "Item Name",
+    "totalAmount": "Total Amount",
+    "goToStore": "Return to Store",
+    "goToLibrary": "Go to Library",
+    "failureMessage": "Payment approval failed..."
+  },
+  "languageButton": "Language",
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "intro": "Valve respects the privacy of its online visitors and customers of its products and services and complies with applicable laws for the protection of your privacy, including, without limitation, the California Consumer Privacy Act (\"CCPA\"), the European Union General Data Protection Regulation (\"GDPR\") and the UK GDPR.",
+    "dpf": "Valve and its subsidiary TR Technical Inc. comply with the EU-U.S. Data Privacy Framework (EU-U.S. DPF), the UK Extension to the EU-U.S. DPF, and the Swiss-U.S. Data Privacy Framework (Swiss-U.S. DPF) as set forth by the U.S. Department of Commerce.",
+    "section1": {
+      "title": "1. Definitions",
+      "content": "Wherever we talk about personal data (\"Personal Data\"), we mean any information that can either itself identify you as an individual (\"Personally Identifying Information\")."
+    },
+    "section2": {
+      "title": "2. Why Valve Collects and Processes Data",
+      "content": "Valve collects and processes Personal Data for the following reasons:",
+      "itemA": "a) Where it is necessary for the performance of an agreement with you.",
+      "itemB": "b) Where it is necessary for compliance with legal obligations.",
+      "itemC": "c) Where it is necessary for the purposes of the legitimate and legal interests of Valve or third parties.",
+      "itemD": "d) Where you have given consent to the processing of your Personal Data for one or more specific purposes.",
+      "summary": "These reasons for collecting and processing data determine and limit what Personal Data we collect and how we use it."
+    },
+    "section3": {
+      "title": "3. The Types and Sources of Data We Collect",
+      "subsection1": {
+        "title": "3.1 Basic Account Data",
+        "content": "When setting up an Account, Valve will collect your email address and country of residence, among other information."
+      },
+      "subsection2": {
+        "title": "3.2 Transaction and Payment Data",
+        "content": "In order to make a transaction on Steam, you may need to provide payment data to Valve to enable the transaction."
+      },
+      "subsection3": {
+        "title": "3.3 Other Data You Explicitly Submit",
+        "content": "We will collect and process Personal Data whenever you explicitly provide it to us or send it.",
+        "item1": "Information that you post, comment or follow in any of our Content and Services.",
+        "item2": "Information sent through chat.",
+        "item3": "Information you provide when you request information or support from us.",
+        "item4": "Information you provide to us when participating in competitions, contests or tournaments."
+      },
+      "subsection4": {
+        "title": "3.4 Your Use of the Steam Client and Websites",
+        "content": "We collect a variety of information through your general interaction with the websites, Content and Services offered by Steam."
+      },
+      "subsection5": {
+        "title": "3.5 Your Use of Games and Other Subscriptions",
+        "content": "In order to provide you with services, we record and store information about your activity in our Content and Services."
+      },
+      "subsection6": {
+        "title": "3.6 Tracking Data and Cookies",
+        "content": "We use \"Cookies\", which are text files placed on your computer, and similar technologies to help us analyze how users use our services."
+      }
+    }
+  },
   
-  "thankYouMessage": "Thank you for your purchase!",
-  "successMessage": "The purchased game has been registered to your account. You can now enjoy it anytime from your Steam library.",
-  "purchaseReceipt": "Purchase Receipt",
-  "accountName": "Account Name",
-  "itemName": "Item Name",
-  "totalAmount": "Total Amount",
-  "goToStore": "Return to Store",
-  "goToLibrary": "Go to Library",
-  "failureMessage": "Payment approval failed..."
-
-},
-"languageButton": "Language"
-}
-
+  
+    
+  
+  
+    "termsOfUse": {
+      "title": "Legal Notice",
+      "copyrightTitle": "COPYRIGHT",
+      "copyrightContent": "© 2024 Valve Corporation. All rights reserved. Valve, the Valve logo, Half-Life, the Half-Life logo, the Lambda logo, Steam, the Steam logo, Team Fortress, the Team Fortress logo, Opposing Force, Day of Defeat, the Day of Defeat logo, Counter-Strike, the Counter-Strike logo, Source, the Source logo, Counter-Strike: Condition Zero, Portal, the Portal logo, Dota, the Dota 2 logo, and Defense of the Ancients are trademarks and/or registered trademarks of Valve Corporation. All other trademarks are property of their respective owners.",
+      "videoPolicyTitle": "VALVE VIDEO POLICY",
+      "videoPolicyContent": "Click here for information.",
+      "thirdPartyTitle": "THIRD PARTY LEGAL NOTICES",
+      "thirdPartyContent": "Steam and other Valve products distributed via Steam use certain third-party materials that require notifications about their license terms. You can find a list of these notifications in the file called ThirdPartyLegalNotices.doc distributed with the Steam client and/or a particular Valve product.",
+      "copyrightInfringementTitle": "CLAIMS OF COPYRIGHT INFRINGEMENT",
+      "copyrightInfringementContent": "Valve respects the intellectual property rights of others, and we ask that everyone using our internet sites and services do the same. Anyone who believes that their work has been reproduced in one of our internet sites or services in a way that constitutes copyright infringement may notify Valve."
+    }
+  ,
+  
+  
+  
+    "steamAgreement": {
+      "title": "Steam Terms of Use",
+      "introductionContent": "This Steam Subscriber Agreement (\"Agreement\") is a legal document that explains your rights and obligations as a subscriber of Steam from Valve Corporation, a corporation under the laws of the State of Washington, with its registered office at 10400 NE 4th St., Bellevue, WA 98004, United States, registered with the Washington Secretary of State under number 60 22 90 773, VAT ID No. EU 8260 00671 (\"Valve\"). Please read it carefully.",
+      "section1Title": "REGISTRATION AS A SUBSCRIBER; APPLICATION OF TERMS TO YOU; YOUR ACCOUNT, ACCEPTANCE OF AGREEMENTS",
+      "section1Content": "Steam is an online service offered by Valve.\n\nYou become a subscriber of Steam (\"Subscriber\") by completing the registration of a Steam user account. This Agreement takes effect as soon as you indicate your acceptance of these terms. You may not become a Subscriber if you are under the age of 13. Steam is not intended for children under 13 and Valve will not knowingly collect personal information from children under the age of 13. Additional age restrictions may apply in your country.",
+      "section1SubTitleA": "Contracting Party",
+      "section1SubContentA": "For any interaction with Steam your contractual relationship is with Valve. Except as otherwise indicated herein or at the time of the transaction (such as in the case of purchases from another Subscriber in a Subscription Marketplace), any transactions for Subscriptions (as defined below) you make on Steam are being made from Valve.",
+      "section1SubTitleB": "Hardware, Subscriptions; Content and Services",
+      "section1SubContentB": "As a Subscriber you may obtain access to certain services, software and content available to Subscribers or purchase certain Hardware (as defined below) on Steam. The Steam client software and any other software, content, and updates you download or access via Steam, including but not limited to Valve or third-party video games and in-game content, software associated with Hardware and any virtual items you trade, sell or purchase in a Steam Subscription Marketplace are referred to in this Agreement as \"Content and Services;\" the rights to access and/or use any Content and Services accessible through Steam are referred to in this Agreement as \"Subscriptions.\"",
+      "section1SubTitleC": "Your Account",
+      "section1SubContentC": "When you complete Steam’s registration process, you create a Steam account (\"Account\"). Your Account may also include billing information you provide to Valve for transactions concerning Subscriptions, Content and Services and the purchase of any physical goods through Steam (\"Hardware\"). You may not reveal, share or otherwise allow others to use your password or Account except as otherwise specifically authorized by Valve. You are responsible for the confidentiality of your login and password and for the security of your computer system. Valve is not responsible for the use of your password and Account or for all of the communication and activity on Steam that results from use of your login name and password by you, or by any person to whom you may have intentionally or by negligence disclosed your login and/or password in violation of this confidentiality provision.",
+      "section1SubTitleD": "Acceptance of Agreements",
+      "section1SubContentD": "Your order through Steam is an offer to Valve to agree on the delivery of the ordered Subscriptions, Content and Services and/or Hardware (the “Product(s)”) in exchange for the listed price.\n\nWhen you place an order on Steam, we will send you a message confirming receipt of your order and containing the details of your order (the “Order Confirmation”). The Order Confirmation is acknowledgement that we have received your order and does not confirm acceptance of your offer to enter into an agreement."
+    },
+    "refundPolicy": {
+      "title": "Steam Refund Policy",
+      "overview": "You can request a refund for nearly any purchase on Steam—for any reason. Perhaps your PC doesn't meet the hardware requirements; perhaps you bought the game by mistake; perhaps you played the title for an hour and just didn't like it.",
+      "refundScopeTitle": "Scope of Refund Policy",
+      "refundScopeContent": "Steam refunds are available for games and software purchased from the Steam store within 14 days of purchase and less than 2 hours of playtime.",
+      "dlcRefundTitle": "Refunds on Downloadable Content (DLC)",
+      "dlcRefundContent": "DLC purchased from the Steam store is refundable within 14 days of purchase, provided the base game hasn't been played for more than 2 hours and the DLC has not been used, modified, or transferred.",
+      "inGameRefundTitle": "Refunds on In-game Purchases",
+      "inGameRefundContent": "In-game purchases made in Valve-developed games are refundable within 48 hours, provided they have not been consumed, modified, or transferred.",
+      "preOrderRefundTitle": "Refunds on Pre-purchased Titles",
+      "preOrderRefundContent": "Pre-purchased titles can be refunded any time prior to release. The standard 14-day and 2-hour refund rules apply once the game is released.",
+      "steamWalletRefundTitle": "Steam Wallet Refunds",
+      "steamWalletRefundContent": "Steam Wallet funds are refundable within 14 days of purchase, provided they have not been used.",
+      "subscriptionRefundTitle": "Refunds on Renewing Subscriptions",
+      "subscriptionRefundContent": "You may request a refund for renewing subscriptions within 48 hours of the initial purchase or renewal, provided the subscription content has not been consumed.",
+      "hardwareRefundTitle": "Steam Hardware Refunds",
+      "hardwareRefundContent": "You can request a refund for Steam hardware following the hardware refund policy and the return process outlined on Steam.",
+      "bundleRefundTitle": "Refunds on Bundles",
+      "bundleRefundContent": "Bundles purchased from the Steam store are refundable within 14 days of purchase if all items are returned, and no items have been consumed, modified, or transferred.",
+      "outsidePurchaseTitle": "Outside of Steam Purchases",
+      "outsidePurchaseContent": "Valve cannot provide refunds for purchases made outside of Steam (e.g., CD keys or Steam Wallet codes).",
+      "vacBanTitle": "VAC Bans",
+      "vacBanContent": "If you are VAC banned from a game, you will lose your right to a refund for that game.",
+      "videoContentRefundTitle": "Refunds on Video Content",
+      "videoContentRefundContent": "We are unable to offer refunds for video content on Steam.",
+      "giftRefundTitle": "Refunds on Gifts",
+      "giftRefundContent": "Gifts that have not been redeemed are refundable within the standard 14-day/2-hour refund period.",
+      "euRightsTitle": "EU Right of Withdrawal",
+      "euRightsContent": "For more information on how EU Right of Withdrawal applies to Steam customers, click here.",
+      "abuseTitle": "Abuse",
+      "abuseContent": "Refunds are designed to remove the risk from purchasing titles on Steam—not as a way to get free games. If it appears that you are abusing refunds, we may stop offering them to you."
+    }
+    ,
+      "footer": {
+        "allRightsReserved": "All rights reserved. All trademarks are property of their respective owners in the US and other countries.",
+        "vatIncluded": "Includes VAT",
+        "privacyPolicy": "Privacy Policy",
+        "termsOfUse": "Terms of Use",
+        "steamAgreement": "Steam Subscriber Agreement",
+        "refundPolicy": "Refund Policy"
+      }
+    }
+    
+  
+  

@@ -44,8 +44,8 @@ const Menu = () => {
         navigate("/");
     }, [memberId, memberLevel]);
 
-     //view
-     return (
+    //view
+    return (
         <>
             <nav className={`navbar navbar-expand-lg fixed-top ${styles.navbar}`} data-bs-theme="dark">
                 <div className={`container ${styles.container}`}>
@@ -78,7 +78,7 @@ const Menu = () => {
                                     data-bs-toggle="dropdown" href="#" role="button"
                                     aria-haspopup="true" aria-expanded="false">{t('menu.community')}</a>
                                 <div className="dropdown-menu">
-                                    <NavLink className="dropdown-item" to="/community/CommunityList">{t('menu.community')}</NavLink>
+                                    <NavLink className="dropdown-item" to="/community/list">{t('menu.community')}</NavLink>
                                 </div>
                             </li>
                             <li className="nav-item dropdown">
@@ -97,10 +97,7 @@ const Menu = () => {
                                     <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
                                         aria-haspopup="true" aria-expanded="false">{t('menu.payment')}</a>
                                     <div className="dropdown-menu">
-                                        <NavLink className="dropdown-item" to="/payment/method">
-                                            <i className="fa-solid fa-right-to-bracket"></i>
-                                            {t('menu.paymentTest1')}
-                                        </NavLink>
+                                       
 
                                         <NavLink className="dropdown-item" to="/payment/confirmation">
                                             <i className="fa-solid fa-right-to-bracket"></i>
@@ -132,16 +129,16 @@ const Menu = () => {
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/wishlist">
-                                        찜
+                                        {t('menu.wishlist')}
                                     </NavLink>
                                 </li>
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/cart">
-                                        장바구니
+                                        {t('menu.cart')}
                                     </NavLink>
                                 </li>
                             </>) : (<>
-                              
+
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/member/MemberLogin">
                                         <i className="fa-solid fa-right-to-bracket"></i>
