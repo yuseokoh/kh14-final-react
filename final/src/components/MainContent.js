@@ -28,8 +28,6 @@ import PrivacyPolicy from "../components/footer/PrivacyPolicy";
 import TermsOfUse from "../components/footer/TermsOfUse";
 import SteamAgreement from "../components/footer/SteamAgreement";
 import RefundPolicy from "../components/footer/RefundPolicy";
-import CommunitySearch from "./community/CommunitySearch";
-import CancelPaymentPage from "./payment/CancelPaymentPage";
 
 
 
@@ -86,7 +84,8 @@ const MainContent = () => {
 
                     {/* 회원가입 */}
                     <Route path="/member/signup" element={<SingUp />} />
-
+                    {/* 카카오로그인 테스트 */}
+                    <Route path="/member/KakaoLoginPage" element={<KakaoLoginPage/>}/>
                     {/* 찜 */}
                     <Route path="/wishlist" element={<WishList />} />
 
