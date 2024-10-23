@@ -9,9 +9,8 @@ npm install react-google-recaptcha
 npm install react-router-dom 
 <br/>
 npm install lucide-react
-=======
+
 # 구글 체킹 <br/>
 npm install react-google-recaptcha <br/>
 # react qr code <br/>
 npm install qrcode.react <br/>
->>>>>>> 1d096029c79ab79d5284d9aaff2b0dd65d13bc7b
