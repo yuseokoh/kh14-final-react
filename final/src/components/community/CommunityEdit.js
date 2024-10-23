@@ -41,16 +41,14 @@ const CommunityEdit = ()=>{
         });
     }, [community]);
 
-    const updateCommunity = useCallback(async ()=>{
-        //추가한다면 변경내용이 없을 때 차단
-
-        await axios.put("/community/", community);
-        //알림 표시
-        //이동 처리
-        //navigate("/community/list");//목록
-        navigate("/community/detail/"+communityNo);//상세
-    }, [community]);
-
+    const updateCommunity = useCallback(async () => {
+        // communityNo가 community 객체에 없다면 추가
+        const updatedCommunity = { ...community, communityNo };
+    
+        await axios.put(`/community/${communityNo}`, updatedCommunity);
+        navigate(`/community/detail/${communityNo}`); // 상세 페이지로 이동
+    }, [community, communityNo]);
+    
     //view
     return (community !== null ? (<>
         <Jumbotron title={community.communityNo+"번 글 수정"}/>
