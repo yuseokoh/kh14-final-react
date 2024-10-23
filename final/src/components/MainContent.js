@@ -21,12 +21,14 @@ import { useTranslation } from 'react-i18next';
 import CommunityList from "./community/CommunityList";
 import CommunityAdd from "./community/CommunityAdd";
 import CommunityEdit from "./community/CommunityEdit";
+import CommunityDetail from "./community/CommunityDetail";
 
 
 import PrivacyPolicy from "../components/footer/PrivacyPolicy";
 import TermsOfUse from "../components/footer/TermsOfUse";
 import SteamAgreement from "../components/footer/SteamAgreement";
 import RefundPolicy from "../components/footer/RefundPolicy";
+import CommunitySearch from "./community/CommunitySearch";
 
 
 
@@ -79,12 +81,15 @@ const MainContent = () => {
 
                     {/* 친구목록 */}
                     <Route path="/friend/list" element={<FriendList/>} />
-                    <Route path="/friend/request" element={<FriendRequest/>} />
+                    <Route path="/friend/request" element={<FriendRequest/>} /> 
 
                     {/* 커뮤니티(게시판) */}
                     <Route path="/community/list" element={<CommunityList/>}/>
                     <Route path="/community/add" element={<CommunityAdd/>}/>
-                    <Route path="/community/edit" element={<CommunityEdit/>}/>
+                    <Route path="/community/edit/:communityNo" element={<CommunityEdit/>}/>
+                    <Route path="/community/detail/:communityNo" element={<CommunityDetail />} />
+                    <Route path="/community/search/title/:keyword" element={<CommunitySearch />} />
+
 
                     {/* 회원가입 */}
                     <Route path="/member/signup" element={<SingUp />} />
