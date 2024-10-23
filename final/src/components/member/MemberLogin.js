@@ -92,7 +92,7 @@ const MemberLogin = () => {
 
           // JWT 토큰을 로컬 스토리지에 저장하여 로그인 상태 유지
           const { accessToken, refreshToken, memberId, memberLevel } = response.data;
-          localStorage.setItem('accessToken', accessToken);
+          // localStorage.setItem('accessToken', accessToken);
           localStorage.setItem('refreshToken', refreshToken);
           localStorage.setItem('memberId', memberId);
           localStorage.setItem('memberLevel', memberLevel);
