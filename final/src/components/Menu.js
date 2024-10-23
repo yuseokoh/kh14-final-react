@@ -91,6 +91,9 @@ const Menu = () => {
                                     data-bs-toggle="dropdown" to="/" role="button"
                                     aria-haspopup="true" aria-expanded="false">{t('menu.support')}</a>
                             </li>
+                            <li className="nav-item">
+                            <NavLink className="nav-link" to="/member/KakaoLoginPage">카카오로그인 테스트</NavLink>
+                        </li>
             
                             {login ? (<>
                                 <li className="nav-item dropdown">
