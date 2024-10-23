@@ -39,26 +39,30 @@ const PaymentSuccessPage = () => {
         try {
             // 세션 스토리지에서 데이터 가져오기
             const tid = window.sessionStorage.getItem("tid");
-            const checkedGameList = JSON.parse(window.sessionStorage.getItem("checkedGameList"));
+            let checkedGameList = JSON.parse(window.sessionStorage.getItem("checkedGameList"));
             const token = sessionStorage.getItem('refreshToken');
+    
             if (!tid || !checkedGameList || !token) {
                 throw new Error(t('payment.errorNoTokenOrData'));
             }
-
+    
+            // 각 게임에 대해 `qty` 값이 없으면 기본값 설정
+            checkedGameList = checkedGameList.map(game => ({
+                ...game,
+                qty: game.qty || 1,
+            }));
+    
             // 승인 요청
             const resp = await axios.post(
                 "http://localhost:8080/game/approve",
                 {
                     partnerOrderId: partnerOrderId,
                     pgToken: new URLSearchParams(window.location.search).get("pg_token"),
-                    tid: window.sessionStorage.getItem("tid"),
-                    gameList: JSON.parse(window.sessionStorage.getItem("checkedGameList"))
-
-                   
+                    tid: tid,
+                    gameList: checkedGameList
                 },
-               
             );
-
+    
             setGameList(checkedGameList);
             setResult(true);
         } catch (e) {
@@ -70,10 +74,20 @@ const PaymentSuccessPage = () => {
             window.sessionStorage.removeItem("checkedGameList");
         }
     }, [partnerOrderId, t]);
+    
 
     const totalAmount = useMemo(() => {
-        return gameList.reduce((total, game) => total + (game.gamePrice * game.qty), 0);
+        return gameList.reduce((total, game) => {
+            console.log("gamePrice:", game.gamePrice, "qty:", game.qty);
+            const price = parseFloat(game.gamePrice) || 0;
+            const qty = parseInt(game.qty) || 0;
+            return total + (price * qty);
+        }, 0);
     }, [gameList]);
+    
+    
+    
+    
 
     const handleGoToStore = () => navigate("/store");
     const handleGoToLibrary = () => navigate("/library");
@@ -110,7 +124,7 @@ const PaymentSuccessPage = () => {
                 <div className={styles.purchaseReceipt}>
                     <h2>{t('paymentSuccess.purchaseReceipt')}</h2>
                     <p>{t('paymentSuccess.accountName')}: {memberId}</p>
-                    <p>{t('paymentSuccess.totalAmount')}: ₩{totalAmount}</p>
+                    <p>{t('paymentSuccess.totalAmount')}: {totalAmount}$</p>
                 </div>
 
                 <div className={styles.navigationButtons}>
