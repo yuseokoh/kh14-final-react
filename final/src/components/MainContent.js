@@ -4,10 +4,10 @@ import { useRecoilValue } from "recoil";
 import { loginState } from "../utils/recoil";
 import MemberLogin from "./member/MemberLogin";
 
-import PaymentConfirmationPage from "./payment/PaymentConfirmationPage";
+
 import PaymentSuccessPage from "./payment/PaymentSuccessPage";
 import PrivateRoute from "../router/PrivateRoute";
-import PaymentCancellationPage from "./payment/PaymentCancellationPage";
+
 import WishList from "./wishlist/WishList";
 import ShoppingCart from "./shoppingcart/ShoppingCart";  // ShoppingCart 사용
 
@@ -21,13 +21,13 @@ import { useTranslation } from 'react-i18next';
 import CommunityList from "./community/CommunityList";
 import CommunityAdd from "./community/CommunityAdd";
 import CommunityEdit from "./community/CommunityEdit";
+import CommunityDetail from "./community/CommunityDetail";
 
 
 import PrivacyPolicy from "../components/footer/PrivacyPolicy";
 import TermsOfUse from "../components/footer/TermsOfUse";
 import SteamAgreement from "../components/footer/SteamAgreement";
 import RefundPolicy from "../components/footer/RefundPolicy";
-import KakaoLoginPage from "./member/KakaoLoginPage";
 
 
 
@@ -48,12 +48,7 @@ const MainContent = () => {
 
                     {/* 경로변수를 사용할 경우 콜론과 이름을 합쳐 변수명으로 지정 */}
 
-                        {/* 결제 */}
-                       
-                        <Route path="/payment/confirmation" element={<PaymentConfirmationPage/>}/>
-                        <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
-                        <Route path="/payment/cancel" element={<PaymentCancellationPage />} />
-
+                     
 
                     {/* 기존 : 일반 라우팅 */}
                     {/* <Route path="/search/autocomplete" element={<AutoComplete/>}/> */}
@@ -71,18 +66,21 @@ const MainContent = () => {
 
                     {/* 결제 */}
                   
-                    <Route path="/payment/confirmation" element={<PaymentConfirmationPage/>}/>
-                    <Route path="/payment/confirmation/success/:partnerOrderId" element={<PaymentSuccessPage />} />
-                    <Route path="/payment/cancel" element={<PaymentCancellationPage />} />
+                    <Route path="/cancel-payment/detail/:paymentNo" element={<CancelPaymentPage />} />
+                    <Route path="/cart/success/:partnerOrderId" element={<PaymentSuccessPage />} />
+                  
 
                     {/* 친구목록 */}
                     <Route path="/friend/list" element={<FriendList/>} />
-                    <Route path="/friend/request" element={<FriendRequest/>} />
+                    <Route path="/friend/request" element={<FriendRequest/>} /> 
 
                     {/* 커뮤니티(게시판) */}
                     <Route path="/community/list" element={<CommunityList/>}/>
                     <Route path="/community/add" element={<CommunityAdd/>}/>
-                    <Route path="/community/edit" element={<CommunityEdit/>}/>
+                    <Route path="/community/edit/:communityNo" element={<CommunityEdit/>}/>
+                    <Route path="/community/detail/:communityNo" element={<CommunityDetail />} />
+                    <Route path="/community/search/title/:keyword" element={<CommunitySearch />} />
+
 
                     {/* 회원가입 */}
                     <Route path="/member/signup" element={<SingUp />} />
