@@ -2,6 +2,7 @@ import React, { useState, useMemo } from 'react';
 import axios from 'axios';
 import styles from './SignupForm.module.css';
 import { useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const SignupPage = () => {
   const [searchParams] = useSearchParams();
@@ -11,6 +12,8 @@ const SignupPage = () => {
   const [memberId, setMemberId] = useState('');
   const [memberPw, setMemberPw] = useState('');
   const [memberPwRe, setMemberPwRe] = useState('');
+
+  const navigate = useNavigate();
 
   const memberIdValid = useMemo(() => {
     const regex = /^[a-z][a-z0-9]{7,19}$/;
@@ -62,6 +65,7 @@ const handleSubmit = async (e) => {
             
             if (response.status === 200) {
                 alert('회원가입이 완료되었습니다.');
+                navigate("/member/login");
             } else {
                 alert('회원가입에 실패했습니다. 다시 시도해주세요.');
             }

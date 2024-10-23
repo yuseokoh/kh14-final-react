@@ -91,7 +91,7 @@ const Menu = () => {
                                     data-bs-toggle="dropdown" to="/" role="button"
                                     aria-haspopup="true" aria-expanded="false">{t('menu.support')}</a>
                             </li>
-
+            
                             {login ? (<>
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
@@ -140,7 +140,7 @@ const Menu = () => {
                             </>) : (<>
 
                                 <li className="nav-item">
-                                    <NavLink className="nav-link" to="/member/login">
+                                    <NavLink className="nav-link" to="/member/MemberLogin">
                                         <i className="fa-solid fa-right-to-bracket"></i>
                                         {t('menu.login')}
                                     </NavLink>
