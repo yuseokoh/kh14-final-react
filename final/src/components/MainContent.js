@@ -25,7 +25,6 @@ import CommunityEdit from "./community/CommunityEdit";
 import CommunityDetail from "./community/CommunityDetail";
 import CommunitySearch from "./community/CommunitySearch";
 
-
 import PrivacyPolicy from "../components/footer/PrivacyPolicy";
 import TermsOfUse from "../components/footer/TermsOfUse";
 import SteamAgreement from "../components/footer/SteamAgreement";
@@ -67,8 +66,6 @@ const MainContent = () => {
                     <Route path="/member/signupForm" element={<SignupForm />} />
 
                     {/* 결제 */}
-                  
-                    {/* <Route path="/cancel-payment/detail/:paymentNo" element={<CancelPaymentPage />} /> */}
                     <Route path="/cart/success/:partnerOrderId" element={<PaymentSuccessPage />} />
                   
 
