@@ -20,9 +20,6 @@ import SignupForm from './member/SignupForm';
 import KakaoLoginPage from './member/KakaoLoginPage'; 
 import { useTranslation } from 'react-i18next';
 import CommunityList from "./community/CommunityList";
-import CommunityAdd from "./community/CommunityAdd";
-import CommunityEdit from "./community/CommunityEdit";
-
 
 import PrivacyPolicy from "../components/footer/PrivacyPolicy";
 import TermsOfUse from "../components/footer/TermsOfUse";
