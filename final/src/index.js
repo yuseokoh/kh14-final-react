@@ -9,6 +9,7 @@ import "bootswatch/dist/spacelab/bootstrap.min.css"
 import "bootstrap";
 import { RecoilRoot } from 'recoil';
 import { HashRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 
 //axios customize
@@ -24,9 +25,9 @@ root.render(<>
       {/* RecoilRoot를 설정하면 해당 범위에서만 Recoil 이용 가능 */}
       <RecoilRoot>
          {/* HashRouter를 설정하면 해당 범위에서만 Route 이용 가능 */}
-         <HashRouter>
-            <App />
-         </HashRouter>
+         <BrowserRouter>
+            <App /> 
+         </BrowserRouter>
       </RecoilRoot>
 {/* </React.StrictMode> */}
 </>); 

@@ -8,11 +8,7 @@
     "signup": "회원가입",
     "login": "로그인",
     "logout": "로그아웃",
-    "payment": "결제",
-    "paymentTest1": "결제 테스트 1",
-    "paymentRequestTest": "결제 요청 테스트",
-    "paymentSuccessTest": "결제 성공 테스트",
-    "paymentCancelTest": "결제 취소 테스트",
+    
     "wishlist": "찜",
     "cart": "장바구니"
   },
