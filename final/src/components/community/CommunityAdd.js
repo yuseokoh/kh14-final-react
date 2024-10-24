@@ -7,7 +7,7 @@ import { useNavigate } from "react-router";
 const CommunityAdd = () => {
     //navigate
     const navigate = useNavigate();
-    //dsd
+    //dsd테스트
 
     //state
     const [input, setInput] = useState({
