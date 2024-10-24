@@ -8,11 +8,7 @@
     "signup": "Sign Up",
     "login": "Login",
     "logout": "Logout",
-    "payment": "Payment",
-    "paymentTest1": "Payment Test 1",
-    "paymentRequestTest": "Payment Request Test",
-    "paymentSuccessTest": "Payment Success Test",
-    "paymentCancelTest": "Payment Cancel Test",
+    
     "wishlist": "Wishlist",
     "cart": "Cart"
   },
@@ -59,15 +55,7 @@
     "errorDuringPurchase": "An error occurred during the payment preparation:",
     "errorPurchaseFailed": "Payment preparation failed. Please try again."
   },
-  "paymentCancellation": {
-    "loadingMessage": "Loading...",
-    "processingMessage": "Processing cancellation...",
-    "successMessage": "Payment successfully cancelled!",
-    "failureMessage": "Payment cancellation failed...",
-    "refundInfo": "The payment has been successfully cancelled, and the payment amount will be refunded.",
-    "goToStore": "Return to Store",
-    "goToLibrary": "Go to Library"
-  },
+  
   "paymentSuccess": {
     "loading": "Processing payment...",
     "thankYouMessage": "Thank you for your purchase!",

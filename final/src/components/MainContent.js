@@ -29,6 +29,7 @@ import PrivacyPolicy from "../components/footer/PrivacyPolicy";
 import TermsOfUse from "../components/footer/TermsOfUse";
 import SteamAgreement from "../components/footer/SteamAgreement";
 import RefundPolicy from "../components/footer/RefundPolicy";
+import CancelPaymentPage from "./payment/CancelPaymentPage";
 
 
 // 메인에다 커밋하지마라 
@@ -67,7 +68,7 @@ const MainContent = () => {
 
                     {/* 결제 */}
                     <Route path="/cart/success/:partnerOrderId" element={<PaymentSuccessPage />} />
-                  
+                    <Route path="/cancel-payment/detail/:paymentNo" element={<CancelPaymentPage />} />
 
                     {/* 친구목록 */}
                     <Route path="/friend/list" element={<FriendList/>} />

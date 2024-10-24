@@ -96,29 +96,7 @@ const Menu = () => {
                         </li>
             
                             {login ? (<>
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
-                                        aria-haspopup="true" aria-expanded="false">{t('menu.payment')}</a>
-                                    <div className="dropdown-menu">
-                                       
-
-                                        <NavLink className="dropdown-item" to="/payment/confirmation">
-                                            <i className="fa-solid fa-right-to-bracket"></i>
-                                            {t('menu.paymentRequestTest')}
-                                        </NavLink>
-
-                                        <NavLink className="dropdown-item" to="/payment/success">
-                                            <i className="fa-solid fa-right-to-bracket"></i>
-                                            {t('menu.paymentSuccessTest')}
-                                        </NavLink>
-
-                                        <NavLink className="dropdown-item" to="/payment/cancel">
-                                            <i className="fa-solid fa-right-to-bracket"></i>
-                                            {t('menu.paymentCancelTest')}
-                                        </NavLink>
-                                    </div>
-                                </li>
-
+                               
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/member/mypage">
                                         {memberId} ({memberLevel})

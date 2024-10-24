@@ -8,11 +8,7 @@
     "signup": "회원가입",
     "login": "로그인",
     "logout": "로그아웃",
-    "payment": "결제",
-    "paymentTest1": "결제 테스트 1",
-    "paymentRequestTest": "결제 요청 테스트",
-    "paymentSuccessTest": "결제 성공 테스트",
-    "paymentCancelTest": "결제 취소 테스트",
+   
     "wishlist": "찜",
     "cart": "장바구니"
   },
@@ -59,15 +55,7 @@
     "errorDuringPurchase": "결제 준비 중 오류가 발생했습니다:",
     "errorPurchaseFailed": "결제 준비에 실패했습니다. 다시 시도해주세요."
   },
-  "paymentCancellation": {
-    "loadingMessage": "로딩 중...",
-    "processingMessage": "결제 취소 진행 중입니다...",
-    "successMessage": "결제가 성공적으로 취소되었습니다!",
-    "failureMessage": "결제 취소 실패...",
-    "refundInfo": "결제가 성공적으로 취소되었으며, 결제 금액은 환불 처리됩니다.",
-    "goToStore": "상점으로 돌아가기",
-    "goToLibrary": "라이브러리로 이동하기"
-  },
+  
   "paymentSuccess": {
     "loading": "결제 진행 중입니다...",
     "thankYouMessage": "구매해 주셔서 감사합니다!",
@@ -203,6 +191,3 @@
         "refundPolicy": "환불"
       }
     }
-    
-  
-  
