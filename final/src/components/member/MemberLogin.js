@@ -33,12 +33,12 @@ const MemberLogin = () => {
       ...prevInput,
       [e.target.name]: e.target.value
     }));
-  }, []);
+  }, []); 
 
   // 로그인 요청
   const sendLoginRequest = useCallback(async () => {
     try {
-      // 로그인 요청
+      // 로그인 요청 
       const resp = await axios.post("/member/login", input);
       console.log(resp.data); // 응답 데이터 로그
 

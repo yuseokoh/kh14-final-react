@@ -65,7 +65,6 @@ const MainContent = () => {
                     <Route path="/member/signupForm" element={<SignupForm />} />
 
                     {/* 결제 */}
-                  
                     <Route path="/cart/success/:partnerOrderId" element={<PaymentSuccessPage />} />
                   
 
