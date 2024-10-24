@@ -3,19 +3,37 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import debounce from 'lodash.debounce';
 import styles from './WishList.module.css';
+import { useNavigate } from "react-router";
 
 const WishList = () => {
+  const navigate = useNavigate();
   const dragItem = useRef(); // 드래그할 아이템의 인덱스
   const dragOverItem = useRef(); // 드랍할 위치의 아이템의 인덱스
   const [wishlist, setWishlist] = useState([]);
   const [searchKeyword, setSearchKeyword] = useState('');
   const [filteredWishlist, setFilteredWishlist] = useState([]);
+  const [cart,setCart]  = useState([]);
 
   const loadWishlist = useCallback(async () => {
     const resp = await axios.get("http://localhost:8080/wishlist/");
     setWishlist(resp.data);
     setFilteredWishlist(resp.data); // 초기 필터된 리스트 설정
   }, []);
+
+  const addCart = useCallback(async (game) => {
+    try {
+        const token = localStorage.getItem('token'); // 토큰을 로컬 스토리지에서 가져옴
+        const resp = await axios.post("/cart", game, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        setCart(resp.data); // 응답 받은 데이터를 처리
+        navigate("/wishlist/"); // 장바구니로 이동
+    } catch (error) {
+        console.error("Error adding item to cart", error);
+    }
+}, [navigate, setCart]);
 
   const searchWishlist = useCallback(() => {
     if (searchKeyword.trim() !== '') {
@@ -28,6 +46,7 @@ const WishList = () => {
     }
   }, [searchKeyword, wishlist]);
 
+  
   const debouncedSearch = useCallback(debounce(searchWishlist, 300), [searchWishlist]);
 
   useEffect(() => {
@@ -107,7 +126,7 @@ const WishList = () => {
               </div>
               <div className={styles.wishlist_action_container}>
                 <div className={styles.game_price}>${game.gamePrice}</div>
-                <button className={styles.wishlist_cart_button}>장바구니에 추가</button>
+                <button className={styles.wishlist_cart_button} onClick={() => addCart(game)}>장바구니에 추가</button>
               </div>
             </div>
           </CSSTransition>
