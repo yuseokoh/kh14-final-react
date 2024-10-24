@@ -19,6 +19,19 @@ body, html {
   box-sizing: border-box;
 }
 
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.mainContent {
+  flex: 1;
+}
+
+
+
+
 
 .footerContent {
   max-width: 940px;
