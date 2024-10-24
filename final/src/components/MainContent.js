@@ -22,13 +22,13 @@ import CommunityList from "./community/CommunityList";
 import CommunityAdd from "./community/CommunityAdd";
 import CommunityEdit from "./community/CommunityEdit";
 import CommunityDetail from "./community/CommunityDetail";
+import CommunitySearch from "./community/CommunitySearch"; 
 
 
 import PrivacyPolicy from "../components/footer/PrivacyPolicy";
 import TermsOfUse from "../components/footer/TermsOfUse";
 import SteamAgreement from "../components/footer/SteamAgreement";
 import RefundPolicy from "../components/footer/RefundPolicy";
-import CommunitySearch from "./community/CommunitySearch";
 
 
 
@@ -67,7 +67,7 @@ const MainContent = () => {
 
                     {/* 결제 */}
                   
-                    <Route path="/cancel-payment/detail/:paymentNo" element={<CancelPaymentPage />} />
+                
                     <Route path="/cart/success/:partnerOrderId" element={<PaymentSuccessPage />} />
                   
 
@@ -82,11 +82,10 @@ const MainContent = () => {
                     <Route path="/community/detail/:communityNo" element={<CommunityDetail />} />
                     <Route path="/community/search/title/:keyword" element={<CommunitySearch />} />
 
-                                            
+
                     {/* 회원가입 */}
                     <Route path="/member/signup" element={<SingUp />} />
-                    {/* 카카오로그인 테스트 */}
-                    <Route path="/member/KakaoLoginPage" element={<KakaoLoginPage/>}/>
+
                     {/* 찜 */}
                     <Route path="/wishlist" element={<WishList />} />
 
