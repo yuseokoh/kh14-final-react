@@ -91,9 +91,33 @@ const Menu = () => {
                                     data-bs-toggle="dropdown" to="/" role="button"
                                     aria-haspopup="true" aria-expanded="false">{t('menu.support')}</a>
                             </li>
+                            <li className="nav-item">
+                            <NavLink className="nav-link" to="/member/KakaoLoginPage">카카오로그인 테스트</NavLink>
+                        </li>
             
                             {login ? (<>
-                               
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button"
+                                        aria-haspopup="true" aria-expanded="false">{t('menu.payment')}</a>
+                                    <div className="dropdown-menu">
+                                       
+
+                                        <NavLink className="dropdown-item" to="/payment/confirmation">
+                                            <i className="fa-solid fa-right-to-bracket"></i>
+                                            {t('menu.paymentRequestTest')}
+                                        </NavLink>
+
+                                        <NavLink className="dropdown-item" to="/payment/success">
+                                            <i className="fa-solid fa-right-to-bracket"></i>
+                                            {t('menu.paymentSuccessTest')}
+                                        </NavLink>
+
+                                        <NavLink className="dropdown-item" to="/payment/cancel">
+                                            <i className="fa-solid fa-right-to-bracket"></i>
+                                            {t('menu.paymentCancelTest')}
+                                        </NavLink>
+                                    </div>
+                                </li>
 
                                 <li className="nav-item">
                                     <NavLink className="nav-link" to="/member/mypage">

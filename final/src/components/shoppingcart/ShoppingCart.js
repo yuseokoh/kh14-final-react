@@ -3,11 +3,9 @@ import React, { useCallback, useEffect, useState } from 'react';
 import styles from './ShoppingCart.module.css';
 import { useRecoilValue } from 'recoil';
 import { loginState, memberIdState, memberLoadingState } from "../../utils/recoil";
-import { useTranslation } from 'react-i18next';
 
 const ShoppingCart = () => {
   const [cartList, setCartList] = useState([]);
-  const { t } = useTranslation();
 
   // Recoil 상태 사용
   const login = useRecoilValue(loginState);
@@ -16,12 +14,9 @@ const ShoppingCart = () => {
 
   // 장바구니 리스트 불러오는 함수
   const loadCartList = useCallback(async () => {
-    try {
-      const resp = await axios.get("/cart/");
-      setCartList(resp.data);
-    } catch (error) {
-      console.error("Failed to load cart list", error);
-    }
+    const resp = await axios.get("/cart/");
+    console.log(resp.data);
+    setCartList(resp.data);
   }, []);
 
   useEffect(() => {
@@ -29,52 +24,6 @@ const ShoppingCart = () => {
       loadCartList();
     }
   }, [login, memberId, loadCartList]);
-
-  const getCurrentUrl = useCallback(() => {
-    return window.location.origin + window.location.pathname + (window.location.hash || '');
-  }, []);
-
-  const sendPurchaseRequest = useCallback(async () => {
-    if (cartList.length === 0) {
-      alert(t('payment.noItemsInCart'));
-      return;
-    }
-
-    try {
-      const token = sessionStorage.getItem('refreshToken');
-      if (!token) {
-        throw new Error(t('payment.errorNoToken'));
-      }
-
-      const response = await axios.post(
-        "http://localhost:8080/game/purchase",
-        {
-          gameList: cartList.map(game => ({
-            gameNo: game.gameNo,
-            qty: 1, // 장바구니에서 각 게임의 수량을 1로 고정
-          })),
-          approvalUrl: getCurrentUrl() + "/success",
-          cancelUrl: getCurrentUrl() + "/cancel",
-          failUrl: getCurrentUrl() + "/fail",
-        },
-       
-      );
-
-      window.sessionStorage.setItem("tid", response.data.tid);
-      window.sessionStorage.setItem("checkedGameList", JSON.stringify(cartList));
-
-      const savedTid = sessionStorage.getItem("tid");
-      if (!savedTid) {
-        throw new Error("tid 저장에 실패했습니다.");
-      }
-
-      // 카카오페이 결제 페이지로 리다이렉트
-      window.location.href = response.data.next_redirect_pc_url;
-    } catch (error) {
-      console.error(t('payment.errorDuringPurchase'), error);
-      alert(t('payment.errorPurchaseFailed'));
-    }
-  }, [cartList, getCurrentUrl, t]);
 
   return (
     <div className={styles.cartContainer}>
@@ -97,9 +46,7 @@ const ShoppingCart = () => {
         </div>
       ))}
 
-      <button type='button' onClick={sendPurchaseRequest} className={styles.checkoutButton}>
-        결제하기
-      </button>
+      <button type='button'>결제하기</button>
     </div>
   );
 };

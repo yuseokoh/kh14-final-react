@@ -1,0 +1,119 @@
+/* PaymentConfirmationPage.module.css */
+.paymentConfirmationPage {
+  background-color: #1b2838; /* 페이지 전체 배경색과 동일하게 설정 */
+  color: white;
+  padding: 20px;
+  min-height: 100vh; /* 페이지 높이가 항상 100vh 이상이 되도록 설정 */
+  box-sizing: border-box;
+}
+
+
+.tabContainer {
+  display: flex; /* 수평 배치를 위한 flex 설정 */
+  align-items: center; /* 중앙 정렬 */
+  padding: 15px;
+  background-color: #1b2838; /* Steam 배경 색상 */
+}
+
+.paymentInfoTab {
+  color: #c6d4df; /* 흰색에 가까운 회색 */
+  font-size: 14px;
+  margin-right: 10px; /* 탭 간의 간격 조절 */
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #ffffff; /* 삼각형의 색상 - 흰색 */
+  margin-right: 10px; /* 삼각형과 다음 탭 사이의 간격 */
+}
+
+.reviewPurchaseTab {
+  background-color: #63c1ff; /* 강조된 파란색 배경 */
+  color: #ffffff; /* 흰색 글씨 */
+  padding: 8px 12px;
+  border-radius: 3px; /* 모서리 둥글게 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* 그림자 효과 */
+  font-size: 14px;
+}
+
+.mainContent {
+  display: flex;
+  justify-content: space-between;
+}
+
+.confirmationBox {
+  width: 65%;
+  background-color: #2a475e;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.purchaseDetails,
+.paymentInfo {
+  background-color: #2a475e;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+.productImage {
+  max-width: 100px;
+}
+
+.details h2 {
+  color: #c7d5e0;
+}
+
+.vatInfo {
+  color: #c7d5e0;
+  font-size: 12px;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.terms label {
+  margin-left: 10px;
+  color: #66c0f4;
+}
+
+.continueButton {
+  background-color: #5c7e10;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.purchasingInfo {
+  width: 30%;
+  background-color: #2a475e;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.purchasingInfo h2 {
+  color: #ffffff;
+}
+
+.purchasingInfo p {
+  color: #c7d5e0;
+}
+
+/* 반응형 디자인 추가 */
+@media (max-width: 768px) {
+  .mainContent {
+    flex-direction: column;
+  }
+
+  .confirmationBox, .purchasingInfo {
+    width: 100%;
+  }
+}

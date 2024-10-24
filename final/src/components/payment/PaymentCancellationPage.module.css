@@ -1,27 +1,13 @@
-/* PaymentSuccessPage.module.css */
-.paymentSuccessContainer {
-  background-color: #1b2838;
-  color: white;
-  padding: 20px;
-  text-align: center;
-}
 
-h1 {
-  color: #66c0f4;
-}
 
-.contentInstall,
-.steamPoints,
-.purchaseReceipt {
-  background-color: #2a475e;
-  padding: 15px;
-  margin: 20px 0;
+.paymentCancelSuccessContainer {
+  background-color: #f8f9fa;
   border-radius: 8px;
+  padding: 20px;
 }
 
-button {
-  background-color: #5c7e10;
-  color: white;
+.navigationButtons {
+  margin-top: 20px;
 }
 .loginPage {
   display: flex;
