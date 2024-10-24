@@ -17,12 +17,13 @@ import FriendList from "./friend/FriendList";
 import SingUp from './member/SingUp'; 
 import SignupPage from './member/SignupPage'; 
 import SignupForm from './member/SignupForm'; 
+import KakaoLoginPage from './member/KakaoLoginPage'; 
 import { useTranslation } from 'react-i18next';
 import CommunityList from "./community/CommunityList";
 import CommunityAdd from "./community/CommunityAdd";
 import CommunityEdit from "./community/CommunityEdit";
 import CommunityDetail from "./community/CommunityDetail";
-
+import CommunitySearch from "./community/CommunitySearch";
 
 import PrivacyPolicy from "../components/footer/PrivacyPolicy";
 import TermsOfUse from "../components/footer/TermsOfUse";
@@ -65,8 +66,6 @@ const MainContent = () => {
                     <Route path="/member/signupForm" element={<SignupForm />} />
 
                     {/* 결제 */}
-                  
-                    <Route path="/cancel-payment/detail/:paymentNo" element={<CancelPaymentPage />} />
                     <Route path="/cart/success/:partnerOrderId" element={<PaymentSuccessPage />} />
                   
 
