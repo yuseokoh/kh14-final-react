@@ -67,7 +67,7 @@ const MainContent = () => {
 
                     {/* 결제 */}
                   
-                    <Route path="/cancel-payment/detail/:paymentNo" element={<CancelPaymentPage />} />
+                
                     <Route path="/cart/success/:partnerOrderId" element={<PaymentSuccessPage />} />
                   
 
@@ -85,8 +85,7 @@ const MainContent = () => {
 
                     {/* 회원가입 */}
                     <Route path="/member/signup" element={<SingUp />} />
-                    {/* 카카오로그인 테스트 */}
-                    <Route path="/member/KakaoLoginPage" element={<KakaoLoginPage/>}/>
+
                     {/* 찜 */}
                     <Route path="/wishlist" element={<WishList />} />
 
