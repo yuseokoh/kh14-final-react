@@ -9,6 +9,8 @@ npm install react-router-dom
 <br/>
 npm install lucide-react
 <br/>
+npm install react-icons
+<br/>
 npm install react-transition-group
 # 구글 체킹 <br/>
 npm install react-google-recaptcha <br/>
