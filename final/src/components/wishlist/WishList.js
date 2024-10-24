@@ -1,45 +1,42 @@
 import axios from 'axios';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import debounce from 'lodash.debounce';
 import styles from './WishList.module.css';
 
 const WishList = () => {
   const dragItem = useRef(); // 드래그할 아이템의 인덱스
   const dragOverItem = useRef(); // 드랍할 위치의 아이템의 인덱스
-  const [wishlist, setWishlist] = useState([]); // 초기화는 빈 배열로
-  const [gameName, setGameName] = useState('');
-  const [member, setMember] = useState("");
-
-  const loadMember = useCallback(async () => {
-    const resp = await axios.get("http://localhost:8080/member/find");
-    setMember(resp.data);
-  }, []);
+  const [wishlist, setWishlist] = useState([]);
+  const [searchKeyword, setSearchKeyword] = useState('');
+  const [filteredWishlist, setFilteredWishlist] = useState([]);
 
   const loadWishlist = useCallback(async () => {
     const resp = await axios.get("http://localhost:8080/wishlist/");
-    setWishlist(resp.data.map(item => item.game_name)); // 데이터 포맷에 맞게 수정
+    setWishlist(resp.data);
+    setFilteredWishlist(resp.data); // 초기 필터된 리스트 설정
   }, []);
 
-  useEffect(() => {
-    loadMember();
-    loadWishlist(); // 위시리스트를 로드합니다
-  }, [loadMember, loadWishlist]);
-
-  const addGame = () => {
-    if (gameName) {
-      // 새로운 게임을 서버에 추가하는 로직이 필요할 수 있습니다.
-      setWishlist([...wishlist, gameName]);
-      setGameName('');
+  const searchWishlist = useCallback(() => {
+    if (searchKeyword.trim() !== '') {
+      const filtered = wishlist.filter((game) =>
+        game.gameTitle.toLowerCase().includes(searchKeyword.toLowerCase())
+      );
+      setFilteredWishlist(filtered);
+    } else {
+      setFilteredWishlist(wishlist); // 검색어가 없을 경우 전체 리스트 표시
     }
-  };
+  }, [searchKeyword, wishlist]);
 
-  const removeGame = async (index) => {
-    const gameToRemove = wishlist[index];
-    
-    // 서버에서 게임 삭제 요청 (추가 구현 필요)
-    await axios.delete(`http://localhost:8080/wishlist/${gameToRemove}`); // 엔드포인트와 요청 형식에 따라 조정
-    const newWishlist = wishlist.filter((_, i) => i !== index);
-    setWishlist(newWishlist);
-  };
+  const debouncedSearch = useCallback(debounce(searchWishlist, 300), [searchWishlist]);
+
+  useEffect(() => {
+    debouncedSearch();
+  }, [searchKeyword, debouncedSearch]);
+
+  useEffect(() => {
+    loadWishlist();
+  }, [loadWishlist]);
 
   const dragStart = (e, position) => {
     dragItem.current = position;
@@ -53,53 +50,71 @@ const WishList = () => {
 
   const drop = (e) => {
     e.preventDefault(); // 드랍 시 기본 동작 방지
-    const newWishList = [...wishlist];
+    const newWishList = [...filteredWishlist];
     const dragItemValue = newWishList[dragItem.current];
     newWishList.splice(dragItem.current, 1);
     newWishList.splice(dragOverItem.current, 0, dragItemValue);
     dragItem.current = null;
     dragOverItem.current = null;
-    setWishlist(newWishList);
+    setFilteredWishlist(newWishList);
+    setWishlist(newWishList); // 전체 리스트도 업데이트
     e.target.style.opacity = 1; // 드래그 종료 시 불투명도 원래대로
   };
 
   return (
-    <div className={styles.loginPage}>
-      <div className={styles.wishlist_container}>
-        <h1 className={styles.wishlist_title}>{`${member.memberId}'s Wishlist`}</h1>
-        <div className={styles.game_list_section}>
-          <ul className={styles.game_list}>
-            {wishlist.map((game, index) => (
-              <li
-                key={index}
-                className={styles.game_item}
-                draggable
-                onDragStart={(e) => dragStart(e, index)}
-                onDragEnter={(e) => dragEnter(e, index)}
-                onDragEnd={drop}
-                onDragOver={(e) => e.preventDefault()}
-                onDragLeave={(e) => e.target.style.opacity = 1} // 드래그를 벗어날 때 원래대로
-              >
-                {game}
-                <div className={styles.button_group}>
-                  <button onClick={() => alert(`Playing ${game}`)} className={styles.play_button}>Play now</button>
-                  <button onClick={() => removeGame(index)} className={styles.remove_button}>Remove</button>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <div className={styles.wishlist_container} style={{ minHeight: '100vh' }}>
+      <h1 className={styles.wishlist_title}>찜 목록</h1>
+      <div className={styles.wishlist_search_container}>
         <input 
           type="text" 
-          value={gameName} 
-          onChange={(e) => setGameName(e.target.value)} 
-          placeholder="Add a new game" 
+          placeholder="이름 또는 태그로 검색" 
+          className={styles.wishlist_search} 
+          value={searchKeyword} 
+          onChange={(e) => setSearchKeyword(e.target.value)}
         />
-        <button onClick={addGame}>Add Game</button>
       </div>
+      <TransitionGroup className={styles.wishlist_game_list}>
+        {filteredWishlist.map((game, index) => (
+          <CSSTransition
+            key={game.wishListId}
+            timeout={300}
+            classNames={{
+              enter: styles.itemEnter,
+              enterActive: styles.itemEnterActive,
+              exit: styles.itemExit,
+              exitActive: styles.itemExitActive,
+            }}
+          >
+            <div
+              className={styles.wishlist_game_item}
+              draggable
+              onDragStart={(e) => dragStart(e, index)}
+              onDragEnter={(e) => dragEnter(e, index)}
+              onDragEnd={drop}
+              onDragOver={(e) => e.preventDefault()}
+            >
+              <img src={game.gameImage} alt={game.gameTitle} className={styles.wishlist_game_image} />
+              <div className={styles.wishlist_game_details} style={{ maxWidth: '75%' }}>
+                <h2 className={styles.wishlist_game_title}>{game.gameTitle}</h2>
+                <div className={styles.game_meta_info}>
+                  <span className={styles.game_review}>종합 평가: {game.reviewSummary || '정보 없음'}</span>
+                  <span className={styles.game_release}>출시일: {game.releaseDate}</span>
+                </div>
+                <div className={styles.tag_container}>
+                  <span className={styles.tag}>싱글 플레이어</span>
+                  <span className={styles.tag}>멀티 플레이어</span>
+                </div>
+              </div>
+              <div className={styles.wishlist_action_container}>
+                <div className={styles.game_price}>${game.gamePrice}</div>
+                <button className={styles.wishlist_cart_button}>장바구니에 추가</button>
+              </div>
+            </div>
+          </CSSTransition>
+        ))}
+      </TransitionGroup>
     </div>
   );
 };
 
 export default WishList;
-
