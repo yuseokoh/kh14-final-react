@@ -152,3 +152,44 @@ footer {
     width: 100vw;
     height: 100vh;
 }
+/* PaymentSuccessPage.module.css */
+.paymentSuccessContainer {
+  background-color: #1b2838;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #66c0f4;
+}
+
+.contentInstall,
+.steamPoints,
+.purchaseReceipt {
+  background-color: #2a475e;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 8px;
+}
+
+button {
+  background-color: #5c7e10;
+  color: white;
+}
+.loginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./Login.jpg');
+  background-size: cover;
+  /* 이미지가 컨테이너에 꽉 차도록 */
+  background-position: center;
+  /* 이미지를 중앙에 배치 */
+  height: 100vh;
+  /* 화면 높이에 맞추기 */
+  width: 100vw;
+  /* 화면 너비에 맞추기 */
+  margin: 0;
+  padding: 0;
+}
