@@ -22,13 +22,13 @@ import CommunityList from "./community/CommunityList";
 import CommunityAdd from "./community/CommunityAdd";
 import CommunityEdit from "./community/CommunityEdit";
 import CommunityDetail from "./community/CommunityDetail";
-import CommunitySearch from "./community/CommunitySearch"; 
 
 
 import PrivacyPolicy from "../components/footer/PrivacyPolicy";
 import TermsOfUse from "../components/footer/TermsOfUse";
 import SteamAgreement from "../components/footer/SteamAgreement";
 import RefundPolicy from "../components/footer/RefundPolicy";
+import CommunitySearch from "./community/CommunitySearch";
 
 
 
@@ -82,7 +82,7 @@ const MainContent = () => {
                     <Route path="/community/detail/:communityNo" element={<CommunityDetail />} />
                     <Route path="/community/search/title/:keyword" element={<CommunitySearch />} />
 
-
+                                            
                     {/* 회원가입 */}
                     <Route path="/member/signup" element={<SingUp />} />
 

@@ -7,6 +7,7 @@ import { useNavigate } from "react-router";
 const CommunityAdd = () => {
     //navigate
     const navigate = useNavigate();
+    //dsd
 
     //state
     const [input, setInput] = useState({
@@ -78,7 +79,7 @@ const CommunityAdd = () => {
         <div className="row mt-4">
             <div className="col">
                 <label>파일첨부(미정)</label>
-            </div>
+            </div>   
         </div>
 
         <div className="row mt-4">

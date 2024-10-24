@@ -9,6 +9,7 @@ import { useRecoilValue } from "recoil"
 const CommunityList = () => {
     // navigator
     const navigate = useNavigate();
+    //dsad
 
     // state
     const [communityList, setCommunityList] = useState([]);
@@ -124,7 +125,7 @@ const CommunityList = () => {
                     </div>
                 </div>
             </div>
-        </>
+        </>  
     );
 };
 

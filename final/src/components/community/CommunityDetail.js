@@ -7,8 +7,9 @@ import { useState } from 'react';
 import { useMemo } from 'react';
 
 const CommunityDetail = ()=>{
-    //파라미터를 읽는 명령
+    //파라미터를 읽는 명령  
     const {communityNo} = useParams();
+    //dsds
 
     //이동 도구
     const navigate = useNavigate();

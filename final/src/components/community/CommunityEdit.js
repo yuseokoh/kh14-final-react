@@ -11,6 +11,7 @@ const CommunityEdit = ()=>{
 
     //네비게이터
     const navigate = useNavigate();
+    //dsdsds
 
     //state
     const [community, setCommunity] = useState(null);
@@ -40,7 +41,7 @@ const CommunityEdit = ()=>{
             [e.target.name] : e.target.value
         });
     }, [community]);
-
+  
     const updateCommunity = useCallback(async () => {
         // communityNo가 community 객체에 없다면 추가
         const updatedCommunity = { ...community, communityNo };
