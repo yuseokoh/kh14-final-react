@@ -33,7 +33,7 @@ const MemberLogin = () => {
       ...prevInput,
       [e.target.name]: e.target.value
     }));
-  }, []);
+  }, []); 
 
   // 로그인 요청
   const sendLoginRequest = useCallback(async () => {
