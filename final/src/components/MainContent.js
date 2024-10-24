@@ -17,11 +17,11 @@ import FriendList from "./friend/FriendList";
 import SingUp from './member/SingUp'; 
 import SignupPage from './member/SignupPage'; 
 import SignupForm from './member/SignupForm'; 
-import KakaoLoginPage from './member/KakaoLoginPage'; 
 import { useTranslation } from 'react-i18next';
 import CommunityList from "./community/CommunityList";
 import CommunityAdd from "./community/CommunityAdd";
 import CommunityEdit from "./community/CommunityEdit";
+import CommunityDetail from "./community/CommunityDetail";
 
 
 import PrivacyPolicy from "../components/footer/PrivacyPolicy";
@@ -65,6 +65,8 @@ const MainContent = () => {
                     <Route path="/member/signupForm" element={<SignupForm />} />
 
                     {/* 결제 */}
+                  
+                    <Route path="/cancel-payment/detail/:paymentNo" element={<CancelPaymentPage />} />
                     <Route path="/cart/success/:partnerOrderId" element={<PaymentSuccessPage />} />
                   
 
@@ -76,6 +78,8 @@ const MainContent = () => {
                     <Route path="/community/list" element={<CommunityList/>}/>
                     <Route path="/community/add" element={<CommunityAdd/>}/>
                     <Route path="/community/edit/:communityNo" element={<CommunityEdit/>}/>
+                    <Route path="/community/detail/:communityNo" element={<CommunityDetail />} />
+                    <Route path="/community/search/title/:keyword" element={<CommunitySearch />} />
 
 
                     {/* 회원가입 */}
