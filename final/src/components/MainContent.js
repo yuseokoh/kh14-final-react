@@ -31,7 +31,7 @@ import SteamAgreement from "../components/footer/SteamAgreement";
 import RefundPolicy from "../components/footer/RefundPolicy";
 
 
-
+// 메인에다 커밋하지마라 
 
 const MainContent = () => {
     const { t } = useTranslation(); // 번역 훅 사용

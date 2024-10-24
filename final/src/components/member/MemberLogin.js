@@ -9,12 +9,18 @@ import styles from './Login.module.css';
 import LoginImage from './Login.jpg';
 import { useTranslation } from 'react-i18next';
 
+// 테스트커밋 주석 
+
 const MemberLogin = () => {
 
   // navigate
   const { t } = useTranslation();
   const navigate = useNavigate();
-
+  
+// 테스트커밋 주석 
+  const test = useCallback();
+  //
+  
   // state
   const [input, setInput] = useState({
     memberId: "",
