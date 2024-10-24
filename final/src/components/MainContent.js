@@ -22,6 +22,7 @@ import CommunityList from "./community/CommunityList";
 import CommunityAdd from "./community/CommunityAdd";
 import CommunityEdit from "./community/CommunityEdit";
 import CommunityDetail from "./community/CommunityDetail";
+import CommunitySearch from "./community/CommunitySearch"; 
 
 
 import PrivacyPolicy from "../components/footer/PrivacyPolicy";
