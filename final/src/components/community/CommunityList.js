@@ -68,61 +68,6 @@ const CommunityList = ()=>{
             </div>
         </div>
 
-        {/* 목록 표시 자리 */}
-        <div className="row mt-4">
-            <div className="col">
-                {/* 폭이 좁아지면 횡스크롤이 생기는 테이블 */}
-                <div className="table-responsive">
-                    <table className="table text-nowrap">
-                        <thead>
-                            <tr>
-                                <th>글 번호</th>
-                                <th>제목</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {communityList.map(community=>(
-                            <tr key={community.communityNo}>
-                                <td>{community.communityNo}</td>
-                                <td>
-                                    <NavLink to={"/community/detail/"+community.communityNo}>
-                                        {community.communityTitle}
-                                    </NavLink>
-                                </td>
-                                <td>{community.communityNo}</td>
-                                <td>{community.communityTitle}</td>
-                                <td>
-                                    {/* 
-                                    <GoPencil className="text-warning"
-                                        onClick={e=>editBook(book)}/>
-                                    <GoTrash className="text-danger ms-2"
-                                        onClick={e=>deleteBook(book)}/>
-                                     */}
-                                </td>
-                            </tr>
-                            ))}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-<<<<<<< HEAD
-
-            {/* 등록 버튼 */}
-            <div className="row mt-4">
-                <div className="col">
-                    <NavLink className="btn btn-success" to="/community/add">
-                        <FaPlus />
-                        등록
-                    </NavLink>
-
-                    <button className="btn btn-success ms-2" 
-                            onClick={() => navigate("/community/add")}>
-                        <FaPlus />
-                        등록
-                    </button>
-                </div>
-            </div>
-
             {/* 목록 표시 자리 */}
             <div className="row mt-4">
                 <div className="col">
@@ -157,12 +102,8 @@ const CommunityList = ()=>{
                     </div>
                 </div>
             </div>
-        </>  
+        </>
     );
-=======
-        </div>
-    </>);
->>>>>>> origin/main
 };
 
 export default CommunityList;

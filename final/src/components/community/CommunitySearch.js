@@ -18,7 +18,7 @@ const CommunitySearch = () => {
             setResults([]); // 검색어가 없으면 결과를 비웁니다.
         }
     };
-    //dsada
+    //d
 
     return (
         <div>
