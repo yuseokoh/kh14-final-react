@@ -1,0 +1,1030 @@
+[33mcommit b6a96da969d1bcc9d78d0c3808f90695556f604e[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32myuseok-1023-03[m[33m, [m[1;31morigin/yuseok-1023-03[m[33m)[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 24 08:46:51 2024 +0900
+
+    충돌해결후 재커밋
+
+[33mcommit c705b35e9735a824978a417cfb31c085b0d71966[m
+Merge: 6f9cb0b 66089e6
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 24 08:44:16 2024 +0900
+
+    충돌해결 재커밋
+
+[33mcommit 6f9cb0bc45e582fd15c427e7184aaf1f387ea5df[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 24 08:42:26 2024 +0900
+
+    로그인 롤백(카카오전버전) & 카카오테스트 분리 후 재 추가
+
+[33mcommit 66089e6ae41f1360eaa528bb411af7e600190d93[m
+Merge: 7b233a9 be1012c
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 24 04:08:12 2024 +0900
+
+    Merge pull request #20 from yuseokoh:mincheol222
+    
+    결제 목록 완
+
+[33mcommit be1012cbe390fcb92be6efddd60c5d47ae1be876[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 24 04:07:57 2024 +0900
+
+    결제 목록 완
+
+[33mcommit 7b233a9dc6981c36c0cc834161ac840d8619e973[m[33m ([m[1;31morigin/mincheol2[m[33m)[m
+Merge: 194abe3 da34072
+Author: mincheol11 <f438146@gmail.com>
+Date:   Wed Oct 23 21:58:40 2024 +0900
+
+    Merge pull request #19 from yuseokoh:mincheol2
+    
+    세션저장소에 결제 번호 삽입 성공
+
+[33mcommit da340728e33ba87a4f2339cac1de1512d68cb922[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Wed Oct 23 21:57:50 2024 +0900
+
+    세션저장소에 결제 번호 삽입 성공
+
+[33mcommit 194abe3cd864fa68f4cd8776a89ee3e537113f16[m[33m ([m[1;31morigin/kjh99[m[33m)[m
+Merge: 1827cdd a46dfde
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Wed Oct 23 18:27:27 2024 +0900
+
+    Merge pull request #18 from yuseokoh:kjh99
+    
+    Update README.md
+
+[33mcommit a46dfdec9d20b3e2ae192c4e43cc237610e81c38[m
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Wed Oct 23 18:27:08 2024 +0900
+
+    Update README.md
+    .
+
+[33mcommit 1827cdd51990303e244e21f8cc8b99bacd0727b8[m
+Merge: 25bd24b fb9199c
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Wed Oct 23 18:16:36 2024 +0900
+
+    Merge pull request #17 from yuseokoh:kjh99
+    
+    커뮤니티 검색,상세,수정 구현
+
+[33mcommit fb9199c5eedce8e284c2bef5455c9ec271becb16[m
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Wed Oct 23 18:16:26 2024 +0900
+
+    커뮤니티 검색,상세,수정 구현
+    .
+
+[33mcommit 25bd24ba37584e080db71dff8ec0f1eaa100c7b7[m
+Author: poiu1061 <ryoupr1061@gmail.com>
+Date:   Wed Oct 23 15:55:00 2024 +0900
+
+    Update README.md
+
+[33mcommit 0092b20ecc384c9397772ac949985c4442ff8aab[m
+Merge: 7cc04da aae0f42
+Author: mincheol11 <f438146@gmail.com>
+Date:   Wed Oct 23 12:46:03 2024 +0900
+
+    Merge pull request #16 from yuseokoh:mincheol
+    
+    결제 테스트 끝낫으니 메뉴에서 삭제
+
+[33mcommit aae0f4247850a90b55bb4596bc737fb7bb35da80[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Wed Oct 23 12:45:32 2024 +0900
+
+    결제 테스트 끝낫으니 메뉴에서 삭제
+
+[33mcommit 7cc04da4b058c88e54d28940ce6bd0b942ff9478[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 23 10:59:19 2024 +0900
+
+    Update README.md
+
+[33mcommit b06847727c6b4e8aee41b9ae8f8fcb8b0cd5b7c8[m
+Merge: 8200dfa deef03d
+Author: mincheol11 <f438146@gmail.com>
+Date:   Wed Oct 23 10:56:56 2024 +0900
+
+    Merge pull request #15 from yuseokoh:mincheol
+    
+    테스트
+
+[33mcommit deef03dd57fbd10f09839b1e41a16d115a99bcfd[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Wed Oct 23 10:56:35 2024 +0900
+
+    테스트
+
+[33mcommit 8200dfa5c3d18471c4cb24a63663a1091ca4b686[m[33m ([m[1;31morigin/mincheoil[m[33m)[m
+Merge: 49c9bec e04b912
+Author: mincheol11 <f438146@gmail.com>
+Date:   Wed Oct 23 10:54:21 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit 49c9bec513a7bc94c6ca6d08975ac5484afee6a4[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Wed Oct 23 10:54:00 2024 +0900
+
+    제발 날라가지마
+
+[33mcommit e04b91279389081f7a12ac5d0e25a196674e4ac4[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 23 10:35:27 2024 +0900
+
+    Update README.md
+
+[33mcommit 049d3cd46cd2fda9e710aebf5d8bdaee0681ae09[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 23 10:35:08 2024 +0900
+
+    Update README.md
+
+[33mcommit 14d59c40fe2b87a9c60b178b0e2332cab50ed6c0[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 82321c9 d5ac715
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 23 10:33:17 2024 +0900
+
+    Merge pull request #14 from yuseokoh:yuseok-1023-02
+    
+    카카오 api 3차 커밋
+
+[33mcommit d5ac715fd376ea218d042a8cb3a2c3e939a51624[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 23 10:32:15 2024 +0900
+
+    카카오 api 3차 커밋
+
+[33mcommit 82321c945db17255805a28c0f6188b9d2089c01d[m
+Merge: 50aae0e 33b615c
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 23 10:30:13 2024 +0900
+
+    Merge pull request #13 from yuseokoh:yuseok-1023
+    
+    카카오api2차 커밋
+
+[33mcommit 33b615c22e1d737617f35ae6d35f75b63df171ab[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 23 10:29:33 2024 +0900
+
+    카카오api2차 커밋
+
+[33mcommit 50aae0e662128193986b3a3bfe33a50bb4f3134d[m
+Merge: ec49cbe d0d4023
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 23 10:25:40 2024 +0900
+
+    Merge pull request #12 from yuseokoh/yuseok-1021
+    
+    카카오 api로그인 커밋
+
+[33mcommit d0d402364aab11fd3e031cca8c27e2897a9e4441[m
+Merge: d5eff13 ec49cbe
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 23 10:25:00 2024 +0900
+
+    Merge branch 'main' into yuseok-1021
+
+[33mcommit d5eff13ac40d0e9fd433a4526a091965bf6d9d56[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 23 10:21:58 2024 +0900
+
+    카카오 api로그인 커밋
+
+[33mcommit ec49cbe0fb74a199d1f7f82778ae5ee65cfbad51[m
+Merge: 7dfeaff 6aafcb9
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 23 10:19:44 2024 +0900
+
+    Merge pull request #11 from yuseokoh:yuseok-1021
+    
+    커밋테스트
+
+[33mcommit 6aafcb9bd40033315952420796234b78c0a242cb[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 23 10:18:37 2024 +0900
+
+    커밋테스트
+
+[33mcommit 7dfeaff54831573297d33ab1ed95f55bf242f433[m
+Author: poiu1061 <ryoupr1061@gmail.com>
+Date:   Wed Oct 23 10:04:23 2024 +0900
+
+    장바구니
+
+[33mcommit f11260955fdb2c8c8c85522f9d9dd9e1021c24a0[m
+Merge: 306cb31 aab0b23
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Tue Oct 22 18:39:39 2024 +0900
+
+    Merge pull request #10 from yuseokoh:kjh99
+    
+    shoppingcart
+
+[33mcommit aab0b2345dfcf2fb87bc36130aa748e9ac5d1e9b[m
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Tue Oct 22 18:39:28 2024 +0900
+
+    shoppingcart
+
+[33mcommit 306cb31e1ddd152521f6b5ad739318cc07b943d7[m
+Merge: e3dbc19 cc0ccdf
+Author: poiu1061 <ryoupr1061@gmail.com>
+Date:   Tue Oct 22 18:06:43 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit e3dbc1922ecb2a1c871f7348624605f27976bf0d[m
+Author: poiu1061 <ryoupr1061@gmail.com>
+Date:   Tue Oct 22 18:06:16 2024 +0900
+
+    shoppingcart
+
+[33mcommit cc0ccdf9e8ba4aa5c096638fafb1a1da3ec33802[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Tue Oct 22 14:45:09 2024 +0900
+
+    수정
+
+[33mcommit 35978caa6ad0fac3be275495fcd4303a7216c471[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Tue Oct 22 13:27:57 2024 +0900
+
+    footer에 언어 번역 기능 추가
+
+[33mcommit e6ee5520654b423004ef2451f9ca05020c08c7d9[m
+Merge: 2dec156 b84d73a
+Author: mincheol11 <f438146@gmail.com>
+Date:   Tue Oct 22 12:22:10 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit 2dec1569b59cfc04f014c65f13e3d03851f6d177[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Tue Oct 22 12:21:46 2024 +0900
+
+    footer 완?성
+
+[33mcommit b84d73a0096a0a082996d8c883e1a630e036356f[m
+Author: ek9290 <ke9290@naver.com>
+Date:   Tue Oct 22 11:04:37 2024 +0900
+
+    홈 업데이트
+
+[33mcommit d4ac25f36fc49b633159ad0b0910879b9fd1e3ab[m
+Author: ek9290 <ke9290@naver.com>
+Date:   Tue Oct 22 10:59:05 2024 +0900
+
+    홈 업데이트
+
+[33mcommit cb764c594c2ba5e748bd4d9045169442918af9e5[m
+Author: ek9290 <ke9290@naver.com>
+Date:   Tue Oct 22 10:57:38 2024 +0900
+
+    홈 업데이트
+
+[33mcommit 02849e2c757465dcfcf33dcfe33b380c62231269[m
+Merge: 0285f19 1d09602
+Author: ek9290 <ke9290@naver.com>
+Date:   Tue Oct 22 10:43:39 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit 1d096029c79ab79d5284d9aaff2b0dd65d13bc7b[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Tue Oct 22 10:33:56 2024 +0900
+
+    Update README.md
+
+[33mcommit 15439f2e6b75fe834bdb8c22b18c6c01258e3fa5[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Tue Oct 22 09:31:41 2024 +0900
+
+    Update README.md
+
+[33mcommit 4a08bd02023e5572cdd0dc5069a61ec9ce402df6[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Tue Oct 22 09:13:48 2024 +0900
+
+    Update README.md
+
+[33mcommit fb73e259c0a292ecaede955b35fc9315abfb3f72[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Tue Oct 22 09:13:39 2024 +0900
+
+    Update README.md
+
+[33mcommit b365883d79520abdcd036b8bce7338339eeae80b[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 21 20:18:38 2024 +0900
+
+    footer의  사용권 완
+
+[33mcommit ab594038af821408b18aaf83d8b8a2e2e95ffe5e[m
+Merge: 51adc97 6519eae
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 21 18:21:08 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit 51adc97801d277a773b749114251cffe350b6972[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 21 18:20:49 2024 +0900
+
+    개인정보 처리 방침 페이지 완
+
+[33mcommit 6519eaeb33c25044baa266d667098e059228ec4f[m
+Merge: ad8a73e 09f972b
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Mon Oct 21 18:10:33 2024 +0900
+
+    Merge pull request #9 from yuseokoh:kjh99
+    
+    커뮤니티 미완 아직도 오류 못찾음
+
+[33mcommit 09f972bc66fab73426baacb5a24e3db3ce786149[m
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Mon Oct 21 18:09:36 2024 +0900
+
+    커뮤니티 미완 아직도 오류 못찾음
+
+[33mcommit ad8a73e1e33e24a3e0baaa5c79fbbcdcaad67d1b[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 21 17:14:49 2024 +0900
+
+    경로 수정
+
+[33mcommit e35e769e65de4c0f078f968ee9183d90fc2d0977[m
+Merge: 907301e eb7ff46
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 21 17:07:59 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit 907301e10698f0b5f6a3df3ead88ab0a4d30fdeb[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 21 17:07:45 2024 +0900
+
+    footer 생성
+
+[33mcommit eb7ff4681b22934fd6259e4348509cabef9ab4c4[m
+Merge: 4a73651 392f0a9
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Mon Oct 21 16:21:03 2024 +0900
+
+    Merge pull request #8 from yuseokoh:kjh99
+    
+    kjh 1021-1
+
+[33mcommit 392f0a9ca2a0ba90e0d4eeb5abb0502e1878db90[m
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Mon Oct 21 16:19:00 2024 +0900
+
+    kjh 1021-1
+
+[33mcommit 4a7365198461a3a25cab743383bf2a31299393c6[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 21 14:56:05 2024 +0900
+
+    paymentMethodePage 삭제
+
+[33mcommit 57e9f6de15268497547083956e538fb965f77ae3[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 21 14:53:25 2024 +0900
+
+    찜,장바구니 언어 번역 기능 추가
+
+[33mcommit 5122da43876bbb49950542defde7e556ca44d60a[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Mon Oct 21 14:15:21 2024 +0900
+
+    충돌난부분 지움(지훈css)
+
+[33mcommit a84b2967afee98b695265fecdf75773eff5b4dc1[m
+Merge: 8c065ac e6a2bfb
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Mon Oct 21 13:55:57 2024 +0900
+
+    Merge branch 'recover3'
+
+[33mcommit e6a2bfb89dc62c4f0d15e53279fe518db7ed182a[m[33m ([m[1;31morigin/recover3[m[33m, [m[1;32mrecover3[m[33m)[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Mon Oct 21 13:46:29 2024 +0900
+
+    recover3
+
+[33mcommit c0ce8f3b9ef2ee994e3e42e008b82fdd068ee472[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Mon Oct 21 13:34:40 2024 +0900
+
+    recover3(유석)
+
+[33mcommit 0285f199f4848ea916cc3d1ad8d9a1452c72ec29[m
+Author: ek9290 <ke9290@naver.com>
+Date:   Mon Oct 21 11:11:06 2024 +0900
+
+    Home, Homemodule 메인페이지 구성
+
+[33mcommit fa1a7670f0b9bfd00a7e50dde27b8049c0f41545[m
+Merge: 94aa65d e7ebf8a
+Author: ek9290 <ke9290@naver.com>
+Date:   Mon Oct 21 11:10:13 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit 94aa65de680607cce9a9badadade17f8fa415fae[m
+Author: ek9290 <ke9290@naver.com>
+Date:   Mon Oct 21 11:09:37 2024 +0900
+
+    Clear cache
+
+[33mcommit e7ebf8ab3c5342425c4c167e89b476da69a2c48b[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Mon Oct 21 11:06:54 2024 +0900
+
+    Update README.md
+
+[33mcommit 90a16f95c8c9a8bb6b4c04f51de0aa61e2190545[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Mon Oct 21 11:06:42 2024 +0900
+
+    Update README.md
+
+[33mcommit ac31f075b3241a7b465d80c60d9f0439dcfc5b31[m
+Merge: 0261ab6 a229fd7
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Mon Oct 21 10:37:57 2024 +0900
+
+    Merge pull request #6 from yuseokoh/yuseok-login-1021
+    
+    로그인 커밋1차
+
+[33mcommit a229fd7729a3740a91ad1234e205fe9ffedaaec3[m
+Merge: be699d8 0261ab6
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Mon Oct 21 10:37:19 2024 +0900
+
+    Merge branch 'main' into yuseok-login-1021
+
+[33mcommit be699d8bfd545ac882b2b6775d5b44a43d82eb4e[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Mon Oct 21 10:29:53 2024 +0900
+
+    로그인 커밋1차
+
+[33mcommit 0261ab60317917784d0759cc6df1d485ed9a4453[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Mon Oct 21 09:33:04 2024 +0900
+
+    Update README.md
+
+[33mcommit 8c065ac7829251a56ce6757a4fd1e5c3cbb1f17d[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Mon Oct 21 09:32:42 2024 +0900
+
+    Update README.md
+
+[33mcommit 0c3aade88d21063d4f9bbd804fa41729f8db2c9c[m
+Merge: 2351ed8 7e12bce
+Author: poiu1061 <ryoupr1061@gmail.com>
+Date:   Sun Oct 20 18:18:33 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit 2351ed891be2b0424a4065e7e41ebc376f757946[m
+Author: poiu1061 <ryoupr1061@gmail.com>
+Date:   Sun Oct 20 18:14:33 2024 +0900
+
+    장바구니 기초공사
+
+[33mcommit 7e12bced65fa5c383c9fee3cfeccece42501281d[m
+Merge: bf18f0e 7fbfd55
+Author: poiu1061 <ryoupr1061@gmail.com>
+Date:   Sun Oct 20 14:59:08 2024 +0900
+
+    Merge pull request #3 from yuseokoh/jihun1018
+    
+    wishlist화면
+
+[33mcommit 7fbfd5523194669702c87c6fc67a1b7df7506bd4[m[33m ([m[1;31morigin/jihun1018[m[33m)[m
+Merge: 107a974 bf18f0e
+Author: poiu1061 <ryoupr1061@gmail.com>
+Date:   Sun Oct 20 14:58:47 2024 +0900
+
+    Merge branch 'main' into jihun1018
+
+[33mcommit bf18f0e52c7c3e0fe745231c2459cb10cd62fa31[m
+Author: poiu1061 <ryoupr1061@gmail.com>
+Date:   Sun Oct 20 14:51:11 2024 +0900
+
+    wishlist
+
+[33mcommit dcaca95fd66bf3c2c03aa2b8423d074960a8a07e[m
+Merge: 21cfac1 cc38385
+Author: mincheol11 <f438146@gmail.com>
+Date:   Fri Oct 18 20:04:19 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit 21cfac100256c66f58bc31d0327e6095dbb28292[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Fri Oct 18 20:03:45 2024 +0900
+
+    결제 상세 테이블에 값 삽입 완
+
+[33mcommit cc383854fb2da6d69ac3b2ffa8b39c0da3972e5c[m
+Merge: bfaa2d3 aa7d4e7
+Author: minseokOo <minseok916@gmail.com>
+Date:   Fri Oct 18 18:18:22 2024 +0900
+
+    Merge pull request #5 from yuseokoh/minseok1018
+    
+    minseok1018
+
+[33mcommit aa7d4e709ecba7c87d7d6557b85582cf6cc265f8[m[33m ([m[1;31morigin/minseok1018[m[33m)[m
+Author: minseokOo <minseok916@gmail.com>
+Date:   Fri Oct 18 18:17:20 2024 +0900
+
+    minseok1018
+
+[33mcommit bfaa2d33f84c817dea2ebeb52e8299e2d0ca7d35[m
+Merge: f3d6082 20637ff
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Fri Oct 18 17:45:34 2024 +0900
+
+    Merge pull request #4 from yuseokoh:kjh99
+    
+    커뮤니티 리스트
+
+[33mcommit 20637ffc4de880e27594a242d88eca0eeecaa57e[m
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Fri Oct 18 17:44:39 2024 +0900
+
+    커뮤니티 리스트
+
+[33mcommit f3d60822066183886712293845986ed2b52e4a63[m
+Merge: 90177c1 478f160
+Author: mincheol11 <f438146@gmail.com>
+Date:   Fri Oct 18 17:43:20 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit 90177c198acaf546fbad63055312d11b9059f372[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Fri Oct 18 17:42:39 2024 +0900
+
+    결제 데이터베이스 값 삽입 완
+
+[33mcommit 107a974497b8c2f558f3e14e787d601cb414350f[m
+Author: poiu1061 <ryoupr1061@gmail.com>
+Date:   Fri Oct 18 16:54:36 2024 +0900
+
+    wishlist화면
+
+[33mcommit 478f1607230757aae968a59d3a7d4d6853b8bc8b[m
+Merge: b586ba8 364adb2
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Fri Oct 18 16:02:02 2024 +0900
+
+    Merge pull request #2 from yuseokoh:kjh99
+    
+    111
+
+[33mcommit 364adb2896d7c9e5dc70098be60131af1660c914[m
+Merge: c4f5d15 b586ba8
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Fri Oct 18 16:01:46 2024 +0900
+
+    Merge remote-tracking branch 'origin/main' into kjh99
+
+[33mcommit c4f5d1513a8d4e12d61082123ad854c78a6d48c3[m
+Author: kjh0908 <kimmiyounl98@naver.com>
+Date:   Fri Oct 18 16:00:44 2024 +0900
+
+    111
+
+[33mcommit b586ba8b710a424944d091516ec08dd4e70e5a29[m
+Author: ek9290 <ke9290@naver.com>
+Date:   Fri Oct 18 15:50:26 2024 +0900
+
+    홈js 더미제거, 게임 백엔드데이터 처리/배경색추가
+
+[33mcommit 98819f3820572edf829848ef3df2945dc6d75dad[m
+Merge: 8e8ca6f 8c1224b
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 18:27:54 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit 8e8ca6f13e0fc18c3f9d4a62835e7988e399ae4b[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 18:27:04 2024 +0900
+
+    백그라운드 이미지 추가
+
+[33mcommit 8c1224b4e7af79b44d2d90c7dc44d2b28d70d5e1[m
+Merge: e1ca0f0 9804052
+Author: minseokOo <minseok916@gmail.com>
+Date:   Thu Oct 17 18:15:09 2024 +0900
+
+    Merge pull request #1 from yuseokoh/minseok-1017
+    
+    minseok 1017 친구목록 구현중
+
+[33mcommit 980405237a45fb2c08905090050e283a5e19a36d[m
+Merge: b0a80d7 e1ca0f0
+Author: minseokOo <minseok916@gmail.com>
+Date:   Thu Oct 17 18:15:00 2024 +0900
+
+    Merge branch 'main' into minseok-1017
+
+[33mcommit b0a80d7625ee1e6e6ce0cb21cdc8ab164622f280[m
+Author: minseokOo <minseok916@gmail.com>
+Date:   Thu Oct 17 18:11:29 2024 +0900
+
+    minseok 1017 친구목록 구현중
+
+[33mcommit e1ca0f0628dd672e6c6c91e763f40fe29f8251db[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 17:10:59 2024 +0900
+
+    css 수정
+
+[33mcommit f584c30e137bc7e90407870c91051704ee13b1d7[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 17:07:44 2024 +0900
+
+    로딩 js 삭제
+
+[33mcommit e0397f1d2bf9844e13726f2a6cd11542b57bd1f9[m
+Merge: f96d136 ec5de82
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 16:46:16 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit f96d136bd1cfe49e9df2542944478d0e65e32726[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 16:45:52 2024 +0900
+
+    카카오페이 이미지 추가
+
+[33mcommit ec5de82bef5cac72899f1fd2d7340f521d2cbf9b[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 16:28:32 2024 +0900
+
+    Create README.md
+
+[33mcommit 06f15ea011cdac2c632fcf5ae11b897862d192ff[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 16:25:08 2024 +0900
+
+    에러 해결22
+
+[33mcommit 7e6efddfdab8ebc81fbd08a148854ba3b9e1156f[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 16:20:38 2024 +0900
+
+    에러 해결
+
+[33mcommit b67c1716caa63e707cd8e9e8df2d95b46a984bab[m
+Author: ek9290 <ke9290@naver.com>
+Date:   Thu Oct 17 15:55:08 2024 +0900
+
+    final 외 파일 제거
+
+[33mcommit 3fb97748c4fef1c15cd11cc1476d705e31e4ef0d[m
+Author: ek9290 <ke9290@naver.com>
+Date:   Thu Oct 17 15:53:44 2024 +0900
+
+    홈 작업 임시
+
+[33mcommit 7096de62341de488b443eb1671d14a6cd20977be[m
+Merge: 81ca084 4dc735f
+Author: ek9290 <ke9290@naver.com>
+Date:   Thu Oct 17 15:53:28 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit 81ca0844fb44f62e02225f73b2cb09ba72f72f9b[m
+Author: ek9290 <ke9290@naver.com>
+Date:   Thu Oct 17 15:49:27 2024 +0900
+
+    홈 - 임시
+
+[33mcommit 4dc735fdd8842348437f8656a895d8634ab75209[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 14:16:27 2024 +0900
+
+    테스트
+
+[33mcommit 9833749100de871b45c388195bd4a3380f677bb0[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 14:08:47 2024 +0900
+
+    en,ko json에 언어 메뉴 관련 기능 추가
+
+[33mcommit 8b59a84f76a28bc977b0f3f923d458595c308adc[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 14:03:27 2024 +0900
+
+    언어 메뉴 추가
+
+[33mcommit 94b08743656e1eda01b2d8c18900d727237c0794[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 13:51:15 2024 +0900
+
+    결제 페이지들 번역기능  완
+
+[33mcommit 3b796b3dbe9aebe7ee1a04186cecd4c138fe7ea5[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 12:58:52 2024 +0900
+
+    Update README.md
+
+[33mcommit ac9750458ac5ea2f0b1016327705428fd3c0d809[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 12:58:08 2024 +0900
+
+    로그인 페이지 언어 변경 기능 완
+
+[33mcommit cf69b4fd5fda8d31652cdfd78fe0c0492b9cd5f6[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 12:42:34 2024 +0900
+
+    Update README.md
+
+[33mcommit dfa3994b278adde7c8dd0ed8fa8b401c599145c5[m
+Merge: 61c1926 c4e881a
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 17 12:39:12 2024 +0900
+
+    메인컨텐츠 충돌해결
+
+[33mcommit 61c1926cac376247c94a61764ed0a0f20e935c62[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 17 12:38:27 2024 +0900
+
+    회원가입 1차 커밋
+
+[33mcommit c4e881ac4de7f7958a15c255e860829a1d618f7a[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Thu Oct 17 12:10:12 2024 +0900
+
+    언어 변경 기능 구현중
+
+[33mcommit 4fcee53eb5cc423a59934f27e5d1e41ef978fc65[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Wed Oct 16 14:14:20 2024 +0900
+
+    커밋 메시지
+
+[33mcommit f1a0369532abf67ea1f77a00a0d1e058cd432afc[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Wed Oct 16 13:27:07 2024 +0900
+
+    css 문제 해결중
+
+[33mcommit f8d3376dc0c378cdc516a21eedad5213380a1fd0[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 16 12:36:49 2024 +0900
+
+    메뉴 수정
+
+[33mcommit abe794afcd7482a6c10d06b55328295f2e21fc16[m
+Merge: 2980dbb 92cdcff
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 16 12:34:17 2024 +0900
+
+    css 모듈화 & 백그라운드 & 오류충돌 해결
+
+[33mcommit 2980dbbfad64fc49e0ad478d760ff9a51f244c21[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Wed Oct 16 12:33:10 2024 +0900
+
+    css&백그라운드 수정
+
+[33mcommit 92cdcff81ca6146c05e088ca48fc1e984c614118[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Tue Oct 15 20:00:04 2024 +0900
+
+    결제 취소 테스트 공사중
+
+[33mcommit f745003b980c6d154e791f92708a6786cc881ded[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Tue Oct 15 17:19:04 2024 +0900
+
+    로딩 페이지 추가
+
+[33mcommit eecae62bb563916d88439ff7fcb329dba1c551f8[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Tue Oct 15 15:44:38 2024 +0900
+
+    메뉴수정 & 로딩 애니메이션추가
+
+[33mcommit a44e08df7ec347db3509f0c2be5b0e81c596bc49[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Tue Oct 15 14:51:15 2024 +0900
+
+    메뉴바수정
+
+[33mcommit 16cf226bfb3e76ac469bdd726caa846287942c29[m
+Merge: f9f79bc 8b45de0
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Tue Oct 15 12:42:43 2024 +0900
+
+    메뉴,멤버로그인 충돌해결
+
+[33mcommit f9f79bcac54b0fe8793f44f1201ac79a59a641c9[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Tue Oct 15 12:37:53 2024 +0900
+
+    프로젝트 빌드 설정파일분리 (백엔드포함),로그인,메뉴css추가 &변경
+
+[33mcommit 8b45de0c2d33ed1c01e45ae4ca63f64a3b26d788[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Tue Oct 15 04:52:56 2024 +0900
+
+    게임 더미데이터 생성해서 결제 테스트
+
+[33mcommit 9f21e65c50c65611abbd07c00d508f2444217391[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 21:27:20 2024 +0900
+
+    잔여코드
+
+[33mcommit e6f7c61c120de59d38b4078daa4b1669d21225b7[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Mon Oct 14 17:45:22 2024 +0900
+
+    로그인 오류
+
+[33mcommit e4a90d6eed79012b0ab5e80130fbd1e528a0c712[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 17:07:52 2024 +0900
+
+    로그인시 결제 테스트들이 보이게 경로 추가
+
+[33mcommit ef6953ebd20b1e0e6d9b5dccc3bdee45dbf1838a[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 17:03:43 2024 +0900
+
+    경로 수정
+
+[33mcommit dc51c75e6a5f00639dd175d2f1df46991047fe9b[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 16:49:14 2024 +0900
+
+    경로 수정
+
+[33mcommit e3a667b424f06edd9a8176d334358b751bd9de29[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 16:41:39 2024 +0900
+
+    결제 완료시 보여주는 메세지 수정
+
+[33mcommit 602d61eaff583f24d707ef1d3c26ed2e95147e48[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 16:41:00 2024 +0900
+
+    경로 수정
+
+[33mcommit 6373f3572bbe4b795d301aaffe28ef65b2ef9284[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 16:36:21 2024 +0900
+
+    디자인 수정
+
+[33mcommit 5820e7fb2de0f90eddc77ae502c33aa99c691094[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 16:30:58 2024 +0900
+
+    디자인 수정
+
+[33mcommit 8d8ba65a7a99736ed5e5beb7a0c56d304e9a787b[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 16:14:13 2024 +0900
+
+    결제 프론트 공사중
+
+[33mcommit d1ac795db01369b77b9051340b4aebeb74c5a430[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 15:43:36 2024 +0900
+
+    payment-confirmation 프론트 완?성
+
+[33mcommit 70947e1d6f8fc878318af2ec4e6c0402b58e5da8[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 14:39:17 2024 +0900
+
+    결제 프론트 테스트 중
+
+[33mcommit 59162a4b5c1e7f1c27c483a63549913bd627fe95[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Mon Oct 14 12:46:11 2024 +0900
+
+    로그인성공
+
+[33mcommit 46b33bfce59e86fc4d010fb8fc3cd5290a9a610c[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 09:27:17 2024 +0900
+
+    결제 프론트 공사중
+
+[33mcommit 85a5490a984c9dc9f23c2f258b38480ed68cfc30[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 09:14:15 2024 +0900
+
+    결제 프론트 공사중
+
+[33mcommit 132a24c8ab6290b8238ed4e5bb2dac66d36eb6d4[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Mon Oct 14 08:40:03 2024 +0900
+
+    결제 프론트 공사중
+
+[33mcommit 94c8c9f337f3b0d6dab0941e6968fe7f80b6748c[m
+Author: mincheol11 <f438146@gmail.com>
+Date:   Fri Oct 11 21:48:59 2024 +0900
+
+    결제 프론트 초기 공사중
+
+[33mcommit e147baefb9ef59f3a71a0954ce49d5d69303f40f[m
+Merge: b4595f2 fa6e8a7
+Author: mincheol22 <jumsoon0043@gmail.com>
+Date:   Thu Oct 10 14:48:48 2024 +0900
+
+    Merge branch 'main' of https://github.com/yuseokoh/kh14-final-react
+
+[33mcommit b4595f2ef9e907e04d43010738350a25025b0e8c[m
+Author: mincheol22 <jumsoon0043@gmail.com>
+Date:   Thu Oct 10 14:48:26 2024 +0900
+
+    테스트
+
+[33mcommit fa6e8a728606f6df1910f994a33479994461310b[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 10 14:29:25 2024 +0900
+
+    테스트 커밋
+
+[33mcommit 911a5533f77babd7fd17a0e1a81b9e4e91ebdedf[m
+Author: mincheol22 <jumsoon0043@gmail.com>
+Date:   Thu Oct 10 14:09:52 2024 +0900
+
+    결제 프론트 초기 공사중
+
+[33mcommit d281637bf3b510f77dd8ac803d4779ec5fcef8eb[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 10 12:18:54 2024 +0900
+
+    파이널 기본 설정 및 로그인을 위한준비
+
+[33mcommit 6a20859e74982f8b1c266afd74318da42a36a7b7[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 10 11:57:00 2024 +0900
+
+    package json update
+
+[33mcommit 927fd04a40081cb0afdfcd446cafcd01e3c88874[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 10 10:57:46 2024 +0900
+
+    파이널 리액트 최초생성
+
+[33mcommit 1077a20b2daa92f350f2d28f52bdee5f8026783b[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 10 10:47:32 2024 +0900
+
+    Delete final directory
+
+[33mcommit 4c8aeed62a5b29c3cc839a426140c05ee3265a7c[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 10 10:44:03 2024 +0900
+
+    파이널 리액트 최초생성
+
+[33mcommit a49bae1b671167b39026b5c48f2eaee8833b07a2[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 10 10:41:23 2024 +0900
+
+    Delete final directory
+
+[33mcommit f28bd0122339c02ea14cdea8a3723c9fca64c3bb[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 10 10:39:07 2024 +0900
+
+    최초
+
+[33mcommit 6eecbf5bce9f040af7792060b7c2e3c8233a5a1a[m
+Author: yuseokoh <dhdbtjraksa@naver.com>
+Date:   Thu Oct 10 09:14:36 2024 +0900
+
+    Initial commit

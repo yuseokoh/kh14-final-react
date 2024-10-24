@@ -9,6 +9,11 @@ const ShoppingCart = () => {
   const [cartList, setCartList] = useState([]);
   const { t } = useTranslation();
 
+
+  //테스트 커밋
+  const [ar, rr] = useState([]);
+  //지워야함 
+
   // Recoil 상태 사용
   const login = useRecoilValue(loginState);
   const memberId = useRecoilValue(memberIdState);

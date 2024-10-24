@@ -17,22 +17,21 @@ import FriendList from "./friend/FriendList";
 import SingUp from './member/SingUp'; 
 import SignupPage from './member/SignupPage'; 
 import SignupForm from './member/SignupForm'; 
+import KakaoLoginPage from './member/KakaoLoginPage'; 
 import { useTranslation } from 'react-i18next';
 import CommunityList from "./community/CommunityList";
 import CommunityAdd from "./community/CommunityAdd";
 import CommunityEdit from "./community/CommunityEdit";
 import CommunityDetail from "./community/CommunityDetail";
-
+import CommunitySearch from "./community/CommunitySearch";
 
 import PrivacyPolicy from "../components/footer/PrivacyPolicy";
 import TermsOfUse from "../components/footer/TermsOfUse";
 import SteamAgreement from "../components/footer/SteamAgreement";
 import RefundPolicy from "../components/footer/RefundPolicy";
-import CommunitySearch from "./community/CommunitySearch";
-import CancelPaymentPage from "./payment/CancelPaymentPage";
 
 
-
+// 메인에다 커밋하지마라 
 
 const MainContent = () => {
     const { t } = useTranslation(); // 번역 훅 사용
@@ -67,8 +66,6 @@ const MainContent = () => {
                     <Route path="/member/signupForm" element={<SignupForm />} />
 
                     {/* 결제 */}
-                  
-                    <Route path="/cancel-payment/detail/:paymentNo" element={<CancelPaymentPage />} />
                     <Route path="/cart/success/:partnerOrderId" element={<PaymentSuccessPage />} />
                   
 
@@ -86,7 +83,8 @@ const MainContent = () => {
 
                     {/* 회원가입 */}
                     <Route path="/member/signup" element={<SingUp />} />
-
+                    {/* 카카오로그인 테스트 */}
+                    <Route path="/member/KakaoLoginPage" element={<KakaoLoginPage/>}/>
                     {/* 찜 */}
                     <Route path="/wishlist" element={<WishList />} />
 

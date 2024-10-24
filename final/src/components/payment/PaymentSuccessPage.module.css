@@ -4,7 +4,6 @@
   color: white;
   padding: 20px;
   text-align: center;
-  min-height: 100vh; /* 화면 전체 높이 */
 }
 
 h1 {

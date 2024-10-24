@@ -7,7 +7,7 @@ const CommunitySearch = () => {
 
     // 검색 버튼을 눌렀을 때 호출되는 함수
     const handleSearch = async () => {
-        if (keyword.length > 0) {
+        if (keyword.length > 0) {  
             try {
                 const response = await axios.get(`/community/search/title/${keyword}`);
                 setResults(response.data); // 검색 결과 업데이트
@@ -18,6 +18,7 @@ const CommunitySearch = () => {
             setResults([]); // 검색어가 없으면 결과를 비웁니다.
         }
     };
+    //d
 
     return (
         <div>

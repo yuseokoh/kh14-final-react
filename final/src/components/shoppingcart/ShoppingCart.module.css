@@ -1,55 +1,145 @@
+.loginPage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./Login.jpg');
+  background-size: cover;
+  /* 이미지가 컨테이너에 꽉 차도록 */
+  background-position: center;
+  /* 이미지를 중앙에 배치 */
+  height: 100vh;
+  /* 화면 높이에 맞추기 */
+  width: 100vw;
+  /* 화면 너비에 맞추기 */
+  margin: 0;
+  padding: 0;
+}
+
 .cartContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #1b2838;
+  color: #c7d5e0;
+  border-radius: 5px;
+  min-height: 100vh;
+  min-width: 100vh;
+}
+
+.cartTitle {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.cartContent {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 15px;
 }
 
 .cartItem {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 1rem;
-  background-color: #1b1b1d;
-  border-radius: 10px;
+  padding: 15px;
+  background-color: #2a475e;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cartItem:hover {
+  background-color: #3b5875;
+}
+
+.cartItemLeft {
+  display: flex;
+  align-items: center;
 }
 
 .gameThumbnail {
   width: 100px;
-  height: auto;
-  border-radius: 8px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.cartItemRight {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .gameInfo {
   flex-grow: 1;
-  margin-left: 1rem;
 }
 
 .gameTitle {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
+  font-size: 20px;
+  margin-bottom: 5px;
 }
 
 .gamePrice {
-  font-size: 1rem;
-  color: #8e8e8e;
+  font-size: 18px;
 }
 
 .actionButtons {
   display: flex;
-  gap: 0.5rem;
+  gap: 10px;
 }
 
 .giftButton, .removeButton {
-  background-color: #2c2c2e;
-  color: #ffffff;
+  padding: 10px;
   border: none;
-  padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.giftButton:hover, .removeButton:hover {
-  background-color: #3e3e40;
+.giftButton {
+  background-color: #4e5d6c;
+  color: #c7d5e0;
+}
+
+.giftButton:hover {
+  background-color: #6b7a8c;
+  transform: scale(1.05);
+}
+
+.removeButton {
+  background-color: #a93226;
+  color: #ffffff;
+}
+
+.removeButton:hover {
+  background-color: #c0392b;
+  transform: scale(1.05);
+}
+
+.cartFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.totalPrice {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.checkoutButton {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #5c7e10;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.checkoutButton:hover {
+  background-color: #78a216;
+  transform: scale(1.05);
 }

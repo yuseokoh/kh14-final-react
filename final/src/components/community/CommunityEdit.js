@@ -11,6 +11,7 @@ const CommunityEdit = ()=>{
 
     //네비게이터
     const navigate = useNavigate();
+    //dsdsds
 
     //state
     const [community, setCommunity] = useState(null);
