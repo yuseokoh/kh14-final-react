@@ -1,0 +1,48 @@
+/* Menu.module.css */
+
+.navbar {
+  background-color: #141d29; /* 어두운 배경 */
+  padding: 10px 20px;
+  justify-content: center; /* 중앙 정렬 */
+}
+
+.container {
+  background-color: #141d29 !important; 
+  width: auto !important;
+}
+
+/* 중앙 정렬을 위한 추가 스타일 */
+.navbar-nav {
+  display: flex; /* Flexbox를 사용하여 정렬 */
+  justify-content: center; /* 중앙 정렬 */
+  flex-grow: 1; /* 가능한 공간을 채우도록 설정 */
+}
+
+.navbar-nav .nav-link {
+  color: #b8b8b8; /* 기본 링크 색상 (회색) */
+  font-size: 14px;
+  padding: 0 15px;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff; /* Hover 시 텍스트 색상 */
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #2c2c2c; /* 드롭다운 메뉴 배경색 */
+  color: #b8b8b8;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+  color: #b8b8b8;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+  background-color: transparent; /* 드롭다운 Hover */
+  color: #ffffff;
+}
+
+/* 우측 메뉴는 오른쪽 정렬 */
+.navbar-nav.ml-auto {
+  margin-left: auto;
+}

@@ -1,0 +1,43 @@
+.refundPolicyWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* 화면 전체 높이 */
+  background-color: #1b2838;
+}
+
+.refundPolicyContainer {
+  background-color: #1b2838;
+  color: #c6d4df;
+  font-family: Arial, sans-serif;
+  max-width: 800px; /* 최대 넓이 설정 */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: left; /* 텍스트를 왼쪽 정렬 */
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center; /* 제목 가운데 정렬 */
+}
+
+.contentSection {
+  margin-bottom: 20px;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #66c0f4;
+}
+
+.content {
+  font-size: 1rem;
+  color: #c6d4df;
+  margin-top: 10px;
+}

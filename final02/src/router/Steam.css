@@ -1,0 +1,73 @@
+/* From Uiverse.io by SelfMadeSystem */ 
+.loader {
+    display: block;
+   
+    overflow: visible;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .loader path.fill {
+    fill: #2Af2;
+    animation: fill 4s ease-in-out infinite;
+  }
+  
+  .loader .dash path {
+    stroke: #2AF;
+    stroke-width: 1px;
+    stroke-linecap: round;
+    animation: dashArray var(--sped, 2s) ease-in-out infinite,
+      dashOffset var(--sped, 2s) linear infinite;
+  }
+  
+  .loader .dash path.aaa {
+    stroke-width: 2px;
+    stroke-linecap: butt;
+    clip-path: path('M 20.4603 48.5493 L 16.6461 46.9584 C 17.3209 48.3794 18.4917 49.5682 20.0447 50.2206 C 23.4007 51.6328 27.2707 50.0262 28.6694 46.6367 C 29.3464 44.9966 29.3509 43.1867 28.6806 41.5422 C 28.0103 39.8977 26.7434 38.6151 25.119 37.9315 C 23.5035 37.2544 21.7741 37.279 20.2547 37.8576 L 24.1961 39.5022 C 26.6719 40.5434 27.8427 43.4124 26.8104 45.9105 C 25.7803 48.4085 22.936 49.5905 20.4603 48.5493 Z');
+  }
+  
+  .loader .dash path.big {
+    stroke-width: 2px;
+    filter: drop-shadow(0 0 2px #2AF);
+  }
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* 전체 화면의 높이에 맞추어 가운데 배치 */
+}
+
+
+
+
+  
+  @keyframes dashArray {
+    0% {
+      stroke-dasharray: 0 1 359 0;
+    }
+  
+    50% {
+      stroke-dasharray: 0 359 1 0;
+    }
+  
+    100% {
+      stroke-dasharray: 359 1 0 0;
+    }
+  }
+  
+  @keyframes dashOffset {
+    0% {
+      stroke-dashoffset: -5;
+    }
+  
+    100% {
+      stroke-dashoffset: -365;
+    }
+  }
+  
+  @keyframes fill {
+    30%,
+    55% {
+      fill: #2AF0;
+    }
+  }

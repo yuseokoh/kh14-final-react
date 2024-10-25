@@ -1,0 +1,44 @@
+.languageSelector {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px; /* 다른 메뉴와 균형을 맞추기 위해 여백 추가 */
+}
+
+.languageButton {
+    background: none;
+    color: #fff; /* 네비게이션과 일관되도록 텍스트 색상을 흰색으로 설정 */
+    border: none;
+    padding: 10px 15px; /* 다른 메뉴 항목들과 동일한 패딩으로 설정 */
+    cursor: pointer;
+    font-size: 1rem; /* 다른 메뉴 항목들과 동일한 크기로 설정 */
+}
+
+.languageButton:hover {
+    color: #cce; /* 호버 시 효과를 네비게이션의 다른 항목들과 일관되게 설정 */
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333; /* 네비게이션 메뉴와 유사한 색상으로 설정 */
+    color: #fff; /* 메뉴 아이템 색상을 흰색으로 설정 */
+    border: none; /* 네비게이션 메뉴 스타일에 맞춰 경계를 없앰 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    min-width: 150px; /* 드롭다운 메뉴 크기를 일정하게 설정 */
+}
+
+.dropdownItem {
+    padding: 10px;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff; /* 드롭다운 아이템의 텍스트 색상도 흰색으로 설정 */
+}
+
+.dropdownItem:hover {
+    background-color: #575757; /* 네비게이션 메뉴와 유사한 호버 효과 색상 */
+}

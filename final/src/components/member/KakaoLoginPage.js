@@ -21,10 +21,16 @@ function KakaoLoginPage() {
         'Content-Type': 'application/json'
       }
     })
-      .then(response => {
-        localStorage.setItem('jwtToken', response.data);
-        navigate('/');
-      })
+    .then(response => {
+      if (response.data.emailRequired) {
+          // 이메일 입력이 필요한 경우 이메일 입력 페이지로 리다이렉트
+          navigate('/enter/email');
+      } else {
+          // 이메일이 있는 경우 바로 로그인 처리
+          localStorage.setItem('jwtToken', response.data.jwtToken);
+          navigate('/');
+      }
+  })
       .catch(error => {
         console.error("로그인 실패: ", error.response.data);
         alert('로그인에 실패했습니다.');
