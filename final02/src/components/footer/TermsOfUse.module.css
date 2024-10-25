@@ -1,0 +1,41 @@
+.termsOfUseContainer {
+  background-color: #1b2838;
+  color: #c7d5e0;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.contentBox {
+  background-color: #2a475e;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+.sectionHeader {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #66c0f4;
+}
+
+.content {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #c7d5e0;
+}

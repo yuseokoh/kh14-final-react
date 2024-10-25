@@ -1,0 +1,518 @@
+/* 레이아웃 컨테이너 스타일 */
+.layout {
+  display: flex; /* Flexbox를 사용하여 사이드바와 메인 컨텐츠를 나란히 배치 */
+  max-width: 1000px; /* 최대 너비 설정 */
+  margin: 0 auto; /* 가운데 정렬 */
+  padding: 16px 16px 16px 32px; /* 상, 우, 하, 좌 패딩 */
+  background-color: #1b2838; /* 어두운 배경색 */
+  color: #ffffff; /* 기본 텍스트 색상 (변경: 가독성을 위해 순수한 흰색으로) */
+  min-height: 100vh; /* 전체 높이를 차지하도록 설정 */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5); /* 추가: 텍스트 가독성 향상을 위한 그림자 효과 */
+}
+
+/* 사이드바 스타일 */
+.sidebar {
+  width: 300px; /* 사이드바 너비 */
+  margin-right: 30px; /* 오른쪽 여백 */
+  flex-shrink: 0; /* 화면이 작아져도 사이드바 크기 유지 */
+  padding-left: 100px; /* 왼쪽 패딩 추가 (선택사항) */
+}
+
+/* 메인 컨텐츠 영역 스타일 */
+.mainContent {
+  flex-grow: 1; /* 남은 공간을 모두 차지 */
+  min-width: 0; /* Flexbox 버그 방지 */
+  max-width: 1100px; /* 최대 너비 설정 */
+  margin-left: auto; /* 왼쪽 마진을 자동으로 설정 */
+  margin-right: auto; /* 오른쪽 마진을 자동으로 설정 */
+  padding-left: 20px; /* 왼쪽 패딩 추가 (선택사항) */
+  padding-right: 20px; /* 오른쪽 패딩 추가 (선택사항) */
+}
+
+/* 부모 컨테이너에 적용할 스타일 (필요한 경우) */
+.container {
+  display: flex;
+  justify-content: center; /* 수평 중앙 정렬 */
+  width: 100%;
+}  
+
+/* 사이드바 섹션 스타일 */
+.sidebarSection {
+  margin-bottom: 20px; /* 섹션 간 여백 */
+}
+
+/* 사이드바 섹션 제목 스타일 */
+.sidebarSectionTitle {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #ffffff; /* 변경: 가독성을 위해 더 밝은 색상으로 */
+  font-weight: 600; /* 추가: 가독성 향상을 위한 폰트 두께 증가 */
+}
+
+/* 사이드바 섹션 내용 스타일 */
+.sidebarSectionContent {
+  font-size: 14px;
+  color: #ffffff; /* 변경: 가독성을 위해 더 밝은 색상으로 */
+  margin-bottom: 5px;
+  cursor: pointer; /* 호버 효과를 위한 커서 변경 */
+}
+
+/* 사이드바 리스트 스타일 */
+.sidebarSectionList {
+  list-style-type: none; /* 기본 리스트 스타일 제거 */
+  padding: 0;
+}
+
+/* 메인 컨텐츠의 섹션 스타일 */
+.section {
+  margin-bottom: 32px; /* 섹션 간 여백 */
+  overflow-x: auto; /* 가로 스크롤 허용 */
+}
+
+/* 섹션 제목 스타일 */
+.sectionTitle {
+  font-size: 24px;
+  font-weight: 600; /* 변경: 가독성 향상을 위한 폰트 두께 증가 */
+  margin-bottom: 16px;
+  color: #ffffff; /* 변경: 가독성을 위해 더 밝은 색상으로 */
+}
+
+/* 추천 게임 카드 스타일 */
+.featuredGame {
+  position: relative; /* 내부 요소의 절대 위치 기준 */
+  width: 100%;
+  height: 380px;
+  background-color: #16202D; /* 어두운 배경 */
+  border-radius: 2px;
+  overflow: hidden; /* 내부 요소가 넘치지 않도록 */
+  cursor: pointer;
+}
+
+/* 추천 게임 정보 스타일 */
+.featuredGameInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 16px;
+  background: linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0)); /* 그라데이션 배경 */
+}
+
+/* 추천 게임 제목 스타일 */
+.featuredGameTitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #ffffff; /* 변경: 가독성을 위해 더 밝은 색상으로 */
+}
+
+/* 게임 태그 스타일 */
+.tag {
+  background-color: #4c6b22; /* 어두운 녹색 배경 */
+  color: #a4d007; /* 밝은 녹색 텍스트 */
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  margin-right: 4px;
+}
+
+/* 할인 배지 스타일 */
+.discountBadge {
+  background-color: #4c6b22;
+  color: #a4d007;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px 4px;
+  border-radius: 2px;
+  margin-right: 8px;
+}
+
+/* 원래 가격 스타일 (할인 시) */
+.originalPrice {
+  color: #738895; /* 회색 */
+  text-decoration: line-through;
+  margin-right: 8px;
+}
+
+/* 할인된 가격 스타일 */
+.discountedPrice {
+  color: #beee11; /* 밝은 녹색 */
+  font-weight: bold;
+}
+
+/* 게임 카드 스타일 (작은 버전) */
+.gameCard {
+  width: 306px;
+  background-color: #16202D;
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 4px;
+  transition: all 0.3s; /* 부드러운 호버 효과 */
+  cursor: pointer;
+}
+
+/* 게임 카드 호버 효과 */
+.gameCard:hover {
+  filter: brightness(1.25); /* 밝기 증가 */
+}
+
+/* 게임 이미지 스타일 */
+.gameImage {
+  width: 100%;
+  height: 143px;
+}
+
+/* 게임 정보 스타일 */
+.gameInfo {
+  padding: 8px;
+}
+
+/* 게임 제목 스타일 */
+.gameTitle {
+  font-weight: 500;
+  font-size: 14px;
+  color: white;
+  margin-bottom: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 긴 제목 처리 */
+}
+
+/* 카테고리 카드 스타일 */
+.categoryCard {
+  background: linear-gradient(to right, #1a3c5e, #2a475e); /* 그라데이션 배경 */
+  padding: 16px;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+/* 카테고리 카드 호버 효과 */
+.categoryCard:hover {
+  filter: brightness(1.25);
+}
+
+/* 카테고리 아이콘 스타일 */
+.categoryIcon {
+  margin-right: 16px;
+}
+
+/* 카테고리 제목 스타일 */
+.categoryTitle {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Flexbox를 사용한 래퍼 스타일 */
+.flexWrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 그리드 레이아웃 스타일 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3열 그리드 */
+  gap: 16px;
+}
+
+/* 가로 스크롤 컨테이너 스타일 */
+.horizontalScroll {
+  display: flex;
+  overflow-x: auto; /* 가로 스크롤 허용 */
+  padding-bottom: 20px;
+}
+
+/* 가로 스크롤바 스타일 (Webkit 브라우저) */
+.horizontalScroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.horizontalScroll::-webkit-scrollbar-track {
+  background: #2a475e;
+}
+
+.horizontalScroll::-webkit-scrollbar-thumb {
+  background: #66c0f4;
+  border-radius: 4px;
+}
+
+/* 작은 슬라이더 컨테이너 스타일 */
+.smallSlider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* 작은 슬라이더 내부 컨테이너 스타일 */
+.smallSliderContainer {
+  display: flex;
+  transition: transform 0.3s ease-in-out; /* 슬라이드 애니메이션 */
+}
+
+/* 세로 카드 스타일 */
+.verticalCard {
+  width: 230px;
+  height: 350px;
+  margin: 10px;
+  background-color: #16202D;
+  border-radius: 2px;
+  overflow: hidden;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+/* 세로 카드 호버 효과 */
+.verticalCard:hover {
+  transform: translateY(-5px); /* 위로 살짝 이동 */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* 그림자 효과 */
+}
+
+/* 세로 카드 이미지 스타일 */
+.verticalCardImage {
+  width: 100%;
+  height: 215px;
+  object-fit: cover; /* 이미지 비율 유지 */
+}
+
+/* 세로 카드 정보 스타일 */
+.verticalCardInfo {
+  padding: 10px;
+}
+
+/* 세로 카드 제목 스타일 */
+.verticalCardTitle {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* 세로 카드 태그 스타일 */
+.verticalCardTags {
+  font-size: 12px;
+  color: #66c0f4;
+  margin-bottom: 10px;
+}
+
+/* 최고 판매 게임 그리드 스타일 */
+.topSellersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+}
+
+/* 슬라이더 버튼 스타일 */
+.sliderButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.sliderButtonLeft {
+  left: 8px;
+}
+
+.sliderButtonRight {
+  right: 8px;
+}
+
+/* 게임 배경색 스타일 (예시) */
+.gameBackground1 { background-color: #3a0647; }
+.gameBackground2 { background-color: #1e1e1e; }
+.gameBackground3 { background-color: #ffd700; }
+.gameBackground4 { background-color: #8b0000; }
+.gameBackground5 { background-color: #4b0082; }
+.gameBackground6 { background-color: #2f4f4f; }
+.gameBackground7 { background-color: #ff4500; }
+.gameBackground8 { background-color: #4169e1; }
+
+/* 반응형 디자인: 태블릿 */
+@media (max-width: 1024px) {
+  .layout {
+    padding: 16px;
+    max-width: 100%;
+  }
+}
+
+/* 반응형 디자인: 모바일 */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  .mainContent {
+    width: 100%;
+    max-width: 100%;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* 2열 그리드로 변경 */
+  }
+}
+
+/* 반응형 디자인: 작은 모바일 화면 */
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: 1fr; /* 1열 그리드로 변경 */
+  }
+}
+
+/* 링크 스타일 설정 */
+.a {
+  /* 링크의 기본 색상 설정 */
+  color: #66c0f4;
+  /* 링크의 밑줄 제거 */
+  text-decoration: none;
+}
+
+/* 링크 호버 효과 */
+.a:hover {
+  /* 호버 시 밑줄 표시 */
+  text-decoration: underline;
+  /* 변경: 호버 시 색상을 흰색으로 변경하여 가독성 향상 */
+  color: #ffffff;
+}
+
+.appContainer {
+  background-color: #1b2838;
+  color: white;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 기본 버튼 스타일 */
+.button {
+  /* 버튼 배경색 설정 */
+  background-color: #4c6b22;
+  /* 버튼 텍스트 색상 */
+  color: white;
+  /* 테두리 제거 */
+  border: none;
+  /* 패딩 추가 */
+  padding: 10px 15px;
+  /* 커서를 포인터로 변경 */
+  cursor: pointer;
+  /* 폰트 크기 설정 */
+  font-size: 14px;
+  /* 모서리 둥글게 */
+  border-radius: 2px;
+}
+
+/* 버튼 호버 효과 */
+  .button:hover {
+  /* 호버 시 배경색 밝게 */
+  background-color: #5c7e10;
+}
+
+.horizontalSlider, .verticalSlider {
+  position: relative;
+  overflow: hidden;
+}
+
+.horizontalSliderContainer, .verticalSliderContainer {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.horizontalSliderContainer {
+  flex-direction: row;
+}
+
+.verticalSliderContainer {
+  flex-direction: column;
+}
+
+.sliderButton {
+  position: absolute;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+}
+
+.sliderButtonLeft, .sliderButtonRight {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.sliderButtonLeft {
+  left: 10px;
+}
+
+.sliderButtonRight {
+  right: 10px;
+}
+
+.sliderButtonTop, .sliderButtonBottom {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sliderButtonTop {
+  top: 10px; 
+}
+
+.sliderButtonBottom {
+  bottom: 10px;
+}
+
+.verticalCardSlider {
+  position: relative;
+  overflow: hidden;
+}
+
+.verticalCardSliderContainer {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.verticalCardSliderItem {
+  flex-shrink: 0;
+}
+
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: #1b2838;
+  color: #c7d5e0;
+}
+
+.contentWrapper {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.sidebar {
+  width: 300px;
+  margin-right: 20px;
+}
+
+.mainContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.featuredBanner {
+  width: 100%;
+  overflow: hidden;
+  background-color: #1b2838;
+}
+
+.bannerImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}

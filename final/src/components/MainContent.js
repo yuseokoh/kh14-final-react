@@ -3,6 +3,7 @@ import Home from './Home';
 import { useRecoilValue } from "recoil";
 import { loginState } from "../utils/recoil";
 import MemberLogin from "./member/MemberLogin";
+import KakaoEmail from './member/KakaoEmail';
 
 
 import PaymentSuccessPage from "./payment/PaymentSuccessPage";
@@ -86,6 +87,7 @@ const MainContent = () => {
                     <Route path="/member/signup" element={<SingUp />} />
                     {/* 카카오로그인 테스트 */}
                     <Route path="/member/KakaoLoginPage" element={<KakaoLoginPage/>}/>
+                    <Route path="/member/KakaoEmail" element={<KakaoEmail />} />
                     {/* 찜 */}
                     <Route path="/wishlist" element={<WishList />} />
 

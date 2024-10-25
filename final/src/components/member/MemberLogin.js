@@ -17,10 +17,6 @@ const MemberLogin = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   
-// 테스트커밋 주석 
-  const test = useCallback();
-  //
-  
   // state
   const [input, setInput] = useState({
     memberId: "",
