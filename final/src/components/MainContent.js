@@ -31,6 +31,17 @@ import TermsOfUse from "../components/footer/TermsOfUse";
 import SteamAgreement from "../components/footer/SteamAgreement";
 import RefundPolicy from "../components/footer/RefundPolicy";
 import CancelPaymentPage from "./payment/CancelPaymentPage";
+import GameAdd from "./game/GameAdd";
+import GameDetail from "./game/GameDetail";
+import GameEdit from "./game/GameEdit";
+import ActionGame from "./game/gamecategory/ActionGame";
+import AdventureGame from "./game/gamecategory/AdventureGame";
+import IndieGame from "./game/gamecategory/IndieGame";
+import MultiPlayerGame from "./game/gamecategory/MultiPlayerGame";
+import OpenWorldGame from "./game/gamecategory/OpenWorldGame";
+import RpgGame from "./game/gamecategory/RpgGame";
+import SimulationGame from "./game/gamecategory/SimulationGame";
+import StrategyGame from "./game/gamecategory/StrategyGame";
 
 
 // 메인에다 커밋하지마라 
@@ -46,7 +57,23 @@ const MainContent = () => {
                     <Route exact path="/" element={<Home />} />
 
                     {/* 로그인이 필요한 페이지라면 element에 PrivateRoute를 적어서 대상을 명시하면 된다 */}
+                    {/* 게임 처리 */}
+                    <Route path="/game/add" element={<GameAdd />} />
+                    <Route path="/game/detail/:gameNo" element={<GameDetail />} />
+                    <Route path="/game/edit/:gameNo" element={<GameEdit />} />
 
+
+                    {/* 게임카테고리 */}
+                    <Route path="/game/category/action" element={<ActionGame />} />
+                    <Route path="/game/category/adventure" element={<AdventureGame />} />
+                    <Route path="/game/category/indie" element={<IndieGame />} />
+                    <Route path="/game/category/multiplayer" element={<MultiPlayerGame />} />
+                    <Route path="/game/category/openworld" element={<OpenWorldGame />} />
+                    <Route path="/game/category/rpg" element={<RpgGame />} />
+                    <Route path="/game/category/simulation" element={<SimulationGame />} />
+                    <Route path="/game/category/strategy" element={<StrategyGame />} />
+
+                    {/* 게임 테마 */}
 
 
                     {/* 경로변수를 사용할 경우 콜론과 이름을 합쳐 변수명으로 지정 */}

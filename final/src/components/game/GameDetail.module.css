@@ -1,0 +1,214 @@
+/* GameDetail.module.css */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #1b2838;
+    color: #c6d4df;
+}
+
+/* 헤더 스타일링 */
+.header {
+    margin-bottom: 20px;
+}
+
+.titleSection {
+    padding: 20px 0;
+}
+
+.titleSection h1 {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.metadata {
+    display: flex;
+    gap: 20px;
+    color: #8f98a0;
+}
+
+/* 탭 스타일링 */
+.tabs {
+    display: flex;
+    gap: 2px;
+    background: #2a475e;
+    padding: 0 20px;
+}
+
+.tab {
+    padding: 15px 20px;
+    background: none;
+    border: none;
+    color: #c6d4df;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tab.active {
+    background: #1b2838;
+    color: #ffffff;
+}
+
+/* 미디어 갤러리 */
+.mediaGallery {
+    margin-bottom: 30px;
+}
+
+.mainMedia img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.thumbnailStrip {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+}
+
+.thumbnail {
+    width: 115px;
+    height: 65px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.thumbnail:hover {
+    opacity: 1;
+}
+
+/* 게임 요약 */
+.summary {
+    background: #16202d;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.shortDescription {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* 태그 스타일링 */
+.tags {
+    margin-top: 20px;
+}
+
+.tagList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tag {
+    background: #67c1f5;
+    color: #ffffff;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-size: 12px;
+}
+
+/* 상세 설명 */
+.description {
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* 시스템 요구사항 */
+.systemRequirements {
+    background: #16202d;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.requirementsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* 리뷰 섹션 */
+.reviews {
+    margin-bottom: 30px;
+}
+
+.reviewSummary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.score {
+    font-size: 48px;
+    color: #66c0f4;
+}
+
+.scoreNumber {
+    font-weight: bold;
+}
+
+/* 플랫폼 정보 */
+.platforms {
+    margin-bottom: 30px;
+}
+
+.platformList {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.platform {
+    padding: 5px 10px;
+    background: #2a475e;
+    border-radius: 2px;
+}
+
+/* 액션 버튼 */
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #2a475e;
+}
+
+.actionButton {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #2a475e;
+    border: none;
+    border-radius: 2px;
+    color: #c6d4df;
+    cursor: pointer;
+}
+
+.actionButton:hover {
+    background: #66c0f4;
+    color: #ffffff;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .requirementsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .metadata {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

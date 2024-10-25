@@ -1,10 +1,10 @@
 // 필요한 React 훅과 외부 라이브러리를 임포트합니다.
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { ChevronLeft, ChevronRight, Tag, Users, Gamepad } from 'lucide-react'; 
+import { ChevronLeft, ChevronRight, ChevronDown , Tag, Users, Gamepad } from 'lucide-react'; 
 import styles from './Home.module.css';
 import bannerImage from '../components/game/gameimg/webm_page_bg_koreana (1).gif';
-
+import { useNavigate } from 'react-router';
 
 /**
  * FeaturedBanner 컴포넌트
@@ -24,8 +24,44 @@ const FeaturedBanner = ({ bannerAlt }) => {
 };
   
 // 추천 게임을 큰 카드로 표시하는 컴포넌트
-const FeaturedGame = ({ game }) => (
-  <div className={`${styles.featuredGame} ${styles[`gameBackground${game.gameNo}`]}`}>
+const FeaturedGame = ({ game }) => {
+
+  const [imageUrl, setImageUrl] = useState(null);  
+  const navigate = useNavigate();
+
+  //이미지 로딩을 위한 useEffect 추가
+  useEffect(() => {
+    const loadGameImage = async () => {
+      try{ 
+        //게임 이미지 정보 가져오기
+        const response = await axios.get(`http://localhost:8080/game/image/${game.gameNo}`);
+        console.log("이미지 정보 응답:", response.data);
+        if(response.data && response.data.length > 0) {
+          //첫번째 이미지의 attacnmtentNo로 다운로드 URL 생성
+          const imageUrl = `http://localhost:8080/game/download/${response.data[0].attachmentNo}`;
+          console.log("이미지 URL:", imageUrl);
+          setImageUrl(imageUrl);
+        }
+      }
+        catch(error){
+          console.error("이미지 로딩 에러:", error.response || error);
+        }
+      };
+      loadGameImage();
+  },[game.gameNo]); //게임 번호가 변경될때마다 이미지 다시 로드
+
+  return (
+    <div 
+    className={styles.featuredGame}
+    onClick={() => navigate(`/game/detail/${game.gameNo}`, { replace: true })}
+    style={{ cursor: 'pointer' }}
+  >
+    {/* 조건부 랜더링으로 이미지 표시 */}
+    {imageUrl ? (
+      <img src={imageUrl} alt={game.gameTitle} className={styles.featuredGameImage} />
+    ) : (
+      <div className={`${styles.featuredGameImage} ${styles[`gameBackground${game.gameNo}`]}`} />
+    )}
     <div className={styles.featuredGameInfo}>
       <h3 className={styles.featuredGameTitle}>{game.gameTitle}</h3>
       <div>
@@ -53,35 +89,86 @@ const FeaturedGame = ({ game }) => (
     </div>
   </div>
 );
+};
 
 // 개별 게임을 작은 카드로 표시하는 컴포넌트
-const GameCard = ({ game }) => (
-  <div className={styles.gameCard}>
-    <div className={`${styles.gameImage} ${styles[`gameBackground${game.gameNo}`]}`}></div>
-    <div className={styles.gameInfo}>
-      <h3 className={styles.gameTitle}>{game.gameTitle}</h3>
-      <div>
-        {/* 할인 여부에 따른 가격 표시 로직 */}
-        {game.gameDiscount > 0 ? (
-          <>
-            <span className={styles.discountBadge}>-{game.gameDiscount}%</span>
-            <div>
-              <span className={styles.originalPrice}>${game.gamePrice.toFixed(2)}</span>
-              <span className={styles.discountedPrice}>
-                ${(game.gamePrice * (1 - game.gameDiscount / 100)).toFixed(2)}
-              </span>
-            </div>
-          </>
-        ) : game.gamePrice === 0 ? (
-          <span className={styles.discountedPrice}>무료 플레이</span>
+const GameCard = ({ game }) => {
+
+  // 이미지 URL을 관리하기 위한 상태 추가
+  const [imageUrl, setImageUrl] = useState(null);
+  const navigate = useNavigate();
+ 
+  // 이미지 로딩을 위한 useEffect 추가
+  useEffect(() => {
+    const loadGameImage = async () => {
+      try {
+        // 게임 이미지 정보 가져오기
+        const response = await axios.get(`http://localhost:8080/game/image/${game.gameNo}`);
+        console.log("이미지 정보 응답:", response.data);
+        if (response.data && response.data.length > 0) {
+          // 첫 번째 이미지의 attachmentNo로 다운로드 URL 생성
+          const imageUrl = `http://localhost:8080/game/download/${response.data[0].attachmentNo}`;
+          console.log("이미지 URL:", imageUrl);
+          setImageUrl(imageUrl);
+        }
+      } catch (error) {
+        console.error("이미지 로딩 에러:", error.response || error);
+      }
+    };
+
+    loadGameImage();
+  }, [game.gameNo]); // 게임 번호가 변경될 때마다 이미지 다시 로드
+
+
+  return (
+    <div 
+      className={styles.gameCard}
+      onClick={() => navigate(`/game/detail/${game.gameNo}`)}
+      style={{ cursor: 'pointer' }}
+    >
+      {/* 이미지 표시 부분 수정 */}
+      <div className={styles.gameImage}>
+        {imageUrl ? (
+          // 백엔드에서 가져온 이미지가 있으면 표시
+          <img src={imageUrl} alt={game.gameTitle} className={styles.gameImage} />
         ) : (
-          <span className={styles.discountedPrice}>${game.gamePrice.toFixed(2)}</span>
+          // 이미지가 없으면 기존 배경 스타일 사용
+          <div className={`${styles.gameImage} ${styles[`gameBackground${game.gameNo}`]}`} />
         )}
       </div>
+      
+      {/* gameInfo 내부 스타일 클래스명 수정 */}
+      <div className={styles.gameInfo}>
+        <h3 className={styles.gameTitle}>{game.gameTitle}</h3>
+        {/* gameListTags -> 스타일 클래스명 수정 */}
+        <div className={styles.gameListTags}>
+          {game.gameCategory.split(',').map((category, index) => (
+            <span key={index} className={styles.gameListTag}>
+              {category.trim()}
+            </span>
+          ))}
+        </div>
+        {/* gamePricing -> 스타일 클래스명 수정 */}
+        <div className={styles.gamePricing}>
+          {game.gameDiscount > 0 ? (
+            <>
+              <span className={styles.discountBadge}>-{game.gameDiscount}%</span>
+              {/* gamePrices -> 스타일 클래스명 수정 */}
+              <div className={styles.gamePrices}>
+                <span className={styles.originalPrice}>${game.gamePrice.toFixed(2)}</span>
+                <span className={styles.discountedPrice}>
+                  ${(game.gamePrice * (1 - game.gameDiscount / 100)).toFixed(2)}
+                </span>
+              </div>
+            </>
+          ) : (
+            <span className={styles.discountedPrice}>${game.gamePrice.toFixed(2)}</span>
+          )}
+        </div>
+      </div>
     </div>
-  </div>
-);
-
+  );
+ };
 // 게임 카테고리를 카드 형태로 표시하는 컴포넌트
 const CategoryCard = ({ icon, title }) => (
   <div className={styles.categoryCard}>
@@ -91,9 +178,47 @@ const CategoryCard = ({ icon, title }) => (
 );
 
 // 게임을 세로로 긴 카드 형태로 표시하는 컴포넌트
-const VerticalGameCard = ({ game }) => (
-  <div className={styles.verticalCard}>
-    <div className={`${styles.verticalCardImage} ${styles[`gameBackground${game.gameNo}`]}`}></div>
+const VerticalGameCard = ({ game }) => {
+
+  const [imageUrl, setImageUrl] = useState(null);
+  const navigate = useNavigate();
+
+  //이미지 로딩을 위한 useEffect
+  useEffect(() => {
+    const loadGameImage = async () => {
+      try {
+        // 게임 이미지 정보 가져오기
+        const response = await axios.get(`http://localhost:8080/game/image/${game.gameNo}`);
+        console.log("이미지 정보 응답:", response.data);
+        if (response.data && response.data.length > 0) {
+          // 첫 번째 이미지의 attachmentNo로 다운로드 URL 생성
+          const imageUrl = `http://localhost:8080/game/download/${response.data[0].attachmentNo}`;
+          console.log("이미지 URL:", imageUrl);
+          setImageUrl(imageUrl);
+        }
+      } catch (error) {
+        console.error("이미지 로딩 에러:", error.response || error);
+      }
+    };
+
+    loadGameImage();
+  }, [game.gameNo]);
+
+  
+  return (
+    <div 
+      className={styles.verticalCard}
+      onClick={() => navigate(`/game/detail/${game.gameNo}`)}
+      style={{ cursor: 'pointer' }}
+    >
+      {/* 이미지 표시 부분 수정 */}
+      <div className={styles.verticalCardImage}>
+        {imageUrl ? (
+          <img src={imageUrl} alt={game.gameTitle} className={styles.verticalCardImage} />
+        ) : (
+          <div className={`${styles.verticalCardImage} ${styles[`gameBackground${game.gameNo}`]}`} />
+        )}
+      </div>
     <div className={styles.verticalCardInfo}>
       <h3 className={styles.verticalCardTitle}>{game.gameTitle}</h3>
       <div className={styles.verticalCardTags}>{game.gameCategory}</div>
@@ -116,6 +241,7 @@ const VerticalGameCard = ({ game }) => (
     </div>
   </div>
 );
+};
 
 // 게임 목록을 가로 슬라이더로 표시하는 새로운 컴포넌트
 const HorizontalSlider = ({ games, itemsPerPage = 4 }) => {
@@ -276,7 +402,22 @@ const VerticalCardSlider = ({ games, itemsPerPage = 4 }) => {
 };
 
 // 사이드바 컴포넌트
-const Sidebar = () => (
+const Sidebar = () => {
+
+  const navigate = useNavigate();
+  
+  const categories = [
+    { name: 'Action', path: '/game/category/action' },
+    { name: 'Adventure', path: '/game/category/adventure' },
+    { name: 'Indie', path: '/game/category/indie' },
+    { name: 'RPG', path: '/game/category/rpg' },
+    { name: 'Simulation', path: '/game/category/simulation' },
+    { name: 'Strategy', path: '/game/category/strategy' },
+    { name: 'Open World', path: '/game/category/openworld' },
+    { name: 'Multiplayer', path: '/game/category/multiplayer' }
+  ];
+  return (
+
   <div className={styles.sidebar}>
     <div className={styles.sidebarSection}>
       <h3 className={styles.sidebarSectionTitle}>게임 기기</h3>
@@ -298,21 +439,22 @@ const Sidebar = () => (
       <ul className={styles.sidebarSectionList}>
         <li className={styles.sidebarSectionContent}>친구 추천</li>
         <li className={styles.sidebarSectionContent}>큐레이터 추천</li>
-        <li className={styles.sidebarSectionContent}>태그</li>
+        <li className={styles.sidebarSectionContent}>태그</li>  
       </ul>
     </div>
     
     <div className={styles.sidebarSection}>
       <h3 className={styles.sidebarSectionTitle}>카테고리</h3>
       <ul className={styles.sidebarSectionList}>
-        <li className={styles.sidebarSectionContent}>Action</li>
-        <li className={styles.sidebarSectionContent}>Adventure</li>
-        <li className={styles.sidebarSectionContent}>Indie</li>
-        <li className={styles.sidebarSectionContent}>RPG</li>
-        <li className={styles.sidebarSectionContent}>Simulation</li>
-        <li className={styles.sidebarSectionContent}>Strategy</li>
-        <li className={styles.sidebarSectionContent}>Open World</li>
-        <li className={styles.sidebarSectionContent}>Multiplayer</li>
+        {categories.map((category, index) =>(
+          <li
+            key={index}
+            className={styles.categoryLink}
+            onClick={() => navigate(category.path)}
+            >
+            {category.name}
+            </li>
+        ))}
       </ul>
     </div>
     
@@ -350,7 +492,82 @@ const Sidebar = () => (
       </ul>
     </div>
   </div>
-);
+  )};
+
+//게임 리스트 아이템 컴포넌트
+const GameListItem = ({game}) => {
+  const [imageUrl, setImageUrl] = useState(null);
+  const navigate = useNavigate();
+
+  //effect
+  useEffect(() => {
+    const loadGameImage = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/game/image/${game.gameNo}`);
+        console.log("이미지 정보 응답:", response.data);
+        if (response.data && response.data.length > 0) {
+          const imageUrl = `http://localhost:8080/game/download/${response.data[0].attachmentNo}`;
+          console.log("이미지 URL:", imageUrl);
+          setImageUrl(imageUrl);
+        }
+      }
+      catch (error){
+        console.error("이미지 로딩 에러:", error.response || error);
+      }
+    };
+    loadGameImage();
+  }, [game.gameNo]);
+
+  return (
+    <div 
+      className={styles.gameListItem}
+      onClick={() => navigate(`/game/detail/${game.gameNo}`)}
+      style={{ cursor: 'pointer' }}
+    >
+      <div className={styles.gameListImage}>
+        {imageUrl ? (
+          <img src={imageUrl} alt={game.gameTitle} className={styles.gameListImage} />
+        ) : (
+          <div className={`${styles.gameListImage} ${styles[`gameBackground${game.gameNo}`]}`} />
+        )}
+      </div>
+      <div className={styles.gameListInfo}>
+        <h3 className={styles.gameListTitle}>{game.gameTitle}</h3>
+        <div className={styles.gameListTags}>
+          {game.gameCategory.split(',').map((category, index) => (
+            <span key={index} className={styles.gameListTag}>
+              {category.trim()}
+            </span>
+          ))}
+        </div>
+        <div className={styles.gameListPricing}>
+          {game.gameDiscount > 0 ? (
+            <>
+              <span className={styles.gameListDiscount}>-{game.gameDiscount}%</span>
+              <div className={styles.gameListPrices}>
+                <span className={styles.gameListOriginalPrice}>
+                  ${game.gamePrice.toFixed(2)}
+                </span>
+                <span className={styles.gameListFinalPrice}>
+                  ${(game.gamePrice * (1 - game.gameDiscount / 100)).toFixed(2)}
+                </span>
+              </div>
+            </>
+          ) : (
+            <span className={styles.gameListFinalPrice}>
+              ${game.gamePrice.toFixed(2)}
+            </span>
+          )}
+        </div>
+        <div className={styles.gameListMeta}>
+          <span>{game.gameGrade}</span>
+          <span>평점: {game.gameUserScore}/10</span>
+          <span>리뷰: {game.gameReviewCount.toLocaleString()}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // 메인 홈 컴포넌트
 const Home = () => {
@@ -359,7 +576,14 @@ const Home = () => {
   const [featuredIndex, setFeaturedIndex] = useState(0); // 현재 표시 중인 추천 게임의 인덱스
   const [loading, setLoading] = useState(true); // 로딩 상태
   const [error, setError] = useState(null); // 에러 상태
+  const [visiblegames, setVisibleGames] = useState(10);
 
+  const navigate = useNavigate();
+
+  
+  const handleShowMore = () =>{
+    setVisibleGames(prev => Math.min(prev + 10, games.length));
+  }
 
   // 컴포넌트 마운트 시 게임 데이터를 가져오기 위한 useEffect 훅
   useEffect(() => {
@@ -438,6 +662,38 @@ const Home = () => {
               <VerticalCardSlider games={games} itemsPerPage={8} />
             </section>
 
+            <section className={styles.section}>
+              <div className={styles.sectionHeader}>
+                <h2 className={styles.sectionTitle}>전체 게임 목록</h2>
+                <button 
+                  className={styles.addGameButton}
+                  onClick={() => navigate('/game/add')}
+                >
+                  게임 등록
+                </button>
+              </div>
+
+              <div className={styles.gameList}>
+                {games.slice(0, visiblegames).map(game => (
+                  <GameListItem key={game.gameNo} game={game} />
+                ))}
+
+                {visiblegames < games.length && (
+                  <div className={styles.showMoreContainer}>
+                    <button 
+                      onClick={handleShowMore} 
+                      className={styles.showMoreTrigger}
+                    >
+                      <div className={styles.showMoreContent}>
+                        <ChevronDown size={20} />
+                        <span>더 보기</span>
+                      </div>
+                    </button>
+                  </div>
+                )}
+              </div>
+            </section>
+
             {/* 카테고리 섹션 */}
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>카테고리</h2>
@@ -446,8 +702,10 @@ const Home = () => {
                 <CategoryCard icon={<Tag color="white" size={24} />} title="무료 게임" />
                 <CategoryCard icon={<Users color="white" size={24} />} title="멀티플레이어" />
                 <CategoryCard icon={<Gamepad color="white" size={24} />} title="컨트롤러 지원" />
+    
               </div>
             </section>
+
           </div>
         </div>
       </div>

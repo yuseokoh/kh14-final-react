@@ -516,3 +516,246 @@
   height: auto;
   display: block;
 }
+
+.gameCard:hover, .verticalCard:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+/* 게임 리스트 섹션 스타일 */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.addGameButton {
+  padding: 8px 16px;
+  background-color: #4c6b22;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.addGameButton:hover {
+  background-color: #5c7e10;
+}
+
+/* 게임 리스트 그리드 레이아웃 */
+.gameList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+/* 게임 리스트 아이템 스타일 */
+.gameListItem {
+  display: flex;
+  background: linear-gradient(to right, #1a3c5e, #2a475e);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gameListItem:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.gameListItem {
+  display: flex;
+  padding: 8px; /* 패딩 축소 */
+  margin-bottom: 4px; /* 마진 축소 */
+  background-color: rgba(28, 37, 48, 0.8); /* 배경보다 살짝 밝은 어두운 색 */
+  border-radius: 2px;
+  transition: background-color 0.2s ease;
+  min-height: 69px; /* Steam 스타일의 compact한 높이 */
+}
+
+.gameListItem:hover {
+  background-color: rgba(35, 47, 62, 1); /* hover시 더 진한 색상 */
+}
+
+.gameListImage {
+  width: 120px; /* 이미지 크기 조정 */
+  height: 53px; /* 16:9 비율 유지하면서 높이 축소 */
+  border-radius: 2px;
+  object-fit: cover;
+  margin-right: 12px;
+}
+
+.gameListInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  padding: 2px 0;
+}
+
+.gameListTitle {
+  font-size: 14px;
+  margin: 0;
+  color: #ffffff;
+}
+
+.gameListTags {
+  display: flex;
+  gap: 6px;
+  margin: 4px 0;
+}
+
+.gameListTag {
+  font-size: 11px;
+  color: #8f98a0;
+  background: none;
+  padding: 0;
+}
+
+.gameListPricing {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gameListMeta {
+  display: flex;
+  gap: 12px;
+  font-size: 12px;
+  color: #8f98a0;
+}
+
+.gameListDiscount {
+  padding: 2px 4px;
+  background-color: #4c6b22;
+  color: #a4d007;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+.gameListOriginalPrice {
+  text-decoration: line-through;
+  color: #738895;
+  font-size: 11px;
+}
+
+.gameListFinalPrice {
+  color: #c6d4df;
+  font-size: 13px;
+}
+
+/* 게임 메타 정보 스타일 */
+.gameListMeta {
+  display: flex;
+  gap: 16px;
+  color: #8f98a0;
+  font-size: 12px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .gameList {
+    grid-template-columns: 1fr;
+  }
+  
+  .gameListItem {
+    flex-direction: column;
+  }
+  
+  .gameListImage {
+    width: 100%;
+    height: 150px;
+  }
+}
+
+.showMoreContainer {
+  position: relative;
+  height: 40px;
+  margin-top: -40px; /* 마지막 아이템과 겹치도록 설정 */
+  z-index: 1;
+}
+
+.showMoreTrigger {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(28, 37, 48, 0) 0%,
+    rgba(28, 37, 48, 0.8) 30%,
+    rgba(28, 37, 48, 0.9) 100%
+  );
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.showMoreTrigger:hover {
+  opacity: 1;
+}
+
+.showMoreContent {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #cccccc;
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 2px;
+}
+
+/* 기존 스타일 수정 */
+.gameList {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gameListItem:nth-child(10) {
+  margin-bottom: 0; /* 10번째 아이템의 마진 제거 */
+}
+
+.sidebarSectionItem {
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  color: #c7d5e0;
+}
+
+.sidebarSectionItem:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateX(4px);
+}
+.categoryLink {
+  cursor: pointer;
+  color: #8F98A0;
+  transition: color 0.2s ease;
+  margin: 4px 0;  /* 기존 간격 유지 */
+}
+
+.categoryLink:hover {
+  color: #ffffff;  /* hover 시 밝은 색상으로 변경 */
+}
+
+/* 기존 스타일 유지 */
+.sidebarSectionList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}

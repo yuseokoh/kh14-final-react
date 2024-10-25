@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router";
 
@@ -19,7 +20,7 @@ const GameAdd = ()=>{
         gameShortDescription:"",
         gameUserScore:"",
         gameReviewCount:"",
-        gamePlatform:"",
+        gamePlatforms:"",
         gameSystemRequirement:"",
     });
 
@@ -32,11 +33,22 @@ const GameAdd = ()=>{
     }, [input]);
 
     const saveGame = useCallback(async()=> {
-
-        const resp = await axios.post("http://localhost:8080/game/", input);
-        //알림 코드
-        navigate("/game/list");
-    }, [input]);
+        try {
+            // 콤마 제거하고 숫자로 변환
+            const formattedInput = {
+                ...input,
+                gamePrice: parseInt(input.gamePrice.replace(/,/g, '')),
+                gameDiscount: parseInt(input.gameDiscount),
+                gameUserScore: parseFloat(input.gameUserScore),
+                gameReviewCount: parseInt(input.gameReviewCount)
+            };
+            
+            const resp = await axios.post("http://localhost:8080/game/", formattedInput);
+            navigate("/game/list");
+        } catch(error) {
+            console.error("Error:", error);
+        }
+    }, [input, navigate]);
 
     return (<>
         <h1>게임 등록페이지</h1>
@@ -65,25 +77,19 @@ const GameAdd = ()=>{
                             />
                         </div>
                     </div>
-                </div>
-
-                <div className="modal-body">
                     <div className="row mt-4">
                         <div className="col">
                             <label>금액</label>
                             <input
-                                type="number"
+                                type="text"
                                 className="form-control"
                                 placeholder="ex)33,000"
                                 name="gamePrice"
-                                value={input.gameTitle}
+                                value={input.gamePrice}
                                 onChange={changeInput}
                             />
                         </div>
                     </div>
-                </div>
-
-                <div className="modal-body">
                     <div className="row mt-4">
                         <div className="col">
                             <label>개발자</label>
@@ -97,9 +103,6 @@ const GameAdd = ()=>{
                             />
                         </div>
                     </div>
-                </div>
-
-                <div className="modal-body">
                     <div className="row mt-4">
                         <div className="col">
                             <label>출시일</label>
@@ -112,9 +115,6 @@ const GameAdd = ()=>{
                             />
                         </div>
                     </div>
-                </div>
-
-                <div className="modal-body">
                     <div className="row mt-4">
                         <div className="col">
                             <label>할인율</label>
@@ -128,9 +128,6 @@ const GameAdd = ()=>{
                             />
                         </div>
                     </div>
-                </div>
-
-                <div className="modal-body">
                     <div className="row mt-4">
                         <div className="col">
                             <label>카테고리</label>
@@ -144,9 +141,6 @@ const GameAdd = ()=>{
                             />
                         </div>
                     </div>
-                </div>
-
-                <div className="modal-body">
                     <div className="row mt-4">
                         <div className="col">
                             <label>등급</label>
@@ -160,9 +154,6 @@ const GameAdd = ()=>{
                             />
                         </div>
                     </div>
-                </div>
-
-                <div className="modal-body">
                     <div className="row mt-4">
                         <div className="col">
                             <label>설명</label>
@@ -175,9 +166,6 @@ const GameAdd = ()=>{
                             />
                         </div>
                     </div>
-                </div>
-
-                <div className="modal-body">
                     <div className="row mt-4">
                         <div className="col">
                             <label>한줄설명</label>
@@ -190,9 +178,6 @@ const GameAdd = ()=>{
                             />
                         </div>
                     </div>
-                </div>
-
-                <div className="modal-body">
                     <div className="row mt-4">
                         <div className="col">
                             <label>평점</label>
@@ -205,9 +190,6 @@ const GameAdd = ()=>{
                             />
                         </div>
                     </div>
-                </div>
-
-                <div className="modal-body">
                     <div className="row mt-4">
                         <div className="col">
                             <label>리뷰 수</label>
@@ -220,9 +202,6 @@ const GameAdd = ()=>{
                             />
                         </div>
                     </div>
-                </div>
-
-                <div className="modal-body">
                     <div className="row mt-4">
                         <div className="col">
                             <label>지원플랫폼</label>
@@ -236,9 +215,6 @@ const GameAdd = ()=>{
                             />
                         </div>
                     </div>
-                </div>
-
-                <div className="modal-body">
                     <div className="row mt-4">
                         <div className="col">
                             <label>시스템 요구사항</label>
