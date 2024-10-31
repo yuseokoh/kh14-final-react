@@ -11,10 +11,11 @@ npm install lucide-react
 <br/>
 npm install react-icons
 <br/>
+npm install lodash
+<br/>
 npm install react-transition-group
 # 구글 체킹 <br/>
 npm install react-google-recaptcha <br/>
 # react qr code <br/>
 npm install qrcode.react <br/>
 
-npm install lodash
