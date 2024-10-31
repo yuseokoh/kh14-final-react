@@ -17,3 +17,4 @@ npm install react-google-recaptcha <br/>
 # react qr code <br/>
 npm install qrcode.react <br/>
 
+npm install lodash
